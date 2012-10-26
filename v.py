@@ -7,6 +7,7 @@ from std_msgs.msg import String, Empty
 from geometry_msgs.msg import Twist
 from sensor_msgs.msg import Image, CameraInfo
 from cmvision.msg import Blobs, Blob
+from getat import getat
 
 action = rospy.Publisher("cmd_vel", Twist)
 
@@ -20,12 +21,6 @@ directionz = 1
 
 C_LIGHT = (253, 255, 253)
 C_TARGET = (0,  182,  234)
-
-def getat(d):
-	x, y = d.x, d.y
-	return (ord(img.data[x * 3 + y * img.step]),
-		ord(img.data[x * 3 + y * img.step + 1]),
-		ord(img.data[x * 3 + y * img.step + 2]))
 
 def c(data):
 	global directionz

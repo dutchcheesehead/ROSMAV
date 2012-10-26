@@ -1,20 +1,18 @@
-from collections import namedtuple
+from getat import getat
+from collections import namedtuple, defaultdict
 from math import sqrt
 import random
-try:
-    import Image
-except ImportError:
-    from PIL import Image
+
+# source: http://charlesleifer.com/blog/using-python-and-k-means-to-find-the-dominant-colors-in-images/
 
 Point = namedtuple('Point', ('coords', 'n', 'ct'))
 Cluster = namedtuple('Cluster', ('points', 'center', 'n'))
 
 def get_points(img):
-    points = []
-    w, h = img.size
-    for count, color in img.getcolors(w * h):
-        points.append(Point(color, 3, count))
-    return points
+    counter = defaultdict(int)
+    for x in img.blobs:
+        counter[getat(x)] += 1
+    return [Point(k, 3, v) for k, v in counter.pairs()]
 
 def colors(img, n=3):
     points = get_points(img)
