@@ -1,6 +1,5 @@
-from getat import getat
+from getat import getatraw
 from collections import namedtuple, defaultdict
-from math import sqrt
 import random
 
 # source: http://charlesleifer.com/blog/using-python-and-k-means-to-find-the-dominant-colors-in-images/
@@ -10,8 +9,9 @@ Cluster = namedtuple('Cluster', ('points', 'center', 'n'))
 
 def get_points(img):
     counter = defaultdict(int)
-    for x in img.blobs:
-        counter[getat(x)] += 1
+    for x in range(1, 320):
+        for y in range(1, 240):
+            counter[getatraw(img, x, y)] += 1
     return [Point(k, 3, v) for k, v in counter.pairs()]
 
 def colors(img, n=3):
@@ -21,9 +21,9 @@ def colors(img, n=3):
     return rgbs
 
 def euclidean(p1, p2):
-    return sqrt(sum([
+    return sum([
         (p1.coords[i] - p2.coords[i]) ** 2 for i in range(p1.n)
-    ]))
+    ])
 
 def calculate_center(points, n):
     vals = [0.0 for i in range(n)]
