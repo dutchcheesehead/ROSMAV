@@ -12,7 +12,7 @@ def get_points(img):
     for x in range(1, 320):
         for y in range(1, 240):
             counter[getatraw(img, x, y)] += 1
-    return [Point(k, 3, v) for k, v in counter.pairs()]
+    return [Point(k, 3, v) for k, v in counter.items()]
 
 def colors(img, n=3):
     points = get_points(img)

@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 import roslib
+import time
 roslib.load_manifest('lijnvolger')
 import sys
 import rospy
@@ -8,6 +9,7 @@ from geometry_msgs.msg import Twist
 from sensor_msgs.msg import Image, CameraInfo
 from cmvision.msg import Blobs, Blob
 from getat import getat
+import dominant
 
 action = rospy.Publisher("cmd_vel", Twist)
 
@@ -24,9 +26,10 @@ C_TARGET = (0,  182,  234)
 
 def c(data):
 	global directionz
-	#print ';  '.join(str(getat(x)) for x in data.blobs)
-	#print ';  '.join(','.join([str(x.red), str(x.green),str(x.blue)]) for x in data.blobs)
-	lights = [x for x in data.blobs if getat(x)[0] > 100]
+	if img is None:
+		return
+	print "hi"
+	lights = [x for x in data.blobs if getat(img, x)[0] > 100]
 	if lights:
 		naar = min(lights, key=lambda x: x.y)
 		twist = Twist()
@@ -56,7 +59,7 @@ def c(data):
 		twist.angular.z = directionz
 		action.publish(twist)
 		print "n/a"
-	targets = [x for x in data.blobs if getat(x)[0] <= 100]
+	targets = [x for x in data.blobs if getat(img, x)[0] <= 100]
 	if targets:
 		target = max(targets, key=lambda x: x.area)
 		twist = Twist()
@@ -76,13 +79,15 @@ def c(data):
 			action.publish(twist)
 			print "closer"
 
-	#print data
-	#print dir(data)
 img = None
 
 def img_get(data):
+	print "#################################started img_get"
 	global img
 	img = data
+	t = time.time()
+	print dominant.colors(img, 1)
+	print time.time() - t
 
 rospy.Subscriber("/blobs", Blobs, c)
 rospy.Subscriber("/ardrone/image_raw", Image, img_get)
