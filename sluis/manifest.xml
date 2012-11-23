@@ -1,0 +1,17 @@
+<package>
+  <description brief="sluis">
+
+     sluis
+
+  </description>
+  <author>Robin Wellner</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/sluis</url>
+  <depend package="sensor_msgs"/>
+  <depend package="rospy"/>
+  <depend package="std_msgs"/>
+
+</package>
+
+
