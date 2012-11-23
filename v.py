@@ -24,13 +24,27 @@ directionz = 1
 C_LIGHT = (253, 255, 253)
 C_TARGET = (0,  182,  234)
 
+def isRed(c):
+	return c[0] > 150 and c[0] < 200 and c[1] < 100 and c[2] < 100
+def isGreen(c):
+	return c[1] > 50 and c[1] < 150 and c[0] < 50 and c[2] < 50 and c[2] < 150
+def isBlue(c):
+	return c[2] > 150 and c[0] < 100 and c[1] > 150
+def isYellow(c):
+	return c[0] > 150 and c[1] > 150 and c[2] < 200
+def isTarget(c):
+	return c[0] <= 100
+def finished(c): return False
+
+currentTarget = isBlue#isTarget
+nextTarget = {isBlue: isRed, isRed: isGreen, isGreen: isBlue}
+
 def c(data):
-	global directionz
+	global directionz, currentTarget
 	if img is None:
 		return
-	print "hi"
 	lights = [x for x in data.blobs if getat(img, x)[0] > 100]
-	if lights:
+	if lights and False:
 		naar = min(lights, key=lambda x: x.y)
 		twist = Twist()
 		twist.linear.x = .1
@@ -59,17 +73,26 @@ def c(data):
 		twist.angular.z = directionz
 		action.publish(twist)
 		print "n/a"
-	targets = [x for x in data.blobs if getat(img, x)[0] <= 100]
+	print currentTarget.__name__
+	try:
+		print getat(img, max(data.blobs, key=lambda x: x.area))
+	except:
+		pass
+	targets = [x for x in data.blobs if currentTarget(getat(img, x))]
 	if targets:
 		target = max(targets, key=lambda x: x.area)
 		twist = Twist()
 		if target.area > 1000:
 			#found!
-			twist.linear.x = -.1
-			action.publish(twist)
-			l = rospy.Publisher("/ardrone/land", Empty)
-			l.publish(Empty())
-			print "found"
+			if currentTarget in nextTarget:
+				currentTarget = nextTarget[currentTarget]
+			else:
+				twist.linear.x = -.1
+				action.publish(twist)
+				l = rospy.Publisher("/ardrone/land", Empty)
+				l.publish(Empty())
+				print "found"
+				currentTarget = finished
 		else:
 			twist.linear.x = .1
 			if target.x < MIDPOINTX:
@@ -82,12 +105,12 @@ def c(data):
 img = None
 
 def img_get(data):
-	print "#################################started img_get"
+	#print "#################################started img_get"
 	global img
 	img = data
-	t = time.time()
-	print dominant.colors(img, 1)
-	print time.time() - t
+	#t = time.time()
+	#print dominant.colors(img, 1)
+	#print time.time() - t
 
 rospy.Subscriber("/blobs", Blobs, c)
 rospy.Subscriber("/ardrone/image_raw", Image, img_get)
