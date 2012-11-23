@@ -1,0 +1,12 @@
+
+<launch>
+  <node name="cmvision" pkg="cmvision" type="cmvision" respawn="false">
+    <remap from="image" to="/ardrone/image_raw"/>
+    <param name="color_file" value="/home/robin/Uni/bm/ros_workspace/stacks/cmvision/colors_copter.txt" />
+    <param name="mean_shift_on" value="false" />
+    <param name="color_radius_pix" value="0" />
+    <param name="spatial_radius_pix" value="0" />
+    <param name="debug_on" value="true" />
+  </node>
+</launch>
+
