@@ -1,0 +1,5 @@
+#camera_x	camera_y	object_x	object_y	object_theta
+0		240		0		0		0
+320		240		0		2		0
+100		100		2		0		0
+220		100		2		2		0

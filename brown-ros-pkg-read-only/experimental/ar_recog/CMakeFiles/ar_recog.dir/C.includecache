@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/robin/Downloads/brown-ros-pkg-read-only/experimental/ar_recog/src/ARToolKit/examples/loadMultiple/object.c
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+AR/ar.h
+-
+object.h
+/home/robin/Downloads/brown-ros-pkg-read-only/experimental/ar_recog/src/ARToolKit/examples/loadMultiple/object.h
+
+/home/robin/Downloads/brown-ros-pkg-read-only/experimental/ar_recog/src/ARToolKit/examples/loadMultiple/object.h
+
+src/ARToolKit/include/AR/ar.h
+stdio.h
+-
+malloc.h
+-
+stdlib.h
+-
+AR/config.h
+-
+AR/param.h
+-
+
+src/ARToolKit/include/AR/config.h
+
+src/ARToolKit/include/AR/param.h
+AR/config.h
+-
+

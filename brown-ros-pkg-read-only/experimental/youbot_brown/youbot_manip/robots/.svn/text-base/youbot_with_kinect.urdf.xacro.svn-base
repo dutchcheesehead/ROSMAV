@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<robot
+	xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
+	xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
+	xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+	xmlns:xacro="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+	name="youBot" >
+
+	<include filename="$(find youbot_description)/robots/youbot.urdf.xacro" />
+	<include filename="$(find youbot_manip)/urdf/sensors/kinect.urdf.xacro" />
+	<youbot_kinect />
+</robot>

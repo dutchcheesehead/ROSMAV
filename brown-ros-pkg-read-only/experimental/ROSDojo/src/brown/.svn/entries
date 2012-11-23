@@ -1,0 +1,58 @@
+10
+
+dir
+2894
+http://brown-ros-pkg.googlecode.com/svn/trunk/experimental/ROSDojo/src/brown
+http://brown-ros-pkg.googlecode.com/svn
+
+
+
+2012-07-12T20:24:55.644218Z
+2894
+nevernim
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0d49d21e-669f-11de-873c-fb8c264d332a
+
+rosdojo
+dir
+
+blockbuilder
+dir
+
+controller
+dir
+
+blocknlp
+dir
+
+cs148panels
+dir
+
+mobile
+dir
+
+cs148widgets
+dir
+
+roswidgets
+dir
+
+misc
+dir
+
+webtools
+dir
+

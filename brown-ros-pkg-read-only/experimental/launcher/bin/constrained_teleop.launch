@@ -1,0 +1,12 @@
+<launch>
+
+  <!--include file="$(find constrained_teleop)/jtteleop.launch"/-->
+  <!--node pkg="constrained_teleop" type="joint_state_listener.py" name="joint_state_listener"/-->
+  <!--node pkg="constrained_teleop" type="keyboard_listener.py" name="keyboard_listener"/ -->
+  
+  <node pkg="constrained_teleop" type="constrained_teleop" name="constrained_teleop" output="screen">
+    <rosparam file="$(find constrained_teleop)/config/teleop.yaml" command="load" />
+  </node>
+
+  
+</launch>

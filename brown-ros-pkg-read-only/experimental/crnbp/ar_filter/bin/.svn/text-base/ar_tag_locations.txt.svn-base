@@ -1,0 +1,12 @@
+# Use this file to store locations for the AR tags.  The index number (first
+# entry) corresponds to the entry in the file ar_recog/bin/object_data
+# 0 - alpha
+# 2 - cents
+# 6 - (capital) gamma
+# Coordinates correspond to map_filter/maps/fourth_floor_map.yaml 
+# alpha - chair next to desk
+0  32.0  34.85 1.5708
+# delta - over to right when standing with back to door.
+3  35.0  39.0  3.1415
+# Y - over to left
+9  29.5  39.0  0.0

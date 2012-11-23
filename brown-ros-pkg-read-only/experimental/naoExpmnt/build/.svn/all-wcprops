@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/108/trunk/experimental/naoExpmnt/build
+END
+CMakeCache.txt
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/108/trunk/experimental/naoExpmnt/build/CMakeCache.txt
+END
+cmake_install.cmake
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/108/trunk/experimental/naoExpmnt/build/cmake_install.cmake
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/108/trunk/experimental/naoExpmnt/build/Makefile
+END

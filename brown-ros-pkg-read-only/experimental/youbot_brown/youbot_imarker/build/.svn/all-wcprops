@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/2725/trunk/experimental/youbot_brown/youbot_imarker/build
+END
+cmake_install.cmake
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/2725/trunk/experimental/youbot_brown/youbot_imarker/build/cmake_install.cmake
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/2725/trunk/experimental/youbot_brown/youbot_imarker/build/Makefile
+END

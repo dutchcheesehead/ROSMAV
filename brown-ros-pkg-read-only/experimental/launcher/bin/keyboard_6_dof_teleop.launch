@@ -1,0 +1,7 @@
+<launch>
+
+  <!--include file="$(find keyboard_6_dof_teleop)/jtteleop.launch"/-->
+  <!--node pkg="keyboard_6_dof_teleop" type="joint_state_listener.py" name="joint_state_listener"/-->
+  <node pkg="keyboard_6_dof_teleop" type="keyboard_6_dof_teleop" name="keyboard_6_dof_teleop" output="screen" />
+  
+</launch>

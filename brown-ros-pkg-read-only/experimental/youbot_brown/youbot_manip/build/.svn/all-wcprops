@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/2720/trunk/experimental/youbot_brown/youbot_manip/build
+END
+CMakeCache.txt
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/2720/trunk/experimental/youbot_brown/youbot_manip/build/CMakeCache.txt
+END
+cmake_install.cmake
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/2720/trunk/experimental/youbot_brown/youbot_manip/build/cmake_install.cmake
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/2720/trunk/experimental/youbot_brown/youbot_manip/build/Makefile
+END

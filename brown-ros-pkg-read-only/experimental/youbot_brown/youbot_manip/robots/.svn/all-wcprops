@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/2742/trunk/experimental/youbot_brown/youbot_manip/robots
+END
+youbot_with_kinect_gripper_camera.urdf.xacro
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/!svn/ver/2720/trunk/experimental/youbot_brown/youbot_manip/robots/youbot_with_kinect_gripper_camera.urdf.xacro
+END
+youbot_with_kinect.urdf.xacro
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/2720/trunk/experimental/youbot_brown/youbot_manip/robots/youbot_with_kinect.urdf.xacro
+END
+top_camera.urdf.xacro
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/2720/trunk/experimental/youbot_brown/youbot_manip/robots/top_camera.urdf.xacro
+END
+yk.urdf.xacro
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/2720/trunk/experimental/youbot_brown/youbot_manip/robots/yk.urdf.xacro
+END
+east_camera.urdf.xacro
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/2720/trunk/experimental/youbot_brown/youbot_manip/robots/east_camera.urdf.xacro
+END

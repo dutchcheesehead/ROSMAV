@@ -1,0 +1,41 @@
+[Breakpoint 0]
+Enabled=true
+File=/home/iscander/ros/projects/sogp_node/sogp_node/sogp_test.cpp
+Line=154
+Temporary=false
+
+[Breakpoint 1]
+Enabled=true
+File=/home/iscander/ros/projects/sogp_node/sogp_node/sogp_test.cpp
+Line=141
+Temporary=false
+
+[Breakpoint 2]
+Enabled=true
+File=/home/iscander/ros/projects/sogp_node/sogp_node/sogp_test.cpp
+Line=93
+Temporary=false
+
+[Environment]
+Value0=http://localhost:11311
+Var0=ROS_MASTER_URI
+
+[General]
+DebuggerCmdStr=
+DriverName=GDB
+FileVersion=1
+OptionsSelected=
+ProgramArgs=
+TTYLevel=7
+WorkingDirectory=
+
+[Memory]
+ColumnWidths=80,0
+NumExprs=0
+
+[Watches]
+Expr0=uiInputDimension
+Expr1=uiOutputDimension
+Expr2=iParam
+Expr3=uiNumPoints
+Expr4=dblSeedCurrent

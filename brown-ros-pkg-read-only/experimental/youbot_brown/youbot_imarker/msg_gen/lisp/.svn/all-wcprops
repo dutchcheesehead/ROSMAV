@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/2725/trunk/experimental/youbot_brown/youbot_imarker/msg_gen/lisp
+END
+_package.lisp
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/2720/trunk/experimental/youbot_brown/youbot_imarker/msg_gen/lisp/_package.lisp
+END
+diffval.lisp
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/2725/trunk/experimental/youbot_brown/youbot_imarker/msg_gen/lisp/diffval.lisp
+END
+youbot_imarker-msg.asd
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/2720/trunk/experimental/youbot_brown/youbot_imarker/msg_gen/lisp/youbot_imarker-msg.asd
+END
+_package_diffval.lisp
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/2725/trunk/experimental/youbot_brown/youbot_imarker/msg_gen/lisp/_package_diffval.lisp
+END

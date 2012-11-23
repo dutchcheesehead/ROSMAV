@@ -1,0 +1,12 @@
+# Blank lines and lines beginning with a # are ignored.
+
+# File Format (by eg):
+# verb ActionClass
+
+# verb is case-insensitive; ActionClass is case-sensitive
+# Format style:
+#   Verbs: all lower-case, eg move
+#   Action classes: CamelCase, beginning with a capital letter, eg PathPlan
+
+move\s+([a-zA-Z\s]+)|Move
+(stop)|Move

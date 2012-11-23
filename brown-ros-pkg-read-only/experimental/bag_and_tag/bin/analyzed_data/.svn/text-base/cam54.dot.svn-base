@@ -1,0 +1,15 @@
+digraph G {
+n [ shape=plaintext label="tag_distance"]
+n -> nA [ label="<=350.500" ]
+nA [ shape=plaintext label="last_tag_seen"]
+nA -> nAA [ label="0" ]
+nAA [ shape=box label="r (78.51%)"]
+nA -> nAB [ label="1" ]
+nAB [ shape=box label="l (85.05%)"]
+nA -> nAC [ label="2" ]
+nAC [ shape=box label="l (73.71%)"]
+nA -> nAD [ label="3" ]
+nAD [ shape=box label="s (79.46%)"]
+n -> nB [ label=">350.500" ]
+nB [ shape=box label="f (54.89%)"]
+}

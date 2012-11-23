@@ -1,0 +1,64 @@
+[Breakpoint 0]
+Enabled=true
+File=/home/iscander/ros/projects/sogp_node/sogp_node/sogp_ros.cpp
+Line=343
+Temporary=false
+
+[Breakpoint 1]
+Enabled=true
+File=/home/iscander/ros/projects/sogp_node/sogp_node/sogp_ros.cpp
+Line=350
+Temporary=false
+
+[Breakpoint 2]
+Enabled=true
+File=/home/iscander/ros/projects/sogp_node/sogp_node/sogp_ros.cpp
+Line=295
+Temporary=false
+
+[Breakpoint 3]
+Enabled=true
+File=/home/iscander/ros/projects/sogp_node/sogp_node/sogp_ros.cpp
+Line=269
+Temporary=false
+
+[Breakpoint 4]
+Enabled=true
+File=/home/iscander/ros/projects/sogp_node/sogp_node/sogp_ros.cpp
+Line=229
+Temporary=false
+
+[Breakpoint 5]
+Enabled=true
+File=/home/iscander/ros/projects/sogp_node/sogp_node/sogp_ros.cpp
+Line=200
+Temporary=false
+
+[Breakpoint 6]
+Enabled=true
+File=/home/iscander/ros/projects/sogp_node/sogp_node/sogp_ros.cpp
+Line=184
+Temporary=false
+
+[Breakpoint 7]
+Enabled=true
+File=/home/iscander/ros/projects/sogp_node/sogp_node/sogp_ros.cpp
+Line=164
+Temporary=false
+
+[Environment]
+Value0=http://localhost:11311
+Var0=ROS_MASTER_URI
+
+[General]
+DebuggerCmdStr=
+DriverName=GDB
+FileVersion=1
+OptionsSelected=
+ProgramArgs=
+TTYLevel=7
+WorkingDirectory=
+
+[Memory]
+ColumnWidths=80,0
+NumExprs=0

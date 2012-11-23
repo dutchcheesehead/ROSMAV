@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/1610/trunk/experimental/crnbp/step_nav/bin
+END
+makelist.py
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/1500/trunk/experimental/crnbp/step_nav/bin/makelist.py
+END
+fudge.py
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/1480/trunk/experimental/crnbp/step_nav/bin/fudge.py
+END
+step_nav.py
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/1610/trunk/experimental/crnbp/step_nav/bin/step_nav.py
+END
+step_mon.py
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/1542/trunk/experimental/crnbp/step_nav/bin/step_mon.py
+END

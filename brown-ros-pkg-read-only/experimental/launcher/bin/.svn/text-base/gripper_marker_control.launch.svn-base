@@ -1,0 +1,4 @@
+<launch>
+  <node pkg="gripper_marker_control" type="gripper_control" name="gripper_control" output="screen" />
+</launch>
+

@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/1016/trunk/experimental/pr2_remotelab/ik_control/bin
+END
+message_conversion.py
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/857/trunk/experimental/pr2_remotelab/ik_control/bin/message_conversion.py
+END
+example.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/857/trunk/experimental/pr2_remotelab/ik_control/bin/example.py
+END
+arm.py
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/857/trunk/experimental/pr2_remotelab/ik_control/bin/arm.py
+END
+test.py
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/1016/trunk/experimental/pr2_remotelab/ik_control/bin/test.py
+END
+ik_control.py
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/1016/trunk/experimental/pr2_remotelab/ik_control/bin/ik_control.py
+END
+arm_movearm.py
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/857/trunk/experimental/pr2_remotelab/ik_control/bin/arm_movearm.py
+END

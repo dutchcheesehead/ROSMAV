@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/772/trunk/experimental/ar_localizer/bin
+END
+tag_locations.txt
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/772/trunk/experimental/ar_localizer/bin/tag_locations.txt
+END
+generate_tag_locations.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/761/trunk/experimental/ar_localizer/bin/generate_tag_locations.py
+END
+ar_localizer.py
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/772/trunk/experimental/ar_localizer/bin/ar_localizer.py
+END

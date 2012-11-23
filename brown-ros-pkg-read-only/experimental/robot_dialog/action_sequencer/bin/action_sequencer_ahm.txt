@@ -1,0 +1,47 @@
+# Blank lines and lines beginning with a # are ignored.
+
+# File Format (by eg):
+# # Let's say your action class Class has 3 components.
+# #   One, it is composed of 3 classes, where Class1 -> Class2, Class2 -> Class3, and Class1 -> Class3.
+# c Class c Class1 Class2 Class3
+# - Class1 Class2
+# - Class1 Class3
+# - Class2 Class3
+# #   Two, it is composed of 1 class, Class4
+# c Class c Class4
+# #   Three, it could be any of 3 instances, instance1, instance2, or instance3
+# c Class i instance1 instance2 instance3
+# # Let's say your action instance instance1 is located in package as_package, is under the executable name as_type, pubishes on topic as_topic, and uses the action type MyAction.action
+# i instance1 as_package as_type as_topic MyAction
+
+# Action classes and action instances are case-sensitive.
+# Format style:
+#   Action classes: CamelCase, beginning with a capital letter, eg PathPlan
+#   Action instances: lower-case, with underscores between words, eg dijkstras_algorithm
+
+###############################################################################
+
+c Move i move
+i move move moveAS.py move Move
+#todo: for some of the as nodes, they can set their topic at runtime based on the name they're launched as.  how can we resolve this with the static requirement here?  (eg, could we force some naming convention?  or just say that they have to be static?  or interpret at runtime...somehow?  these all seem bad; maybe there's a better way.)
+
+###############################################################################
+
+# # Let's say your action class Class has 3 components.
+# #   One, it is composed of 3 classes, where Class1 -> Class2, Class2 -> Class3, and Class1 -> Class3.
+# c Class c Class1 Class2 Class3
+# - Class1 Class2
+# - Class1 Class3
+# - Class2 Class3
+# #   Two, it is composed of 1 class, Class4
+# c Class c Class4
+# #   Three, it could be any of 3 instances, instance1, instance2, or instance3
+# c Class i instance1 instance2 instance3
+# # Let's say your action instance instance1 is located in package as_package, is under the executable name as_type, pubishes on topic as_topic, and uses the action type MyAction.action
+# i instance1 as_package as_type as_topic MyAction
+
+
+
+
+
+

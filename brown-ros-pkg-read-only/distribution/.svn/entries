@@ -1,0 +1,37 @@
+10
+
+dir
+2894
+http://brown-ros-pkg.googlecode.com/svn/trunk/distribution
+http://brown-ros-pkg.googlecode.com/svn
+
+
+
+2012-06-12T21:20:16.034940Z
+2864
+jonathan.bohren@gmail.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0d49d21e-669f-11de-873c-fb8c264d332a
+
+brown_perception
+dir
+
+brown_remotelab
+dir
+
+brown_drivers
+dir
+

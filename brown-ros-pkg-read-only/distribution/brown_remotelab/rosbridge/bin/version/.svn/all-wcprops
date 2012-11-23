@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/2453/trunk/distribution/brown_remotelab/rosbridge/bin/version
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/2453/trunk/distribution/brown_remotelab/rosbridge/bin/version/__init__.py
+END
+version.py
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/2453/trunk/distribution/brown_remotelab/rosbridge/bin/version/version.py
+END

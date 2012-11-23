@@ -1,0 +1,25 @@
+# Use this file to store locations for the AR tags.  The index number (first
+# entry) corresponds to the entry in the file ar_recog/bin/object_data
+# Coordinates correspond to map_filter/maps/first_floor_map.yaml 
+# alpha - Chair next to desk
+0  32.0  34.85 1.5708
+# beta - next to other lab door
+1  31.58 30.51 3.1416
+# cents, corner opposite door, by stairwell
+2 29.58 30.71 1.5708
+# delta = near corner of loading dock door
+3  31.58 20.61 3.1416
+# epsilon = end of hall, corner facing lab
+4 30.73 18.91 1.5708
+# eta = 4 m down hall from corner
+5 25.73 20.71 -1.5708
+# gamma = coke machine, outside corner, facing loading dock
+6 19.58 20.81 0.0
+# iota = open door across from vending machine, near hinge
+8 15.43 19.86 .7854
+# kappa = end of wall next to elevator
+#10 13.93 17.71 3.1416
+# kappa = end of wall next to elevator
+10 31.58 23.61 3.1416
+# zeta - opposite second door, farther corner from lab
+12  29.73 26.31 0.0

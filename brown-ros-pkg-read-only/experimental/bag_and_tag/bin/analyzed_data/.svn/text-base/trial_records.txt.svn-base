@@ -1,0 +1,41 @@
+Learning on tag data, maxMajority = 0.70 (tree size = 9)
+Success on 30/40 trials.  23.80<-30.00->36.20
+
+Learning on cam data, maxMajority = 0.70 (tree size = 1692)
+Success on 15/40 trials.  8.80<-15.00->21.20
+
+Learning on cam data, maxMajority = 0.55 (tree size = 179)
+Success on 28/40 trials.  22.80<-29.00->35.20
+
+Learning on cam data, maxMajority = 0.71 (tree size = 1706)
+Learning on tag data, maxMajority = 0.71 (tree size = 79)
+Learning on tag data, maxMajority = 0.54 (tree size = 7)
+Learning on cam data, maxMajority = 0.54 (tree size = 7)
+
+Unique individuals = 132
+Total trials = 276
+Total cam trials = 149
+Total tag trials = 127
+Invalid trials = 55
+Invalid cam trials = 26
+Invalid tag trials = 29
+
+Camera performance: 123 instances
+  Time: 27.7227<-28.8662->32.0097
+  Bumps: 0.8878<-1.1545->1.4212
+Tag performance: 98 instances
+  Time: 40.9939<-44.8961->48.7983
+  Bumps: 0.2297<-0.4490->0.6683
+
+% = 0.01  Tag: 6/10  Cam: 2/10
+% = 0.02  Tag: 3/10  Cam: 1/10
+% = 0.04  Tag: 8/10  Cam: 2/10
+% = 0.08  Tag: 2/5   Cam: 2/5
+% = 0.16  Tag: 5/5   Cam: 2/5
+% = 0.32             Cam: 3/5
+
+Weird maze
+% = 0.02  Tag: 6/10  Cam: 0/10
+% = 0.04  Tag: 6/10  Cam: 3/10
+% = 0.08  Tag: 7/10  Cam: 5/10
+% = 100.0 Tag: 5/5   Cam: 2/5

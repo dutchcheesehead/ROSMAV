@@ -1,0 +1,37 @@
+problemtype: episodic
+
+discountfactor: 1
+
+observations:
+    /position:
+        x:
+            - -0.05
+            - 3.0
+        y:
+            - -0.05
+            - 3.0
+        theta:
+            - -1.6
+            - 3.5
+
+actions:
+    /act:
+        - service
+        - arg1:
+            - 0
+            - 2
+reward:
+   type: glue #ros or glue
+#   /position:
+#    x:
+#     - -0.05
+#     - 3.0
+   range: 
+     - -1
+     - 10
+
+termination:
+    type: glue #ros or glue
+    /terminate:
+    - terminate
+extra: iRobotCreate by Sarah Osentoski

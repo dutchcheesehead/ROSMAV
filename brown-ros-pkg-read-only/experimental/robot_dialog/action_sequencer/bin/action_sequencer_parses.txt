@@ -1,0 +1,10 @@
+# Blank lines and lines beginning with a # are ignored.
+# Format: regex|as_topic|as_package|action_actionType
+
+# move
+move\s+([a-zA-Z\s]+)|move|move|Move
+(stop)|move|move|Move
+
+
+
+

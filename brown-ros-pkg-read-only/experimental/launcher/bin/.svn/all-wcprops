@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/1516/trunk/experimental/launcher/bin
+END
+jtteleop.launch
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/961/trunk/experimental/launcher/bin/jtteleop.launch
+END
+interactive_marker_teleop.launch
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/1516/trunk/experimental/launcher/bin/interactive_marker_teleop.launch
+END
+arm_teleop.launch
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/862/trunk/experimental/launcher/bin/arm_teleop.launch
+END
+gripper_marker_control.launch
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/1516/trunk/experimental/launcher/bin/gripper_marker_control.launch
+END
+gscam_visualization.launch
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/889/trunk/experimental/launcher/bin/gscam_visualization.launch
+END
+launcher.py
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/800/trunk/experimental/launcher/bin/launcher.py
+END
+constrained_teleop.launch
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/1516/trunk/experimental/launcher/bin/constrained_teleop.launch
+END
+keyboard_6_dof_teleop.launch
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/1516/trunk/experimental/launcher/bin/keyboard_6_dof_teleop.launch
+END

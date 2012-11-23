@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination_map/map_loader/bin
+END
+edges_map.txt
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination_map/map_loader/bin/edges_map.txt
+END
+nodes_map.txt
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination_map/map_loader/bin/nodes_map.txt
+END
+edges_map1.txt
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination_map/map_loader/bin/edges_map1.txt
+END
+map_loader
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination_map/map_loader/bin/map_loader
+END
+nodes_map1.txt
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination_map/map_loader/bin/nodes_map1.txt
+END
+edges_map2.txt
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination_map/map_loader/bin/edges_map2.txt
+END
+lines_map.txt
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination_map/map_loader/bin/lines_map.txt
+END
+nodes_map2.txt
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination_map/map_loader/bin/nodes_map2.txt
+END
+edges_map3.txt
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination_map/map_loader/bin/edges_map3.txt
+END
+nodes_map3.txt
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination_map/map_loader/bin/nodes_map3.txt
+END
+edges_map4.txt
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination_map/map_loader/bin/edges_map4.txt
+END
+nodes_map4.txt
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination_map/map_loader/bin/nodes_map4.txt
+END

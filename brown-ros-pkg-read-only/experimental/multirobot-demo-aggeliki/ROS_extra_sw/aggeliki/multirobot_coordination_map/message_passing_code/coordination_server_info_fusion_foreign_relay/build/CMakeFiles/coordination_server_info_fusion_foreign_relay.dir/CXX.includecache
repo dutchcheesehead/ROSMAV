@@ -1,0 +1,12 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/obot/ros-1.0.0/pkg/coordination_server_info_fusion_foreign_relay/src/coordination_server_info_fusion_foreign_relay.cpp
+coordination_server_info_fusion.h
+/home/obot/ros-1.0.0/pkg/coordination_server_info_fusion_foreign_relay/src/coordination_server_info_fusion.h
+

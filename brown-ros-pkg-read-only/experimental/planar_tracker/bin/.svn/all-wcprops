@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/965/trunk/experimental/planar_tracker/bin
+END
+planar_tracker.py
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/953/trunk/experimental/planar_tracker/bin/planar_tracker.py
+END
+transformation_points.txt
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/965/trunk/experimental/planar_tracker/bin/transformation_points.txt
+END
+blob_ar_tracker.py
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/952/trunk/experimental/planar_tracker/bin/blob_ar_tracker.py
+END
+ColorCodesToIDs.txt
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/905/trunk/experimental/planar_tracker/bin/ColorCodesToIDs.txt
+END
+multicamera_resolution.py
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/965/trunk/experimental/planar_tracker/bin/multicamera_resolution.py
+END

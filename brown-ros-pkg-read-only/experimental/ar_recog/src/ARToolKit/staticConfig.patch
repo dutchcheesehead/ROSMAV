@@ -1,0 +1,12 @@
+40c40
+<     read ANS
+---
+>     ANS="5"
+124c124
+<     read ANS
+---
+>     ANS="n"
+182c182
+< read ANS
+---
+> ANS="y"

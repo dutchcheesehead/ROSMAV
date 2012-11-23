@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/2729/trunk/experimental/youbot_brown/youbot_imarker/src
+END
+cube.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/2720/trunk/experimental/youbot_brown/youbot_imarker/src/cube.cpp
+END
+point_cloud.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/2720/trunk/experimental/youbot_brown/youbot_imarker/src/point_cloud.cpp
+END
+pong.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/2720/trunk/experimental/youbot_brown/youbot_imarker/src/pong.cpp
+END
+basic_controls.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/2720/trunk/experimental/youbot_brown/youbot_imarker/src/basic_controls.cpp
+END
+menu.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/2720/trunk/experimental/youbot_brown/youbot_imarker/src/menu.cpp
+END
+selection.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/2720/trunk/experimental/youbot_brown/youbot_imarker/src/selection.cpp
+END
+youbot_im_test.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/2729/trunk/experimental/youbot_brown/youbot_imarker/src/youbot_im_test.cpp
+END
+youbot_with_kinect_ik.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/2724/trunk/experimental/youbot_brown/youbot_imarker/src/youbot_with_kinect_ik.cpp
+END

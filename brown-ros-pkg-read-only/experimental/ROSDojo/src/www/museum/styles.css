@@ -1,0 +1,60 @@
+body {
+	margin: 0;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.logo {
+	height: 100px;
+	position: absolute;	
+	top: 0;
+	left: 0;
+}
+
+.cartoon {
+	height: 100px;
+	position: absolute;	
+	top: 0;
+	right: 0;
+}
+
+.connectionpanel {
+	text-align: center;
+	padding-top: 30px;
+	padding-bottom: 50px;
+}
+
+.pose-sequence, .robot-visualization {
+	display: inline-block;
+	float: left;
+}
+
+.pose-sequence {
+	width: 40%;
+	overflow: auto;
+}
+
+.robot-visualization {
+	width: 60%;
+	border: 1px solid #759DC0;
+	border-top-right-radius: 7px;
+	border-bottom-right-radius: 7px;
+	border-left: 0;
+	box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+}
+
+.pose-sequence {
+    border: 1px solid #759DC0;
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+	box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+}
+
+.korg-nanokontrol {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}

@@ -1,0 +1,12 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/opt/ros/boxturtle/ros/aggeliki/step_navigator_nomap/src/step_navigator_nomap.cpp
+step_navigator.h
+/opt/ros/boxturtle/ros/aggeliki/step_navigator_nomap/src/step_navigator.h
+

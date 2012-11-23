@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/1506/trunk/experimental/rlrobot/rosglue/bin
+END
+reward_termination.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/786/trunk/experimental/rlrobot/rosglue/bin/reward_termination.py
+END
+rosglue.py
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/1506/trunk/experimental/rlrobot/rosglue/bin/rosglue.py
+END
+icreate.yaml
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/828/trunk/experimental/rlrobot/rosglue/bin/icreate.yaml
+END

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/508/trunk/experimental/pr2develop/kinematics_tutorials/build
+END
+CMakeCache.txt
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/508/trunk/experimental/pr2develop/kinematics_tutorials/build/CMakeCache.txt
+END
+cmake_install.cmake
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/503/trunk/experimental/pr2develop/kinematics_tutorials/build/cmake_install.cmake
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/503/trunk/experimental/pr2develop/kinematics_tutorials/build/Makefile
+END

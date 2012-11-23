@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/918/trunk/experimental/bag_and_tag/bin
+END
+dataset_builder.py
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/896/trunk/experimental/bag_and_tag/bin/dataset_builder.py
+END
+data_massager.py
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/896/trunk/experimental/bag_and_tag/bin/data_massager.py
+END
+time_totaller.py
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/918/trunk/experimental/bag_and_tag/bin/time_totaller.py
+END
+learned_driver.py
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/918/trunk/experimental/bag_and_tag/bin/learned_driver.py
+END
+bag_and_tag.py
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/891/trunk/experimental/bag_and_tag/bin/bag_and_tag.py
+END

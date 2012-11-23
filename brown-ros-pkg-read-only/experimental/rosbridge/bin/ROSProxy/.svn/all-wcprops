@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/2885/trunk/experimental/rosbridge/bin/ROSProxy
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/1525/trunk/experimental/rosbridge/bin/ROSProxy/__init__.py
+END
+ROSProxy.py
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/2885/trunk/experimental/rosbridge/bin/ROSProxy/ROSProxy.py
+END

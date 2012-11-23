@@ -1,0 +1,7 @@
+<launch>
+
+  <!--include file="$(find interactive_marker_teleop)/jtteleop.launch"/-->
+  <!--node pkg="interactive_marker_teleop" type="joint_state_listener.py" name="joint_state_listener"/-->
+  <node pkg="interactive_marker_teleop" type="interactive_marker_teleop" name="interactive_marker_teleop" output="screen" />
+  
+</launch>

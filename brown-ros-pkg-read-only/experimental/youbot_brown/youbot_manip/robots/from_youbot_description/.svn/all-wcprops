@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/2720/trunk/experimental/youbot_brown/youbot_manip/robots/from_youbot_description
+END
+youbot_gripper.urdf.xacro
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/!svn/ver/2720/trunk/experimental/youbot_brown/youbot_manip/robots/from_youbot_description/youbot_gripper.urdf.xacro
+END
+youbot_base.urdf.xacro
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/!svn/ver/2720/trunk/experimental/youbot_brown/youbot_manip/robots/from_youbot_description/youbot_base.urdf.xacro
+END
+youbot_arm.urdf.xacro
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/!svn/ver/2720/trunk/experimental/youbot_brown/youbot_manip/robots/from_youbot_description/youbot_arm.urdf.xacro
+END
+youbot.urdf.xacro
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/2720/trunk/experimental/youbot_brown/youbot_manip/robots/from_youbot_description/youbot.urdf.xacro
+END

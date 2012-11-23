@@ -1,0 +1,15 @@
+#!/bin/bash
+echo "(Using root permissions ahead...)"
+MAC="00:0A:3A:2E:CB:D8" # default
+if (( $# != 1 )) ; then
+#    hcitool scan
+#    read -p "mac? " mac
+#    sudo su -c "rfcomm connect /dev/rfcomm0 $mac"
+    rfcomm connect /dev/rfcomm0 00:0A:3A:2E:C9:6B
+else
+    #echo "Connecting to " $1
+    sudo su -c "rfcomm connect /dev/rfcomm0 $1"
+fi
+
+
+

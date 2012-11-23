@@ -1,0 +1,11 @@
+<Robot name="youbot_with_kinect" file="/home/aarumbak/dev/brown/brown-ros-pkg/experimental/youbot_brown/youbot_manip/robots/youbot_new/youbot_new.dae">
+  <Manipulator name="youbot">
+    <base>base_link</base>
+    <!--<effector>arm_link_5</effector>-->
+    <effector>gripper_palm_link</effector>
+    <joints>gripper_finger_joint_l gripper_finger_joint_r</joints>
+    <closingdirection>1 1</closingdirection>
+    <direction>0 0 1</direction>
+    <translation>0 0 0</translation>
+  </Manipulator>
+</Robot>

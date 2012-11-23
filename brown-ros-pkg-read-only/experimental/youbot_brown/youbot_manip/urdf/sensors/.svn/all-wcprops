@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/2720/trunk/experimental/youbot_brown/youbot_manip/urdf/sensors
+END
+youbot_kinect_sensor.urdf.xacro
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/2720/trunk/experimental/youbot_brown/youbot_manip/urdf/sensors/youbot_kinect_sensor.urdf.xacro
+END
+kinect.urdf.xacro
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/2720/trunk/experimental/youbot_brown/youbot_manip/urdf/sensors/kinect.urdf.xacro
+END
+gripper_camera.urdf.xacro
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/2720/trunk/experimental/youbot_brown/youbot_manip/urdf/sensors/gripper_camera.urdf.xacro
+END
+blocklaser.urdf.xacro
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/2720/trunk/experimental/youbot_brown/youbot_manip/urdf/sensors/blocklaser.urdf.xacro
+END

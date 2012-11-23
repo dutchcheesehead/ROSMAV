@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/1731/trunk/experimental/crnbp/gnav/bin
+END
+gnav_test.py
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/1632/trunk/experimental/crnbp/gnav/bin/gnav_test.py
+END
+gnav.py
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/1731/trunk/experimental/crnbp/gnav/bin/gnav.py
+END
+gsnav.py
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/1549/trunk/experimental/crnbp/gnav/bin/gsnav.py
+END

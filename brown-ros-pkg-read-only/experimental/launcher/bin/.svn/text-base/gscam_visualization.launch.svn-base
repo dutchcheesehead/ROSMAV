@@ -1,0 +1,9 @@
+<launch>
+
+  <!-- Camera -->
+
+    <node name="gscam" pkg="gscam" type="gscam" cwd="node" >
+        <env name="GSCAM_CONFIG" value="v4l2src device=/dev/video2 ! video/x-raw-rgb ! ffmpegcolorspace ! identity name=ros ! fakesink"/> 
+    </node>			 
+
+</launch>

@@ -1,0 +1,6 @@
+<launch>
+
+	<include file="$(find pr2_3dnav)/left_arm_navigation.launch"/>
+	<node name="ik_control" pkg="ik_control" type="ik_control.py" cwd="node" />
+  
+</launch>

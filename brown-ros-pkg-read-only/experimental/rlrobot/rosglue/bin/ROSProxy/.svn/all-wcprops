@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/800/trunk/experimental/rlrobot/rosglue/bin/ROSProxy
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/800/trunk/experimental/rlrobot/rosglue/bin/ROSProxy/__init__.py
+END
+ROSProxy.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/800/trunk/experimental/rlrobot/rosglue/bin/ROSProxy/ROSProxy.py
+END

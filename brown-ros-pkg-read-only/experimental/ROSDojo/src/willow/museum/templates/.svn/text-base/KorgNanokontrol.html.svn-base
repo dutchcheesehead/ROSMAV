@@ -1,0 +1,11 @@
+<div class="korg-nanokontrol">
+	<div class="leftside">
+		<div class="willowlogo" dojoAttachPoint="slidersAttach"></div>
+		<div class="buttons" dojoAttachPoint="buttonsAttach"></div>
+	</div>
+	<div class="rightside">
+		<div class="knobs" dojoAttachPoint="knobsAttach"></div>
+		<div class="sliders" dojoAttachPoint="slidersAttach"></div>
+	</div>
+	<div class="clear"></div>
+</div>

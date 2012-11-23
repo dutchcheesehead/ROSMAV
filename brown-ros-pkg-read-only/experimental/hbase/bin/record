@@ -1,0 +1,125 @@
+#!/usr/bin/env python
+import roslib; roslib.load_manifest('hbase')
+import rospy
+
+import sys
+
+from sys import argv,exit
+ 
+from thrift import Thrift
+from thrift.transport import TSocket
+from thrift.transport import TTransport
+from thrift.protocol import TBinaryProtocol
+ 
+from hbase import Hbase
+from hbase.ttypes import *
+
+import datetime
+import StringIO
+
+class WriteClient:
+
+	def __init__(self, session_name):
+		self.session_name = session_name
+		host = '192.168.0.1'
+		# default thrift port is 9090
+		port = 9091
+
+		# Make socket
+		transport = TSocket.TSocket(host, port)
+		# Buffering is critical. Raw sockets are very slow
+		transport = TTransport.TBufferedTransport(transport)
+		# Wrap in a protocol
+		protocol = TBinaryProtocol.TBinaryProtocol(transport)
+
+		self.hbaseclient = Hbase.Client(protocol)
+		transport.open()
+
+		self.counter = 0
+		self.topic_metadata = ""
+
+	
+	def startTopic(self, topic, msg_type, checksum):
+		# store <topic, msg_type> pairs and <topic, checksum> pairs as a string
+		self.topic_metadata = self.topic_metadata+topic+":"+msg_type+":"+checksum+"|"
+		dict_entry = Mutation(0, "topic:"+self.session_name, self.topic_metadata)
+		self.hbaseclient.mutateRow("session_table", "0", [dict_entry])
+
+
+	def write(self, msg_val, topic):
+
+		self.counter = self.counter + 1
+		timestamp = datetime.datetime.now().isoformat()
+
+		# hbase> put "session_table", "<counter>", "timestamp:session_name", "<timestamp>"
+		time_entry = Mutation(0, "timestamp:"+self.session_name, timestamp)
+		# hbase> put "session_table", "<counter>", "msg:session_name", "<msg_val>"
+ 		msg_entry = Mutation(0, "msg:"+self.session_name, msg_val)
+		# hbase> put "session_table", "<counter>", "topic:session_name", "<topic>"
+		topic_entry = Mutation(0, "topic:"+self.session_name, topic)
+
+		# write to hbase
+		mutations = [time_entry, msg_entry, topic_entry]
+		self.hbaseclient.mutateRow("session_table", "%d"%self.counter, mutations)
+
+		# hbase> put "session_table", "0", "timestamp:session_name", "<counter>"
+		num_entry = Mutation(0, "timestamp:"+self.session_name, "%d"%self.counter)
+		self.hbaseclient.mutateRow("session_table", "0", [num_entry])
+
+
+class MsgHandler:
+	topic = ""
+	msgType = ""
+	write = None
+	
+	def __init__(self,t,m,w):
+		self.topic = t
+		self.msgType = m
+		self.write = w
+		
+	def handleMsg(self,msg):
+		buf = StringIO.StringIO()
+		msg.serialize(buf)
+		self.write(self.msgType,buf.getvalue(),self.topic)
+		buf.close()
+
+
+	
+if __name__ == '__main__':
+	if (len(argv) < 3):
+		print "Must provide session id and atleast one topic"
+		exit(-1)
+		
+	rospy.init_node('hbaseLogger', anonymous=True)
+	topics = rospy.get_published_topics()
+	notfound = []
+	client = WriteClient(argv[1])
+	for name in argv[2:]:
+		found = False
+		for t in topics:
+			if( t[0] == name):
+				print "Found ",t
+				msgType = t[1].split('/') 
+				#__import__(msgType[0]+'.msg')
+				roslib.load_manifest(msgType[0]) #add error handling
+				_temp = __import__(msgType[0]+'.msg',globals(), locals(), [msgType[1]])
+				msg = getattr(_temp, msgType[1])
+				msgHandler = MsgHandler(name,msgType[0]+'.msg.'+msgType[1],client.write)
+				rospy.Subscriber(name,msg,msgHandler.handleMsg)
+				found = True
+				break
+		if( not found):
+			notfound.append(name)
+			print "Cannot find topic ",name
+	while (len(notfound)>0):
+		rospy.sleep(1.0)
+		topics = rospy.get_published_topics()
+		for name in notfound:
+			if( t[0] == name):
+				print "Found ",t
+				found = True
+				notfound.remove(name)
+				break
+	print "Found all topics"
+	rospy.spin()
+		

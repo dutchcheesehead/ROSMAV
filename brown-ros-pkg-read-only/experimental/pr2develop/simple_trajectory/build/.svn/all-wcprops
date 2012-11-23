@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/503/trunk/experimental/pr2develop/simple_trajectory/build
+END
+CMakeCache.txt
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/503/trunk/experimental/pr2develop/simple_trajectory/build/CMakeCache.txt
+END
+cmake_install.cmake
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/503/trunk/experimental/pr2develop/simple_trajectory/build/cmake_install.cmake
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/503/trunk/experimental/pr2develop/simple_trajectory/build/Makefile
+END

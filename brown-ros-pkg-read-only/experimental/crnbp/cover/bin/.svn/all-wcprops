@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/1731/trunk/experimental/crnbp/cover/bin
+END
+model_ffloor_few.py
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/1706/trunk/experimental/crnbp/cover/bin/model_ffloor_few.py
+END
+cover.py
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/1679/trunk/experimental/crnbp/cover/bin/cover.py
+END
+model_1d.py
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/1585/trunk/experimental/crnbp/cover/bin/model_1d.py
+END
+model_1d_control.py
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/1585/trunk/experimental/crnbp/cover/bin/model_1d_control.py
+END
+model_2d.py
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/1607/trunk/experimental/crnbp/cover/bin/model_2d.py
+END
+model_2d_control.py
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/1731/trunk/experimental/crnbp/cover/bin/model_2d_control.py
+END
+model_2d_few.py
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/1690/trunk/experimental/crnbp/cover/bin/model_2d_few.py
+END
+model_ffloor.py
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/1691/trunk/experimental/crnbp/cover/bin/model_ffloor.py
+END
