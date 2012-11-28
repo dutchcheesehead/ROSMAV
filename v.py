@@ -25,7 +25,7 @@ C_LIGHT = (253, 255, 253)
 C_TARGET = (0,  182,  234)
 
 def isRed(c):
-	return c[0] > 150 and c[0] < 200 and c[1] < 100 and c[2] < 100
+	return c[0] > 100 and c[0] < 255 and c[1] < 250 and c[2] < 250
 def isGreen(c):
 	return c[1] > 50 and c[1] < 150 and c[0] < 50 and c[2] < 50 and c[2] < 150
 def isBlue(c):
@@ -36,8 +36,8 @@ def isTarget(c):
 	return c[0] <= 100
 def finished(c): return False
 
-currentTarget = isBlue#isTarget
-nextTarget = {isBlue: isRed, isRed: isGreen, isGreen: isBlue}
+currentTarget = isRed#isBlue#isTarget
+nextTarget = {isRed: isBlue, isBlue: isRed}#{isBlue: isRed, isRed: isGreen, isGreen: isBlue}
 
 def c(data):
 	global directionz, currentTarget
