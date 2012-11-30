@@ -25,11 +25,14 @@ C_LIGHT = (253, 255, 253)
 C_TARGET = (0,  182,  234)
 
 def isRed(c):
-	return c[0] > 100 and c[0] < 255 and c[1] < 250 and c[2] < 250
+	#return c[0] > 100 and c[0] < 255 and c[1] < 250 and c[2] < 250
+#	print c
+	return c[0] > 150
 def isGreen(c):
 	return c[1] > 50 and c[1] < 150 and c[0] < 50 and c[2] < 50 and c[2] < 150
 def isBlue(c):
-	return c[2] > 150 and c[0] < 100 and c[1] > 150
+	#return c[2] > 150 and c[0] < 100 and c[1] > 150
+	return c[0] < 150
 def isYellow(c):
 	return c[0] > 150 and c[1] > 150 and c[2] < 200
 def isTarget(c):
@@ -82,7 +85,8 @@ def c(data):
 	if targets:
 		target = max(targets, key=lambda x: x.area)
 		twist = Twist()
-		if target.area > 1000:
+		print target.area
+		if target.area > 2000:
 			#found!
 			if currentTarget in nextTarget:
 				currentTarget = nextTarget[currentTarget]
@@ -96,9 +100,9 @@ def c(data):
 		else:
 			twist.linear.x = .1
 			if target.x < MIDPOINTX:
-				twist.angular.z = .5
+				twist.angular.z = .1#.5
 			else:
-				twist.angular.z = -.5
+				twist.angular.z = -.1#-.5
 			action.publish(twist)
 			print "closer"
 
