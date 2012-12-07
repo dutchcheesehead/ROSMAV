@@ -9,7 +9,8 @@ from geometry_msgs.msg import Twist
 from sensor_msgs.msg import Image, CameraInfo
 from cmvision.msg import Blobs, Blob
 from getat import getat
-import dominant
+import heatmap
+import numpy as np
 
 action = rospy.Publisher("cmd_vel", Twist)
 
@@ -23,6 +24,9 @@ directionz = 1
 
 C_LIGHT = (253, 255, 253)
 C_TARGET = (0,  182,  234)
+
+target_heatmap = np.zeros(shape=(320/heatmap.downsize_factor, 240/heatmap.downsize_factor), dtype=np.int16)
+indexes = np.array(range(320/heatmap.downsize_factor))
 
 def isRed(c):
 	#return c[0] > 100 and c[0] < 255 and c[1] < 250 and c[2] < 250
@@ -82,6 +86,8 @@ def c(data):
 	except:
 		pass
 	targets = [x for x in data.blobs if currentTarget(getat(img, x))]
+	heatmap.cooldown(target_heatmap)
+	heatmap.draw(target_heatmap, targets)
 	if targets:
 		target = max(targets, key=lambda x: x.area)
 		twist = Twist()
@@ -101,10 +107,23 @@ def c(data):
 			twist.linear.x = .1
 			if target.x < MIDPOINTX:
 				twist.angular.z = .1#.5
+				print "left (old)"
 			else:
 				twist.angular.z = -.1#-.5
+				print "right (old)"
 			action.publish(twist)
-			print "closer"
+	print target_heatmap[::4,::4].transpose()
+	if target_heatmap.max() > 16:
+		weights = np.apply_along_axis(np.sum, 1, target_heatmap)
+		loc = np.average(indexes, weights=weights)/len(indexes)
+		if loc < .5:
+			print "left (new)"
+		else:
+			print "right (new)"
+		#twist = Twist()
+		#twist.linear.x = .1
+		#twist.angular.z = loc - .5
+		#action.publish(twist)
 
 img = None
 
