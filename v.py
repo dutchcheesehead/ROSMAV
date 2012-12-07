@@ -111,8 +111,9 @@ def c(data):
 			else:
 				twist.angular.z = -.1#-.5
 				print "right (old)"
-			action.publish(twist)
+			#action.publish(twist)
 	print target_heatmap[::4,::4].transpose()
+	twist = Twist()
 	if target_heatmap.max() > 16:
 		weights = np.apply_along_axis(np.sum, 1, target_heatmap)
 		loc = np.average(indexes, weights=weights)/len(indexes)
@@ -120,10 +121,9 @@ def c(data):
 			print "left (new)"
 		else:
 			print "right (new)"
-		#twist = Twist()
-		#twist.linear.x = .1
-		#twist.angular.z = loc - .5
-		#action.publish(twist)
+		twist.linear.x = .1
+		twist.angular.z = loc - .5
+	action.publish(twist)
 
 img = None
 
