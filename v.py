@@ -105,7 +105,7 @@ def c(data):
 		target = max(targets, key=lambda x: x.area)
 		twist = Twist()
 		print target.area
-		if target.area > 3000:
+		if target.area > 2500:
 			#found!
 			target_heatmap[:] = 0
 			if currentTarget in nextTarget:
