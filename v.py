@@ -12,6 +12,12 @@ from getat import getat
 import heatmap
 import numpy as np
 
+import cv
+from cv_bridge import CvBridge, CvBridgeError
+bridge = CvBridge()
+hm_pub = rospy.Publisher("/heatmap_image", Image)
+hm_enc_pub = rospy.Publisher("/heatmap_image/encoding", String)
+
 action = rospy.Publisher("cmd_vel", Twist)
 
 rospy.init_node('v', anonymous=True)
@@ -25,7 +31,7 @@ directionz = 1
 C_LIGHT = (253, 255, 253)
 C_TARGET = (0,  182,  234)
 
-target_heatmap = np.zeros(shape=(320/heatmap.downsize_factor, 240/heatmap.downsize_factor), dtype=np.int16)
+target_heatmap = np.zeros(shape=(240/heatmap.downsize_factor, 320/heatmap.downsize_factor), dtype=np.int8)
 indexes = np.array(range(320/heatmap.downsize_factor))
 
 def isRed(c):
@@ -36,7 +42,7 @@ def isGreen(c):
 	return c[1] > 50 and c[1] < 150 and c[0] < 50 and c[2] < 50 and c[2] < 150
 def isBlue(c):
 	#return c[2] > 150 and c[0] < 100 and c[1] > 150
-	return c[0] < 150
+	return c[0] < 180 and c[1] > 150
 def isYellow(c):
 	return c[0] > 150 and c[1] > 150 and c[2] < 200
 def isTarget(c):
@@ -78,7 +84,7 @@ def c(data):
 	else:
 		twist = Twist()
 		twist.angular.z = directionz
-		action.publish(twist)
+		#action.publish(twist)
 		print "n/a"
 	print currentTarget.__name__
 	try:
@@ -88,12 +94,20 @@ def c(data):
 	targets = [x for x in data.blobs if currentTarget(getat(img, x))]
 	heatmap.cooldown(target_heatmap)
 	heatmap.draw(target_heatmap, targets)
+	hm2 = 1 * target_heatmap
+	hm2[hm2 < 80] = 0
+	
+	f = cv.fromarray(hm2)
+	#print f, dir(f), f.step, f.channels, f.cols, f.rows, f.width, f.height
+	hm_pub.publish(bridge.cv_to_imgmsg(f))
+	hm_enc_pub.publish("16SC1")
 	if targets:
 		target = max(targets, key=lambda x: x.area)
 		twist = Twist()
 		print target.area
-		if target.area > 2000:
+		if target.area > 3000:
 			#found!
+			target_heatmap[:] = 0
 			if currentTarget in nextTarget:
 				currentTarget = nextTarget[currentTarget]
 			else:
@@ -112,17 +126,17 @@ def c(data):
 				twist.angular.z = -.1#-.5
 				print "right (old)"
 			#action.publish(twist)
-	print target_heatmap[::4,::4].transpose()
+	#print target_heatmap[::4,::4].transpose()
 	twist = Twist()
-	if target_heatmap.max() > 16:
-		weights = np.apply_along_axis(np.sum, 1, target_heatmap)
+	if hm2.max() > 16:
+		weights = np.apply_along_axis(np.sum, 0, hm2)
 		loc = np.average(indexes, weights=weights)/len(indexes)
 		if loc < .5:
 			print "left (new)"
 		else:
 			print "right (new)"
 		twist.linear.x = .1
-		twist.angular.z = loc - .5
+		twist.angular.z = .5 - loc# - .5
 	action.publish(twist)
 
 img = None
