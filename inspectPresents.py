@@ -54,6 +54,7 @@ currentTarget = isRed
 nextTarget = {isRed: isBlue, isBlue: isRed}
 snelheid = 0
 
+# Main decision function
 def c(data):
 	global directionz, currentTarget, snelheid
 	if img is None:
