@@ -59,36 +59,7 @@ def c(data):
 	global directionz, currentTarget, snelheid
 	if img is None:
 		return
-	lights = [x for x in data.blobs if getat(img, x)[0] > 100]
-	if lights and False:
-		naar = min(lights, key=lambda x: x.y)
-		twist = Twist()
-		twist.linear.x = .1
-		if naar.x < 50:
-			twist.angular.z = .7
-			directionz = 1
-			print "hard left"
-		elif naar.y > WIDTH - 50:
-			twist.angular.z = -.7
-			directionz = -1
-			print "hard right"
-		elif naar.x < MIDPOINTX - 20:
-			twist.angular.z = .3
-			directionz = 1
-			print "left"
-		elif naar.x > MIDPOINTX + 20:
-			twist.angular.z = -.3
-			directionz = -1
-			print "right"
-		else:
-			#twist.linear.x = .2
-			print "straight on"
-		action.publish(twist)
-	else:
-		twist = Twist()
-		twist.angular.z = directionz
-		#action.publish(twist)
-		#print "n/a"
+	
 	print currentTarget.__name__
 	targets = [x for x in data.blobs if currentTarget(getat(img, x))]
 	heatmap.cooldown(target_heatmap)
@@ -97,7 +68,6 @@ def c(data):
 	hm2[hm2 < 80] = 0
 	
 	f = cv.fromarray(hm2)
-	#print f, dir(f), f.step, f.channels, f.cols, f.rows, f.width, f.height
 	hm_pub.publish(bridge.cv_to_imgmsg(f))
 	hm_enc_pub.publish("16SC1")
 	twist = Twist()
