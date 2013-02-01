@@ -52,9 +52,10 @@ def finished(c): return False
 
 currentTarget = isRed
 nextTarget = {isRed: isBlue, isBlue: isRed}
+snelheid = 0
 
 def c(data):
-	global directionz, currentTarget
+	global directionz, currentTarget, snelheid
 	if img is None:
 		return
 	lights = [x for x in data.blobs if getat(img, x)[0] > 100]
@@ -86,12 +87,8 @@ def c(data):
 		twist = Twist()
 		twist.angular.z = directionz
 		#action.publish(twist)
-		print "n/a"
+		#print "n/a"
 	print currentTarget.__name__
-	try:
-		print getat(img, max(data.blobs, key=lambda x: x.area))
-	except:
-		pass
 	targets = [x for x in data.blobs if currentTarget(getat(img, x))]
 	heatmap.cooldown(target_heatmap)
 	heatmap.draw(target_heatmap, targets)

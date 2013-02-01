@@ -52,9 +52,10 @@ def finished(c): return False
 
 currentTarget = isRed
 nextTarget = {isRed: isBlue, isBlue: isRed}
+snelheid = 0
 
 def c(data):
-	global directionz, currentTarget
+	global directionz, currentTarget, snelheid
 	if img is None:
 		return
 	lights = [x for x in data.blobs if getat(img, x)[0] > 100]
@@ -86,12 +87,8 @@ def c(data):
 		twist = Twist()
 		twist.angular.z = directionz
 		#action.publish(twist)
-		print "n/a"
+		#print "n/a"
 	print currentTarget.__name__
-	try:
-		print getat(img, max(data.blobs, key=lambda x: x.area))
-	except:
-		pass
 	targets = [x for x in data.blobs if currentTarget(getat(img, x))]
 	heatmap.cooldown(target_heatmap)
 	heatmap.draw(target_heatmap, targets)
@@ -102,15 +99,14 @@ def c(data):
 	#print f, dir(f), f.step, f.channels, f.cols, f.rows, f.width, f.height
 	hm_pub.publish(bridge.cv_to_imgmsg(f))
 	hm_enc_pub.publish("16SC1")
-	if targets:
-		# When we found targets we start to inspect them/fly towards them
-		target = max(targets, key=lambda x: x.area)
-		twist = Twist()
-		print target.area
-		# If the target found is very large we assume that the target is found. Otherwise we fly towards the target
-		if target.area > 2500:
+	twist = Twist()
+	# When a dot in the activation matrix is high enough we start to fly towards this place
+	if hm2.max() > 16:
+		snelheid = 0
+		weights = np.apply_along_axis(np.sum, 0, hm2)
+		if np.sum(hm2) > 30000:
+			# found!
 			target_heatmap[:] = 0
-			# If we have a new target after this one, take the next target. Otherwise we start landing
 			if currentTarget in nextTarget:
 				currentTarget = nextTarget[currentTarget]
 			else:
@@ -121,29 +117,17 @@ def c(data):
 				l.publish(Empty())
 				print "found"
 				currentTarget = finished
-		else:
-			# Fly forward
-			twist.linear.x = .1
-			if target.x < MIDPOINTX:
-				# If the target is to the left, fly to the left
-				twist.angular.z = .1
-				print "left (old)"
-			else:
-				# If the target is to the right, fly to the right
-				twist.angular.z = -.1
-				print "right (old)"
-	twist = Twist()
-	# When a dot in the activation matrix is high enough we start to fly towards this place
-	if hm2.max() > 16:
-		weights = np.apply_along_axis(np.sum, 0, hm2)
 		loc = np.average(indexes, weights=weights)/len(indexes) # When the target if farther to the left or right, we turn faster
 		# Print what direction we are going to fly towards
 		if loc < .5:
 			print "left (new)"
 		else:
 			print "right (new)"
-		twist.linear.x = .1
+		twist.linear.x = .05
 		twist.angular.z = .5 - loc
+	else:
+		snelheid = max(snelheid + .001, .05)
+		twist.angular.z = snelheid
 	action.publish(twist)
 
 img = None

@@ -1,6 +1,6 @@
 FILE(REMOVE_RECURSE
-  "src/ardrone_brown/msg"
   "msg_gen"
+  "src/ardrone_brown/msg"
   "msg_gen"
   "CMakeFiles/rosbuild_premsgsrvgen"
 )

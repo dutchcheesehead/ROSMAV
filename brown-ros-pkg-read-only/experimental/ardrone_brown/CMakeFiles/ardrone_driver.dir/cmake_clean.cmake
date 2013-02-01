@@ -1,6 +1,6 @@
 FILE(REMOVE_RECURSE
-  "src/ardrone_brown/msg"
   "msg_gen"
+  "src/ardrone_brown/msg"
   "msg_gen"
   "CMakeFiles/ardrone_driver.dir/src/ardrone_driver.o"
   "CMakeFiles/ardrone_driver.dir/src/video.o"

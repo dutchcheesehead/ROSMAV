@@ -32,10 +32,10 @@ CMAKE_COMMAND = /usr/bin/cmake
 RM = /usr/bin/cmake -E remove -f
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/robin/Downloads/brown-ros-pkg-read-only/experimental/ardrone_brown
+CMAKE_SOURCE_DIR = /home/robin/Uni/bm/ros_workspace/lijnvolger/brown-ros-pkg-read-only/experimental/ardrone_brown
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/robin/Downloads/brown-ros-pkg-read-only/experimental/ardrone_brown
+CMAKE_BINARY_DIR = /home/robin/Uni/bm/ros_workspace/lijnvolger/brown-ros-pkg-read-only/experimental/ardrone_brown
 
 # Utility rule file for rospack_genmsg_all.
 
@@ -54,6 +54,6 @@ CMakeFiles/rospack_genmsg_all.dir/clean:
 .PHONY : CMakeFiles/rospack_genmsg_all.dir/clean
 
 CMakeFiles/rospack_genmsg_all.dir/depend:
-	cd /home/robin/Downloads/brown-ros-pkg-read-only/experimental/ardrone_brown && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/robin/Downloads/brown-ros-pkg-read-only/experimental/ardrone_brown /home/robin/Downloads/brown-ros-pkg-read-only/experimental/ardrone_brown /home/robin/Downloads/brown-ros-pkg-read-only/experimental/ardrone_brown /home/robin/Downloads/brown-ros-pkg-read-only/experimental/ardrone_brown /home/robin/Downloads/brown-ros-pkg-read-only/experimental/ardrone_brown/CMakeFiles/rospack_genmsg_all.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/robin/Uni/bm/ros_workspace/lijnvolger/brown-ros-pkg-read-only/experimental/ardrone_brown && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/robin/Uni/bm/ros_workspace/lijnvolger/brown-ros-pkg-read-only/experimental/ardrone_brown /home/robin/Uni/bm/ros_workspace/lijnvolger/brown-ros-pkg-read-only/experimental/ardrone_brown /home/robin/Uni/bm/ros_workspace/lijnvolger/brown-ros-pkg-read-only/experimental/ardrone_brown /home/robin/Uni/bm/ros_workspace/lijnvolger/brown-ros-pkg-read-only/experimental/ardrone_brown /home/robin/Uni/bm/ros_workspace/lijnvolger/brown-ros-pkg-read-only/experimental/ardrone_brown/CMakeFiles/rospack_genmsg_all.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/rospack_genmsg_all.dir/depend
 

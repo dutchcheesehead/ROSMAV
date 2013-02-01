@@ -1,6 +1,6 @@
 FILE(REMOVE_RECURSE
-  "src/ardrone_brown/msg"
   "msg_gen"
+  "src/ardrone_brown/msg"
   "msg_gen"
   "CMakeFiles/ROSBUILD_genmsg_cpp"
   "msg_gen/cpp/include/ardrone_brown/Navdata.h"
