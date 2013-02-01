@@ -54,6 +54,7 @@ currentTarget = isRed
 nextTarget = {isRed: isBlue, isBlue: isRed}
 snelheid = 0
 
+# Main decision function
 def c(data):
 	global directionz, currentTarget, snelheid
 	if img is None:
@@ -137,9 +138,11 @@ def img_get(data):
 	global img
 	img = data
 
+# Subscribes to the blobs and image from the AR Drone
 rospy.Subscriber("/blobs", Blobs, c)
 rospy.Subscriber("/ardrone/image_raw", Image, img_get)
 
+# Main loop
 try:
 	rospy.spin()
 except KeyboardInterrupt:
