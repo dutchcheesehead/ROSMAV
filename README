@@ -1,0 +1,26 @@
+ROSMAV
+
+To install ROSMAV, first install ROS:
+http://www.ros.org/wiki/electric/Installation/Ubuntu
+
+Next do:
+
+	./install.sh
+
+ARDrone Brown and cmvision are now installed.
+
+ROSMAV itself needs no further installation, it can be run right from
+the repository.
+
+To run ROSMAV, run the following commands, each in their own terminal
+window:
+
+	roscore
+
+	rosrun ardrone_brown ardrone_driver
+
+	brown-ros-pkg-read-only/experimental/drone_teleop/bin/drone_teleop.py
+
+	roslaunch cmvision blobs.launch
+
+	rosrun ROSMAV inspectPresents
