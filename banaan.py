@@ -31,8 +31,6 @@ found = False
 def c(data):
 	global directionz
 	global found
-	#print ';  '.join(str(getat(x)) for x in data.blobs)
-	#print ';  '.join(','.join([str(x.red), str(x.green),str(x.blue)]) for x in data.blobs)
 	lights = [x for x in data.blobs if getat(x)[2] > 200]
 	if lights:
 		naar = min(lights, key=lambda x: x.y)

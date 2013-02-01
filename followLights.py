@@ -34,23 +34,24 @@ C_TARGET = (0,  182,  234)
 target_heatmap = np.zeros(shape=(240/heatmap.downsize_factor, 320/heatmap.downsize_factor), dtype=np.int8)
 indexes = np.array(range(320/heatmap.downsize_factor))
 
+
+#Specifies whether a given color is red by looking at the RGB values
 def isRed(c):
-	#return c[0] > 100 and c[0] < 255 and c[1] < 250 and c[2] < 250
-#	print c
 	return c[0] > 150
+#Specifies whether a given color is green by looking at the RGB values
 def isGreen(c):
 	return c[1] > 50 and c[1] < 150 and c[0] < 50 and c[2] < 50 and c[2] < 150
+#Specifies whether a given color is blue by looking at the RGB values
 def isBlue(c):
-	#return c[2] > 150 and c[0] < 100 and c[1] > 150
 	return c[0] < 180 and c[1] > 150
+#Specifies whether a given color is yellow by looking at the RGB values
 def isYellow(c):
 	return c[0] > 150 and c[1] > 150 and c[2] < 200
-def isTarget(c):
-	return c[0] <= 100
+
 def finished(c): return False
 
-currentTarget = isRed#isBlue#isTarget
-nextTarget = {isRed: isBlue, isBlue: isRed}#{isBlue: isRed, isRed: isGreen, isGreen: isBlue}
+currentTarget = isRed
+nextTarget = {isRed: isBlue, isBlue: isRed}
 
 def c(data):
 	global directionz, currentTarget
@@ -108,14 +109,17 @@ def c(data):
 		if target.area > 2500:
 			#found!
 			target_heatmap[:] = 0
+
+			# If we have a new target after this one, take the next target. Otherwise we start landing
 			if currentTarget in nextTarget:
 				currentTarget = nextTarget[currentTarget]
 			else:
+				# Start landing
 				twist.linear.x = -.1
 				action.publish(twist)
 				l = rospy.Publisher("/ardrone/land", Empty)
 				l.publish(Empty())
-				print "found"
+				print "found!"
 				currentTarget = finished
 		else:
 			twist.linear.x = .1
@@ -125,8 +129,6 @@ def c(data):
 			else:
 				twist.angular.z = -.1#-.5
 				print "right (old)"
-			#action.publish(twist)
-	#print target_heatmap[::4,::4].transpose()
 	twist = Twist()
 	if hm2.max() > 16:
 		weights = np.apply_along_axis(np.sum, 0, hm2)
@@ -141,13 +143,10 @@ def c(data):
 
 img = None
 
+# The img_get function is called every time the topic ardrone/img_raw fires. It saves the captured image to a global variable
 def img_get(data):
-	#print "#################################started img_get"
 	global img
 	img = data
-	#t = time.time()
-	#print dominant.colors(img, 1)
-	#print time.time() - t
 
 rospy.Subscriber("/blobs", Blobs, c)
 rospy.Subscriber("/ardrone/image_raw", Image, img_get)
