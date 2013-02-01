@@ -59,7 +59,7 @@ def c(data):
 	if img is None:
 		return
 	lights = [x for x in data.blobs if getat(img, x)[0] > 100]
-	if lights and False:
+	if lights:
 		naar = min(lights, key=lambda x: x.y)
 		twist = Twist()
 		twist.linear.x = .1
@@ -101,7 +101,6 @@ def c(data):
 	hm_enc_pub.publish("16SC1")
 	if targets:
 		target = max(targets, key=lambda x: x.area)
-		twist = Twist()
 		print target.area
 		if target.area > 2500:
 			#found!
@@ -112,20 +111,13 @@ def c(data):
 				currentTarget = nextTarget[currentTarget]
 			else:
 				# Start landing
+				twist = Twist()
 				twist.linear.x = -.1
 				action.publish(twist)
 				l = rospy.Publisher("/ardrone/land", Empty)
 				l.publish(Empty())
 				print "found!"
 				currentTarget = finished
-		else:
-			twist.linear.x = .1
-			if target.x < MIDPOINTX:
-				twist.angular.z = .1#.5
-				print "left (old)"
-			else:
-				twist.angular.z = -.1#-.5
-				print "right (old)"
 	twist = Twist()
 	if hm2.max() > 16:
 		weights = np.apply_along_axis(np.sum, 0, hm2)
@@ -145,9 +137,11 @@ def img_get(data):
 	global img
 	img = data
 
+# Subscribes to the blobs and image from the AR Drone
 rospy.Subscriber("/blobs", Blobs, c)
 rospy.Subscriber("/ardrone/image_raw", Image, img_get)
 
+# Main loop
 try:
 	rospy.spin()
 except KeyboardInterrupt:

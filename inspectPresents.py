@@ -137,9 +137,11 @@ def img_get(data):
 	global img
 	img = data
 
+# Subscribes to the blobs and image from the AR Drone
 rospy.Subscriber("/blobs", Blobs, c)
 rospy.Subscriber("/ardrone/image_raw", Image, img_get)
 
+# Main loop
 try:
 	rospy.spin()
 except KeyboardInterrupt:
