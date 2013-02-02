@@ -23,4 +23,6 @@ window:
 
 	roslaunch cmvision blobs.launch
 
-	rosrun ROSMAV inspectPresents
+	rosrun ROSMAV inspectPresents.py
+
+	rosrun image_view image_view image:=/heatmap_image
