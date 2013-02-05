@@ -73,6 +73,8 @@
 In this section several of the implemented algorithms are discussed. Every subsection starts with the code in pseudocode and ends with an explanation of the algorithm. 
 \subsection{Detection of objects}
 \begin{verbatim}
+targets = getAllBlobsThatMatchOurTarget
+coolDownHeatMap
 
 \end{verbatim}
 \subsection{Corridor following} 
@@ -88,9 +90,30 @@ In this section several of the implemented algorithms are discussed. Every subse
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % DIVISION OF LABOUR
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Division of labour}
- 
- 
+\section{Project history and division of labour}
+The first BioMAV project started in xxxxxx with an enthousiastic group of people. After the initial project was a large succes and obtained the third price in the imav competition on xxxxxinsert datexxxx a second project was started.
+For this second project one had to write a sollicitation letter. 
+Initially the group consisted of xxxxxx people (Youetta, Rick, Jurriaan, Roland, Robin and xxxxx).  
+These people were devided into two teams, the "image processing" team and the "drone control" group. 
+The task of the "image processing" team was defined as getting useful features from the data. 
+The "drone control" group, consisting of Roland and Youetta, was supposed to use these features to control the drone.  
+
+Initially both groups were both trying to decode the largely undocumented code made by the previous team.
+One of the wishes of the group was a code implementation using ROS. This was another part that both teams had to figure out.  
+Around june the first implementation of a control program using ROS was finished by Roland. 
+This program consisted of a server extension of the original software written by the first BioMAV team.  
+The ROS component connected to a socket that listened to calls coming from the ROS component of the software. 
+Using a simple syntax it was possible to fly with the ARDrone using ROS.  
+
+Insert some part about other members stopping.
+
+During a meeting in juli it was agreed that this setup was not usefull enough and that another implementation had to be found that only used ROS. 
+Unfortunately this meant that Robin and Roland had to start over again, throwing away all old code (including all code used by BioMAV 1).  
+After we threw away all old code we started with searching this "easy usable" library that should have been available on the internet. 
+Unfortunately, this did cost us a few days. 
+Every library we found was eiter not usable, not downloadable (findable) anymore or not uploaded yet (but sounded very promising). 
+It was only after a lot of hours searching that one of the librarys suddenly was pullable again. 
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % REFLECTION
