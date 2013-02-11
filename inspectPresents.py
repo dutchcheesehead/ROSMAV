@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 import roslib
 import time
-roslib.load_manifest('lijnvolger')
 import sys
+roslib.load_manifest(sys.argv[0].split('/')[-2])
 import rospy
 from std_msgs.msg import String, Empty
 from geometry_msgs.msg import Twist
