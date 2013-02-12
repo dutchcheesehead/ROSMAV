@@ -82,6 +82,14 @@ if dot in heatmap is high enough
 		go toward average of activation
 
 \end{verbatim}
+Our program first determines that targets we have by aquiring all blobs that match our target. 
+After this is done our heatmap is cooled down using a xxxxxxx function. 
+When a dot in our heatmap is high enough we assume this is our package. 
+When the total sum of the heatmap is high enough (there is enough activation) we inspect the present (see section xxxxxx). 
+Otherwist we fly towards the average of the activation (see section xxxxxxx)
+
+
+TODO: add the part where the heatmap is activated again. 
 \subsection{Corridor following} 
 \begin{verbatim}
 targets = getAllBlobsThatMatchOurTarget
@@ -101,20 +109,32 @@ else
 
 insert part about that flying towards the nearest? biggest? object that is pretty white results in the following of lights in the hallway. This of course equals to corridor following
 
+Our program first gets all blobs that are matching our target colour. 
+The largest blob is chosen as our primary target. 
+When this blob is very much to the left or right the drone will turn with a great speed in this direction. 
+When this blob is only slightly to the left or right the drone will turn slowly in this direction. 
+Otherwise the drone will fly forwards. 
 
 \subsection{Flying towards objects}
 \begin{verbatim}
-
+direction = XvalueOfAverageOfActivation
+turnTowards(direction)
+flyForward
 \end{verbatim}
 
 insert part about left-right and middle 
 
 \subsection{Present inspection}
 \begin{verbatim}
-
+if sum(activation) > threshold
+	if getNewTarget(currentTarget)
+		currentTarget = getNewTarget(currentTarget)
+	else
+		startLanding
 \end{verbatim}
 
-insert part about the size of packes that results in inspection
+As soon as the total activation in the heatmap for the presents exceeds the set threshold the next target is chosen. 
+When there is no new target specified in our goals-array the drone will land. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % DIVISION OF LABOUR
@@ -156,20 +176,17 @@ insert part about decay functions
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Reflection}
 
-insert part about how cool it is what we reached
+Although the bioMAV project has been a rough project this year the final result is something that looks very cool. 
+To build a program that lets a small UAV autonomously follow bread-containers, corridors and inspect packages is something to be proud of. 
 
-insert part about how terrible it is that other members stopped
+Of course, one starts to think about how much more awesome the initial plans of the complete team were. 
+Unfortunately, since more than half of the team decided to stop early, these plans were never finished and kept for the next team. 
 
-insert part about all work that we did not use
+Another thing that was very unfortunate was the fact that the whole old BioMAV project was thrown away in the end. 
+Although a lot of time was spend in learning how to interpret the old code and extending the project to work with ROS all these work was thrown away. 
+Another thing that was not used after a lot of time went into researching this were the AR markers, unfortunately these proved to be impossible for us to implement. 
 
-insert part about how pretty-cool the eindresult was. 
-
-
-
-
-
-
-
+Of course we were all very contend with the final result, which is very cool. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
