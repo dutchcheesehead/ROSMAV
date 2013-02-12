@@ -75,17 +75,46 @@ In this section several of the implemented algorithms are discussed. Every subse
 \begin{verbatim}
 targets = getAllBlobsThatMatchOurTarget
 coolDownHeatMap
+if dot in heatmap is high enough
+	if sum of heatmap is high enough
+		inspect present
+	else
+		go toward average of activation
 
 \end{verbatim}
 \subsection{Corridor following} 
 \begin{verbatim}
+targets = getAllBlobsThatMatchOurTarget
+myTarget = getTargetLowestOnCamera
+if isVeryMuchToTheLeft(myTarget)
+	flyVeryHardToTheleft
+else if isVeryMuchToTheRight(myTarget)
+	flyVeryHardToTheRight
+else if isSlightlyToTheLeft(myTarget)
+	flySlowlyToTheLeft
+else if isSlightlyToTheRight(myTarget)
+	flySlowlyToTheRight
+else
+	flyForward
 
 \end{verbatim}
+
+insert part about that flying towards the nearest? biggest? object that is pretty white results in the following of lights in the hallway. This of course equals to corridor following
+
+
 \subsection{Flying towards objects}
 \begin{verbatim}
 
 \end{verbatim}
+
+insert part about left-right and middle 
+
 \subsection{Present inspection}
+\begin{verbatim}
+
+\end{verbatim}
+
+insert part about the size of packes that results in inspection
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % DIVISION OF LABOUR
@@ -114,13 +143,26 @@ Unfortunately, this did cost us a few days.
 Every library we found was eiter not usable, not downloadable (findable) anymore or not uploaded yet (but sounded very promising). 
 It was only after a lot of hours searching that one of the librarys suddenly was pullable again. 
 
+insert part about recognizing colours
+
+insert part about not recognizing markers
+
+insert part about problems with small blobs
+
+insert part about decay functions
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % REFLECTION
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Reflection}
 
+insert part about how cool it is what we reached
 
+insert part about how terrible it is that other members stopped
+
+insert part about all work that we did not use
+
+insert part about how pretty-cool the eindresult was. 
 
 
 
