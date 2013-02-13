@@ -154,7 +154,9 @@ This program consisted of a server extension of the original software written by
 The ROS component connected to a socket that listened to calls coming from the ROS component of the software. 
 Using a simple syntax it was possible to fly with the ARDrone using ROS.  
 
-Insert some part about other members stopping.
+Unfortunately, other team members turned out to be not that enthousiastic about the project anymore. 
+Some stopped pretty early and told the whole group about it, others stopped very late without telling anybody.
+This all led to the fact that the project slowed down and was not really coordinated anymore. 
 
 During a meeting in juli it was agreed that this setup was not usefull enough and that another implementation had to be found that only used ROS. 
 Unfortunately this meant that Robin and Roland had to start over again, throwing away all old code (including all code used by BioMAV 1).  
@@ -163,13 +165,27 @@ Unfortunately, this did cost us a few days.
 Every library we found was eiter not usable, not downloadable (findable) anymore or not uploaded yet (but sounded very promising). 
 It was only after a lot of hours searching that one of the librarys suddenly was pullable again. 
 
-insert part about recognizing colours
+After we were able to control the drone using this library we started looking at how we would be able to recognise objects. 
+We started with looking at the recognition of colours, which thanks to a remark by Bas Bootsma turned out to be relatively simple. 
+His idea was to recognize blobs using the xxxxxx library. 
+Starting this library turned out to be pretty easy, tweaking it turned out to cost more time than expected. 
 
-insert part about not recognizing markers
+Although recognizing blobs worked for recognizing objects it also yielded a lot of "false-positives", objects that did not have to be recognized.
+As an alternative we started to look at alternatives, including using AR markers and image-recognition. 
+Unfortunately it proved to be too much of a challenge to use the algorithms available on ROS with the image data that we aquired. 
 
-insert part about problems with small blobs
+Unfortunately this did not solve our problem about recognizing other objects as target objects. 
+The first solution we came up with was searching for the most dull location, this turned out to be the corridor under the Spinoza building. 
+Although this hallway did not contain a lot of colours and distractions from our real target there were still a lot of small blobs recognised by our blob-detector. 
 
-insert part about decay functions
+Our first solution was to simply ignore small blobs and try to use colours that were more different than those colours found in the hallway. 
+This did lead to a more stable blob recognition, but still was not perfect. 
+
+The small blobs scattered a lot while the blob of our real object was pretty stable. 
+Eventually we came up with the idea to use a "heat-map", where all detected blobs would yield an activation. 
+Over the course of several frames this activation would decay leading to the fact that only locations where for longer times blobs were detected would be activated. 
+
+This led to a very smooth detection of the target object, as is visible in figure xxxxx. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % REFLECTION
@@ -186,7 +202,7 @@ Another thing that was very unfortunate was the fact that the whole old BioMAV p
 Although a lot of time was spend in learning how to interpret the old code and extending the project to work with ROS all these work was thrown away. 
 Another thing that was not used after a lot of time went into researching this were the AR markers, unfortunately these proved to be impossible for us to implement. 
 
-Of course we were all very contend with the final result, which is very cool. 
+Of course we are all very contend with the final result, and are very proud about what we eventually reached in such a short time. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
