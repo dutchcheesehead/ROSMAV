@@ -91,6 +91,7 @@ In this section several of the implemented algorithms are discussed. Every subse
 \begin{verbatim}
 targets = getAllBlobsThatMatchOurTarget
 coolDownHeatMap
+activateHeatMap(targets)
 if dot in heatmap is high enough
 	if sum of heatmap is high enough
 		inspect present
@@ -98,14 +99,15 @@ if dot in heatmap is high enough
 		go toward average of activation
 
 \end{verbatim}
-Our program first determines that targets we have by aquiring all blobs that match our target. 
+Our program first determines that targets we have by aquiring all blobs that match our target.
 After this is done our heatmap is cooled down using a xxxxxxx function. 
-When a dot in our heatmap is high enough we assume this is our package. 
-When the total sum of the heatmap is high enough (there is enough activation) we inspect the present (see section xxxxxx). 
-Otherwist we fly towards the average of the activation (see section xxxxxxx)
+The heatmap then receives activation again by raising the value of all the locations of the detected blobs. 
+When a dot in our heatmap is activated enough it is assumed that this is because our target is at this position. 
+When the total sum of the heatmap is activated enough we "inspect" the present (see section xxxxxx). 
+When there is not enough activation the drone flies towards the average of the activation (see section xxxxxxx)
 
 
-TODO: add the part where the heatmap is activated again. 
+
 \subsection{Corridor following} 
 \begin{verbatim}
 targets = getAllBlobsThatMatchOurTarget
@@ -123,13 +125,13 @@ else
 
 \end{verbatim}
 
-insert part about that flying towards the nearest? biggest? object that is pretty white results in the following of lights in the hallway. This of course equals to corridor following
-
-Our program first gets all blobs that are matching our target colour. 
-The largest blob is chosen as our primary target. 
+We found out that by always flying towards the target that was the "lowest" on the camera (in the y-space) our drone could smoothly follow the lights in the hallway. 
+By implementing this function we were able to get a corridor-following behaviour. 
+Our program first gets all blobs that are matching our target colour (the color of the lights). 
+The blob with the lowest y value is chosen as our primary target. 
 When this blob is very much to the left or right the drone will turn with a great speed in this direction. 
 When this blob is only slightly to the left or right the drone will turn slowly in this direction. 
-Otherwise the drone will fly forwards. 
+Otherwise the drone will fly forwards this blob. 
 
 \subsection{Flying towards objects}
 \begin{verbatim}
@@ -138,7 +140,11 @@ turnTowards(direction)
 flyForward
 \end{verbatim}
 
-insert part about left-right and middle 
+Flying towards a target was first solved by only flying towards a specific blob. 
+As soon as we started working with objects that were not detected as a "whole" blob and we had an activation value we thought of another function. 
+In the new fly-towards function the X value of the average of the activation is taken.
+This value is devided by the length of the camera image and mapped to our drone in such a way that we aquire a directional value. 
+We let the drone "spin" in this direction and fly forwards. 
 
 \subsection{Present inspection}
 \begin{verbatim}
@@ -149,6 +155,7 @@ if sum(activation) > threshold
 		startLanding
 \end{verbatim}
 
+For the "inspection" of the presents there is not a really special behaviour. 
 As soon as the total activation in the heatmap for the presents exceeds the set threshold the next target is chosen. 
 When there is no new target specified in our goals-array the drone will land. 
 
@@ -156,19 +163,21 @@ When there is no new target specified in our goals-array the drone will land.
 % DIVISION OF LABOUR
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Project history and division of labour}
-The first BioMAV project started in xxxxxx with an enthousiastic group of people. After the initial project was a large succes and obtained the third price in the imav competition on xxxxxinsert datexxxx a second project was started.
-For this second project one had to write a sollicitation letter. 
+The first BioMAV project started in xxxxxx with an enthousiastic group of people.
+After the initial project was a large succes and obtained the third price in the imav competition on xxxxxinsert datexxxx a second project was started.
+For this second project one had to write a sollicitation letter and send this to the teachers. 
 Initially the group consisted of xxxxxx people (Youetta, Rick, Jurriaan, Roland, Robin and xxxxx).  
 These people were devided into two teams, the "image processing" team and the "drone control" group. 
-The task of the "image processing" team was defined as getting useful features from the data. 
+The task of the "image processing" team was defined as getting useful features from the image data, which would be given to the "drone control" group.
 The "drone control" group, consisting of Roland and Youetta, was supposed to use these features to control the drone.  
 
 Initially both groups were both trying to decode the largely undocumented code made by the previous team.
-One of the wishes of the group was a code implementation using ROS. This was another part that both teams had to figure out.  
+One of the wishes of the group was a code implementation using ROS.
+This was another software part that both teams had to figure out how to use. 
 Around june the first implementation of a control program using ROS was finished by Roland. 
 This program consisted of a server extension of the original software written by the first BioMAV team.  
 The ROS component connected to a socket that listened to calls coming from the ROS component of the software. 
-Using a simple syntax it was possible to fly with the ARDrone using ROS.  
+Using a simple syntax to parse fly-commands it was possible to fly with the ARDrone using ROS.  
 
 Unfortunately, other team members turned out to be not that enthousiastic about the project anymore. 
 Some stopped pretty early and told the whole group about it, others stopped very late without telling anybody.
@@ -177,7 +186,7 @@ This all led to the fact that the project slowed down and was not really coordin
 During a meeting in juli it was agreed that this setup was not usefull enough and that another implementation had to be found that only used ROS. 
 Unfortunately this meant that Robin and Roland had to start over again, throwing away all old code (including all code used by BioMAV 1).  
 After we threw away all old code we started with searching this "easy usable" library that should have been available on the internet. 
-Unfortunately, this did cost us a few days. 
+Unfortunately, this did cost us more time than we expected.  
 Every library we found was eiter not usable, not downloadable (findable) anymore or not uploaded yet (but sounded very promising). 
 It was only after a lot of hours searching that one of the librarys suddenly was pullable again. 
 
@@ -190,7 +199,7 @@ Although recognizing blobs worked for recognizing objects it also yielded a lot 
 As an alternative we started to look at alternatives, including using AR markers and image-recognition. 
 Unfortunately it proved to be too much of a challenge to use the algorithms available on ROS with the image data that we aquired. 
 
-Unfortunately this did not solve our problem about recognizing other objects as target objects. 
+Unfortunately this did not solve our problem about recognizing other objects as target objects. % Dit is nog een vage zin...
 The first solution we came up with was searching for the most dull location, this turned out to be the corridor under the Spinoza building. 
 Although this hallway did not contain a lot of colours and distractions from our real target there were still a lot of small blobs recognised by our blob-detector. 
 
