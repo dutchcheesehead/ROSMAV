@@ -1,49 +1,53 @@
-This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
+This is BibTeX, Version 0.99d (TeX Live 2011)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: reportBioMAV.aux
 The style file: plain.bst
 Database file #1: bibliography.bib
 Warning--entry type for "imav" isn't style-file defined
 --line 1 of file bibliography.bib
+Warning--entry type for "cmvision" isn't style-file defined
+--line 5 of file bibliography.bib
 Warning--to sort, need author or key in imav
-You've used 1 entry,
+Warning--to sort, need author or key in cmvision
+You've used 2 entries,
             2118 wiz_defined-function locations,
-            499 strings with 4124 characters,
-and the built_in function-call counts, 168 in all, are:
-= -- 12
-> -- 1
+            501 strings with 4195 characters,
+and the built_in function-call counts, 316 in all, are:
+= -- 24
+> -- 2
 < -- 0
-+ -- 1
++ -- 2
 - -- 0
-* -- 7
-:= -- 23
-add.period$ -- 1
-call.type$ -- 1
-change.case$ -- 3
+* -- 12
+:= -- 37
+add.period$ -- 2
+call.type$ -- 2
+change.case$ -- 6
 chr.to.int$ -- 0
-cite$ -- 2
-duplicate$ -- 7
-empty$ -- 24
+cite$ -- 4
+duplicate$ -- 14
+empty$ -- 47
 format.name$ -- 0
-if$ -- 38
+if$ -- 75
 int.to.chr$ -- 0
-int.to.str$ -- 1
+int.to.str$ -- 2
 missing$ -- 0
-newline$ -- 6
+newline$ -- 9
 num.names$ -- 0
-pop$ -- 8
+pop$ -- 16
 preamble$ -- 1
-purify$ -- 2
+purify$ -- 4
 quote$ -- 0
-skip$ -- 10
+skip$ -- 20
 stack$ -- 0
-substring$ -- 5
-swap$ -- 1
+substring$ -- 10
+swap$ -- 2
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 4
-warning$ -- 1
+type$ -- 8
+warning$ -- 2
 while$ -- 0
-width$ -- 2
-write$ -- 7
-(There were 2 warnings)
+width$ -- 3
+write$ -- 12
+(There were 4 warnings)
