@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.4.5)  15 FEB 2013 14:03
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.4.5)  15 FEB 2013 14:14
 entering extended mode
  %&-line parsing enabled.
 **reportBioMAV
@@ -208,27 +208,30 @@ File: images/droneAttack.jpg Graphic file (type jpg)
 File: images/presentsAndDrone.jpg Graphic file (type jpg)
 
 <use images/presentsAndDrone.jpg> (./reportBioMAV.bbl
-
-LaTeX Warning: Empty `thebibliography' environment on input line 3.
+Underfull \hbox (badness 10000) in paragraph at lines 4--6
+[]\OT1/cmr/m/n/10 International mi-cro air ve-hi-cle con-fer-ence and flight co
+m-pe-ti-tion \OT1/cmr/m/sc/10 url\OT1/cmr/m/n/10 :
+ []
 
 ) [6 <./images/presentsAndDrone.jpg>] (./reportBioMAV.aux) ) 
 Here is how much of TeX's memory you used:
- 1925 strings out of 495061
- 25229 string characters out of 1182622
- 82175 words of memory out of 3000000
- 5105 multiletter control sequences out of 15000+50000
- 7755 words of font info for 28 fonts, out of 3000000 for 9000
+ 1930 strings out of 495061
+ 25278 string characters out of 1182622
+ 82179 words of memory out of 3000000
+ 5108 multiletter control sequences out of 15000+50000
+ 8402 words of font info for 30 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
  25i,6n,24p,185b,240s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/share/texmf-t
 exlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-texlive/font
-s/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/publ
-ic/amsfonts/cm/cmr12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/
-cm/cmr17.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmtt10.pf
-b>
-Output written on reportBioMAV.pdf (6 pages, 2617799 bytes).
+s/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texmf-texlive/fonts/type1/pu
+blic/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfont
+s/cm/cmr12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr17.p
+fb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/sh
+are/texmf-texlive/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on reportBioMAV.pdf (6 pages, 2638472 bytes).
 PDF statistics:
- 44 PDF objects out of 1000 (max. 8388607)
+ 52 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
