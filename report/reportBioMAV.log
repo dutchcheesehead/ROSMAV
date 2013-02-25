@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.4.5)  25 FEB 2013 16:01
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.4.5)  25 FEB 2013 16:03
 entering extended mode
  %&-line parsing enabled.
 **reportBioMAV
@@ -203,22 +203,26 @@ File: images/boringHallway.jpg Graphic file (type jpg)
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 140.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 140.
 [2] [3 <./images/boringHallway.jpg>] [4]
-<images/robinPresentActivation.png, id=20, 620.3175pt x 311.1625pt>
+<images/robinPresentActivation.png, id=21, 620.3175pt x 311.1625pt>
 File: images/robinPresentActivation.png Graphic file (type png)
 
 <use images/robinPresentActivation.png>
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<images/droneAttack.jpg, id=22, 2601.72pt x 1734.48pt>
+<images/droneAttack.jpg, id=23, 2601.72pt x 1734.48pt>
 File: images/droneAttack.jpg Graphic file (type jpg)
 
 <use images/droneAttack.jpg>
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[5] <images/presentsAndDrone.jpg, id=26, 2601.72pt x 1734.48pt>
+[5] <images/presentsAndDrone.jpg, id=27, 2601.72pt x 1734.48pt>
 File: images/presentsAndDrone.jpg Graphic file (type jpg)
 
 <use images/presentsAndDrone.jpg>
@@ -234,23 +238,24 @@ m-pe-ti-tion \OT1/cmr/m/sc/10 url\OT1/cmr/m/n/10 :
 ) [6 <./images/robinPresentActivation.png> <./images/droneAttack.jpg>] [7 <./im
 ages/presentsAndDrone.jpg>] (./reportBioMAV.aux) ) 
 Here is how much of TeX's memory you used:
- 1939 strings out of 495061
- 25514 string characters out of 1182622
+ 1941 strings out of 495061
+ 25542 string characters out of 1182622
  82211 words of memory out of 3000000
- 5116 multiletter control sequences out of 15000+50000
+ 5118 multiletter control sequences out of 15000+50000
  8402 words of font info for 30 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
  25i,6n,24p,206b,237s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/share/texmf-texlive/fon
 ts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-texlive/fonts/type1/pu
 blic/amsfonts/cm/cmcsc10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfo
-nts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr12
-.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/s
-hare/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-
-texlive/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on reportBioMAV.pdf (7 pages, 2852755 bytes).
+nts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr1
+0.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/
+share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-
+texlive/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-texlive/fon
+ts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on reportBioMAV.pdf (7 pages, 2860254 bytes).
 PDF statistics:
- 60 PDF objects out of 1000 (max. 8388607)
+ 64 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

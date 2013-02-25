@@ -137,7 +137,7 @@ if dot in heatmap is high enough
         go toward average of activation
 \end{verbatim}
 Our program first determines that targets we have by aquiring all blobs that match our target.
-After this is done our heatmap is cooled down using a xxxxxxx function. 
+After this is done our heatmap is cooled down multiplying every activation value by $0.5$. 
 The heatmap then receives activation again by raising the value of all the locations of the detected blobs. 
 When a dot in our heatmap is activated enough it is assumed that this is because our target is at this position. 
 When the total sum of the heatmap is activated enough we "inspect" the present (see section \ref{inspect}). 
