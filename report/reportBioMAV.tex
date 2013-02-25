@@ -140,8 +140,8 @@ Our program first determines that targets we have by aquiring all blobs that mat
 After this is done our heatmap is cooled down using a xxxxxxx function. 
 The heatmap then receives activation again by raising the value of all the locations of the detected blobs. 
 When a dot in our heatmap is activated enough it is assumed that this is because our target is at this position. 
-When the total sum of the heatmap is activated enough we "inspect" the present (see section xxxxxx). 
-When there is not enough activation the drone flies towards the average of the activation (see section xxxxxxx)
+When the total sum of the heatmap is activated enough we "inspect" the present (see section \ref{inspect}). 
+When there is not enough activation the drone flies towards the average of the activation (see section \ref{flytowards}).
 
 
 
@@ -169,7 +169,7 @@ When this blob is very much to the left or right the drone will turn with a grea
 When this blob is only slightly to the left or right the drone will turn slowly in this direction. 
 Otherwise the drone will fly forwards this blob. 
 
-\subsection{Flying towards objects}
+\subsection{Flying towards objects\label{flytowards}}
 \begin{verbatim}
 direction = XvalueOfAverageOfActivation
 turnTowards(direction)
@@ -182,7 +182,7 @@ In the new fly-towards function the X value of the average of the activation is 
 This value is devided by the length of the camera image and mapped to our drone in such a way that we aquire a directional value. 
 We let the drone "spin" in this direction and fly forwards. 
 
-\subsection{Present inspection}
+\subsection{Present inspection\label{inspect}}
 \begin{verbatim}
 if sum(activation) > threshold
     if getNewTarget(currentTarget)
