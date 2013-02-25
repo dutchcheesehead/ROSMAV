@@ -131,11 +131,10 @@ targets = getAllBlobsThatMatchOurTarget
 coolDownHeatMap
 activateHeatMap(targets)
 if dot in heatmap is high enough
-	if sum of heatmap is high enough
-		inspect present
-	else
-		go toward average of activation
-
+    if sum of heatmap is high enough
+        inspect present
+    else
+        go toward average of activation
 \end{verbatim}
 Our program first determines that targets we have by aquiring all blobs that match our target.
 After this is done our heatmap is cooled down using a xxxxxxx function. 
@@ -151,16 +150,15 @@ When there is not enough activation the drone flies towards the average of the a
 targets = getAllBlobsThatMatchOurTarget
 myTarget = getTargetLowestOnCamera
 if isVeryMuchToTheLeft(myTarget)
-	flyVeryHardToTheleft
+    flyVeryHardToTheleft
 else if isVeryMuchToTheRight(myTarget)
-	flyVeryHardToTheRight
+    flyVeryHardToTheRight
 else if isSlightlyToTheLeft(myTarget)
-	flySlowlyToTheLeft
+    flySlowlyToTheLeft
 else if isSlightlyToTheRight(myTarget)
-	flySlowlyToTheRight
+    flySlowlyToTheRight
 else
-	flyForward
-
+    flyForward
 \end{verbatim}
 
 We found out that by always flying towards the target that was the "lowest" on the camera (in the y-space) our drone could smoothly follow the lights in the hallway. 
@@ -187,10 +185,10 @@ We let the drone "spin" in this direction and fly forwards.
 \subsection{Present inspection}
 \begin{verbatim}
 if sum(activation) > threshold
-	if getNewTarget(currentTarget)
-		currentTarget = getNewTarget(currentTarget)
-	else
-		startLanding
+    if getNewTarget(currentTarget)
+        currentTarget = getNewTarget(currentTarget)
+    else
+        startLanding
 \end{verbatim}
 
 For the "inspection" of the presents there is not a really special behaviour. 
