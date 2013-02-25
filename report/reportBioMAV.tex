@@ -81,9 +81,17 @@ detection and inter-node communication.
 % MOTIVATION
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Motivation}
-Motivation on working on BioMAV
+One of the wishes of the group was a code implementation using ROS, this was another software part that both teams had to figure out how to use. 
+Around june the first implementation of a control program using ROS was finished by Roland. 
+This program consisted of a server extension of the original software written by the first BioMAV team.  
+The ROS component connected to a socket that listened to calls coming from the ROS component of the software. 
+Using a simple syntax to parse fly-commands it was possible to fly with the ARDrone using ROS.  
 
-Motivation on the current implementation?
+After that, we started to look on how to perform tasks, and we decided
+to use a library for computer vision, which eventually became
+blob-detection, and a ``driver'' ROS node that turned information from
+the camera, processed with blob-detection, into actions, to perform a
+task.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % GOAL
@@ -212,7 +220,7 @@ Unfortunately, other team members turned out to be not that enthousiastic about 
 Some stopped pretty early and told the whole group about it, others stopped very late without telling anybody.
 This all led to the fact that the project slowed down and was not really coordinated anymore. 
 
-During a meeting in juli it was agreed that this setup was not usefull enough and that another implementation had to be found that only used ROS. 
+During a meeting in juli it was agreed that this setup was not useful enough and that another implementation had to be found that only used ROS. 
 Unfortunately this meant that Robin and Roland had to start over again, throwing away all old code (including all code produced by the first BioMAV project).  
 After we threw away all old code we started with searching this "easy usable" library that should have been available on the internet. 
 Unfortunately, this did cost us more time than we expected.
