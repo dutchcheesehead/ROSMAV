@@ -281,13 +281,18 @@ To install ROSMAV, follow the following steps:
 \item Run \textbf{./install.sh}.
 \end{enumerate}
 
-To start our software, run:
+To start our software, run the following commands all in different terminal windows:
 \begin{enumerate}
-\item Start roscore (roscore)
-\item Start de AR-drone (rosrun ardrone\_brown ardrone\_driver)
-\item Start de sluis (rosrun sluis sluis.py)
-\item Start cmvision met roslaunch cmvision blobs.launch (start this from the cmvision folder???)
-\item Start with rosrun ROSMAV v.py
+\item \textbf{roscore} \\ This starts roscore.
+\item \textbf{rosrun ardrone\_brown ardrone\_driver} \\ This starts the driver for the AR-Drone.
+\item \textbf{roslaunch cmvision blobs.launch} \\ This starts the blob detection process.
+\item \textbf{brown-ros-pkg-read-only/experimental/drone\_teleop/bin/drone\_teleop.py} \\ This is needed to let the drone take off and land.
+\item \textbf{rosrun image\_view image\_view image:=/heatmap\_image} \\ This
+      allows you to see the heatmap activation for the ``inspect presents''
+      task, and thus see through the eyes of the drone.
+\item \textbf{rosrun ROSMAV inspectPresents.py} \textit{or} \\
+      \textbf{rosrun ROSMAV followLights.py} \\
+      This actually starts the task. 
 \end{enumerate}
 
 
