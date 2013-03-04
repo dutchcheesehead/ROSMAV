@@ -264,51 +264,21 @@ This led to a very smooth detection of the target object, as is visible in figur
 % TUTORIAL
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Tutorial}
+To install ROSMAV, follow the following steps:
 \begin{enumerate}
-\item Install Ubuntu (we used ubuntu 10.10)
+\item Install Ubuntu (we used Ubuntu 10.10).
 
-\item Install ROS (we used electric) by following this guide: http://www.ros.org/wiki/electric/Installation/Ubuntu
+\item Install ROS (we used Electric) by following this guide: \\
+      http://www.ros.org/wiki/electric/Installation/Ubuntu
 
-\item make sure that you performed the “Environment setup” step during installation.
+\item Make sure that you performed the ``Environment setup'' step during installation.
 
 \item Download our repository from
-https://github.com/dutchcheesehead/ROSMAV
+      https://github.com/dutchcheesehead/ROSMAV
 
-\item Navigate to ROSMAV/brown-ros-pkg-read-only/experimental
+\item Navigate to ROSMAV.
 
-\item Remove the old cmake\_cache file if it exists
-If it doesn't exist, continue.
-
-\item In the terminal, run: cmake . (note that the dot is very important)
-
-\item Navigate to the folder where you checked out the ros\_package. In our case this was:ROSMAV/brown-ros-pkg-read-only/experimental/ardrone\_brown
-
-\item Now run the command ./build\_sdk.sh
-
-\item Use the command sudo rosmake or sudo make
-
-\item Run the command roscore
-
-\item In a different terminal, run rosrun ardrone\_brown ardrone\_driver This driver is able to receive messages from the ardrone.
-
-\item Navigate to this folder:
-ROSMAV/brown-ros-pkg-read-only/experimental/drone\_teleop/bin
-
-\item In this folder, type ./teleop.py
-
-\item Edit your ~.bashrc by typing nano .bashrc then put this at the end of your file: export ROS\_PACKAGE\_PATH=/home/\$USER/workspace/ROSMAV/cmvision:/home/\$USER/workspace/ROSMAV/brown-ros-pkg-read-only/experimental:/home/\$USER/workspace/ROSMAV:/home/\$USER/workspace/ROSMAV/stacks:\$ROS\_PACKAGE\_PATH
-
-\item Navigate to the cmvision folder.
-
-\item run cmake . In this folder
-
-\item rosmake cmvision
-
-\item add the “sluis” folder
-
-\item change your rospackage path to make sure this folder is added
-
-\item edit the blobs.launch file in cmvision to make sure the directory is right.
+\item Run \textbf{./install.sh}.
 \end{enumerate}
 
 To start our software, run:
