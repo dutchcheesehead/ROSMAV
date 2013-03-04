@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.4.5)  25 FEB 2013 16:10
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.4.5)  4 MAR 2013 23:40
 entering extended mode
  %&-line parsing enabled.
 **reportBioMAV
@@ -222,40 +222,43 @@ File: images/droneAttack.jpg Graphic file (type jpg)
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[5] <images/presentsAndDrone.jpg, id=27, 2601.72pt x 1734.48pt>
-File: images/presentsAndDrone.jpg Graphic file (type jpg)
 
-<use images/presentsAndDrone.jpg>
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-(./reportBioMAV.bbl
-Underfull \hbox (badness 10000) in paragraph at lines 7--9
-[]\OT1/cmr/m/n/10 International mi-cro air ve-hi-cle con-fer-ence and flight co
-m-pe-ti-tion \OT1/cmr/m/sc/10 url\OT1/cmr/m/n/10 :
+Overfull \hbox (92.45909pt too wide) in paragraph at lines 269--270
+[]\OT1/cmr/m/n/10 2. In-stall ROS (we used elec-tric) by fol-low-ing this guide
+: http://www.ros.org/wiki/electric/Installation/Ubuntu 
  []
 
-) [6 <./images/robinPresentActivation.png> <./images/droneAttack.jpg>] [7 <./im
-ages/presentsAndDrone.jpg>] (./reportBioMAV.aux) ) 
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+[5]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.283 ...n-ros-pkg-read-only/experimental/ardrone_
+                                                  brown
+? x
+ 
 Here is how much of TeX's memory you used:
- 1941 strings out of 495061
- 25542 string characters out of 1182622
+ 1925 strings out of 495061
+ 25280 string characters out of 1182622
  82211 words of memory out of 3000000
- 5118 multiletter control sequences out of 15000+50000
- 8402 words of font info for 30 fonts, out of 3000000 for 9000
+ 5110 multiletter control sequences out of 15000+50000
+ 7755 words of font info for 28 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
  25i,6n,24p,206b,237s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/share/texmf-texlive/fon
-ts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-texlive/fonts/type1/pu
-blic/amsfonts/cm/cmcsc10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfo
-nts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr1
-0.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/
-share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-
-texlive/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-texlive/fon
-ts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on reportBioMAV.pdf (7 pages, 2860550 bytes).
+</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share
+/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texl
+ive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/ty
+pe1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-texlive/fonts/type1/public/a
+msfonts/cm/cmr17.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/c
+mtt10.pfb>
+Output written on reportBioMAV.pdf (5 pages, 947561 bytes).
 PDF statistics:
- 64 PDF objects out of 1000 (max. 8388607)
+ 46 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
