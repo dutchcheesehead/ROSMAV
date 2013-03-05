@@ -29,7 +29,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % TTITLEPAGE
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\title{BioMAV: the present-inspecting robot}
+\title{BioMAV: the package-inspecting robot}
 
 \author{Robin Wellner and Roland Meertens}
 
@@ -45,7 +45,7 @@
 \section{Introduction}
 BioMAV is a recurring project of the department of Artificial
 Intelligence at the Radboud University in Nijmegen. It stands for
-``Biologically inspired Micro Air Vehicles''. xxxxxx
+``Biologically inspired Micro Air Vehicles''. 
 
 The robot used in the BioMAV is the Parrot AR.Drone 1.0. It is able to
 communicate via USB and Wi-Fi. The drone has two cameras, one
@@ -57,6 +57,7 @@ camera.
 % BACKGROUND
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Background}
+\label{sec:background}
 IMAV is a series of conferences and competitions with as main objective
 ``to provide an effective and established forum for dissemination and
 demonstration of original and recent advances in MAV technology.''\cite{imav}
@@ -67,20 +68,21 @@ The previous and first BioMAV project started in 2010. It was a large
 success and obtained the third price in the IMAV 2011 pylon challenge.
 
 This project's biological inspirations are mostly related to vision. The
-corridor-following task was inspired by how flying insects such as moths
-follow the light of the moon for navigation. The packet inspection task
+corridor-following task described in section \ref{sec:corridorfollowing} was inspired by how flying insects such as moths
+follow the light of the moon for navigation. The packet inspection task described in section \ref{sec:packageinspection}
 evolved from animals hunting their prey.
 
 ROS (for Robot Operating System) is an open-source framework for robot
 controller software, especially intended for re-use of libraries
 (called ``nodes'') between different projects and for different types of
 robots. This allowed us to make use of existing solutions for blob
-detection and inter-node communication.
+detection (used in section \ref{sec:corridorfollowing} and inter-node communication.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % MOTIVATION
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Motivation}
+\label{sec:motivation}
 One of the wishes of the group was a code implementation using ROS, this was another software part that both teams had to figure out how to use. 
 Around June the first implementation of a control program using ROS was finished by Roland. 
 This program consisted of a server extension of the original software written by the first BioMAV team.  
@@ -97,7 +99,9 @@ task.
 % GOAL
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Goal}
+\label{sec:goal}
 \subsection{Initial goals}
+\label{sec:initialgoals}
 The initial goals of this project were:
 \begin{enumerate}
 \item To establish a platform, based on the old BioMAV project, on which
@@ -107,6 +111,7 @@ The initial goals of this project were:
 \item To demonstrate the drone performing that task.
 \end{enumerate}
 \subsection{Final goal}
+\label{sec:finalgoal}
 Our final goal was to have the drone perform the packet-inspection task and
 light-following task.
 
@@ -117,7 +122,7 @@ light-following task.
 % PSEUDOCODE
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Pseudocode}
-
+\label{sec:pseudocode}
 \begin{figure}[h!]
 	\caption{A picture of a drone.}
 	\centering
@@ -132,7 +137,7 @@ coolDownHeatMap
 activateHeatMap(targets)
 if dot in heatmap is high enough
     if sum of heatmap is high enough
-        inspect present
+        inspect package
     else
         go toward average of activation
 \end{verbatim}
@@ -140,12 +145,13 @@ Our program first determines that targets we have by acquiring all blobs that ma
 After this is done our heatmap is cooled down multiplying every activation value by $0.5$. 
 The heatmap then receives activation again by raising the value of all the locations of the detected blobs. 
 When a dot in our heatmap is activated enough it is assumed that this is because our target is at this position. 
-When the total sum of the heatmap is activated enough we "inspect" the present (see section \ref{inspect}). 
+When the total sum of the heatmap is activated enough we "inspect" the package (see section \ref{sec:packageinspection}). 
 When there is not enough activation the drone flies towards the average of the activation (see section \ref{flytowards}).
 
 
 
 \subsection{Corridor following} 
+\label{sec:corridorfollowing}
 \begin{verbatim}
 targets = getAllBlobsThatMatchOurTarget
 myTarget = getTargetLowestOnCamera
@@ -182,7 +188,7 @@ In the new fly-towards function the X value of the average of the activation is 
 This value is divided by the length of the camera image and mapped to our drone in such a way that we acquire a directional value. 
 We let the drone "spin" in this direction and fly forwards. 
 
-\subsection{Present inspection\label{inspect}}
+\subsection{Package inspection\label{sec:packageinspection}}
 \begin{verbatim}
 if sum(activation) > threshold
     if getNewTarget(currentTarget)
@@ -191,21 +197,23 @@ if sum(activation) > threshold
         startLanding
 \end{verbatim}
 
-For the "inspection" of the presents there is not a really special behaviour. 
-As soon as the total activation in the heatmap for the presents exceeds the set threshold the next target is chosen. 
+For the "inspection" of the packages there is not a really special behaviour. 
+As soon as the total activation in the heatmap for the packages exceeds the set threshold the next target is chosen. 
 When there is no new target specified in our goals-array the drone will land. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % DIVISION OF LABOUR
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Project history and division of labour}
-The first BioMAV project started in 2010 with an enthusiastic group of people.
+\label{sec:projecthistory}
+The first BioMAV project started in 2010 with an enthusiastic group of people (as described in section \ref{sec:background}). 
 After the initial project was a large success and obtained the third price in the IMAV 2011 pylon challenge, a sequel to this project was started.
 For this second project one had to write a solicitation letter and send this to the teachers. 
 Initially the group consisted of a group of 5 students (Youetta, Rick, Jurriaan, Roland and Robin).  
 These people were divided into two teams, the "image processing" team and the "drone control" group. 
 The task of the "image processing" team, consisting of Rick, Jurriaan and Robin, was defined as getting useful features from the image data, which would be given to the "drone control" group.
 The "drone control" group, consisting of Roland and Youetta, was supposed to use these features to control the drone. 
+
 
 Initially both groups were both trying to decode the largely undocumented code made by the previous team.
 One of the wishes of the group was a code implementation using ROS, this was another software part that both teams had to figure out how to use. 
@@ -264,6 +272,7 @@ This led to a very smooth detection of the target object, as is visible in figur
 % REFLECTION
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Reflection}
+\label{sec:reflection}
 
 Although the BioMAV project has been a rough project this year the final result is something that looks very cool. 
 To build a program that lets a small UAV autonomously follow bread-containers, corridors and inspect packages is something to be proud of. 
