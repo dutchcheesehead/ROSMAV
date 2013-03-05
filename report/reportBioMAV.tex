@@ -33,7 +33,7 @@
 
 \author{Robin Wellner and Roland Meertens}
 
-\date{February 1, 2012}
+\date{\today}
 
 \maketitle
 
@@ -267,6 +267,42 @@ This led to a very smooth detection of the target object, as is visible in figur
 	\centering
 	\includegraphics[width=0.5\textwidth]{images/droneAttack}
 \end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TUTORIAL
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Tutorial}
+To install ROSMAV, follow the following steps:
+\begin{enumerate}
+\item Install Ubuntu (we used Ubuntu 10.10).
+
+\item Install ROS (we used Electric) by following this guide: \\
+      http://www.ros.org/wiki/electric/Installation/Ubuntu
+
+\item Make sure that you performed the ``Environment setup'' step during installation.
+
+\item Download our repository from
+      https://github.com/dutchcheesehead/ROSMAV
+
+\item Navigate to ROSMAV.
+
+\item Run \textbf{./install.sh}.
+\end{enumerate}
+
+To start our software, run the following commands all in different terminal windows:
+\begin{enumerate}
+\item \textbf{roscore} \\ This starts roscore.
+\item \textbf{rosrun ardrone\_brown ardrone\_driver} \\ This starts the driver for the AR-Drone.
+\item \textbf{roslaunch cmvision blobs.launch} \\ This starts the blob detection process.
+\item \textbf{brown-ros-pkg-read-only/experimental/drone\_teleop/bin/drone\_teleop.py} \\ This is needed to let the drone take off and land.
+\item \textbf{rosrun image\_view image\_view image:=/heatmap\_image} \\ This
+      allows you to see the heatmap activation for the ``inspect presents''
+      task, and thus see through the eyes of the drone.
+\item \textbf{rosrun ROSMAV inspectPresents.py} \textit{or} \\
+      \textbf{rosrun ROSMAV followLights.py} \\
+      This actually starts the task. 
+\end{enumerate}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % REFLECTION
