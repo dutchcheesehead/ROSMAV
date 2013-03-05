@@ -309,8 +309,8 @@ Suppose you want to add a different color to inspect.
 \item Move both the object and the drone a bit around and click some more, to account for changes in lighting.
 \item Repeat until you are confident it recognizes the object correctly in different circumstances.
 \item If you made a mistake, close the ColorGUI and go back to step 3.
-\item If it recognizes the object correctly, open ``cmvision/colors.txt''. Add both the color and the threshold. TODO: EXPLAIN
-\item Edit ``inspectPresents.py''. TODO: EXPLAIN
+\item If it recognizes the object correctly, open ``cmvision/colors.txt''. Add both the color and the threshold. For the color, you can copy the last color and change the first bit into what the ColorGUI said, and change the name of the color. For the threshold, paste the threshold after the last threshold.
+\item Edit ``inspectPresents.py''. You might need to add a function like ``isRed'' if it's not already in there. Then modify the ``nextTarget'' dictionary to the sequence you want to inspect the presents.
 \end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
