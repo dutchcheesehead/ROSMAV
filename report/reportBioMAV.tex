@@ -297,6 +297,21 @@ To start our software, run the following commands all in different terminal wind
       This actually starts the task. 
 \end{enumerate}
 \subsection{Adding different colors to inspect}
+Suppose you want to add a different color to inspect.
+\begin{enumerate}
+\item Run \textbf{roscore}
+\item In another terminal window, start the AR-Drone driver: \textbf{rosrun ardrone\_brown ardrone\_driver}
+\item Start the ColorGUI: \textbf{rosrun cmvision colorgui image:=/ardrone/image\_raw} \\
+      You will see a window with the camera images from the AR-Drone.
+\item Resize the window so you can see the text fields.
+\item Keep the object you want to inspect in the view of the drone.
+\item Click on the image of that object in the ColorGUI on a few different places.
+\item Move both the object and the drone a bit around and click some more, to account for changes in lighting.
+\item Repeat until you are confident it recognizes the object correctly in different circumstances.
+\item If you made a mistake, close the ColorGUI and go back to step 3.
+\item If it recognizes the object correctly, open ``cmvision/colors.txt''. Add both the color and the threshold. TODO: EXPLAIN
+\item Edit ``inspectPresents.py''. TODO: EXPLAIN
+\end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % REFLECTION
