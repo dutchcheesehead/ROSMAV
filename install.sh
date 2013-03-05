@@ -9,4 +9,4 @@ cmake .
 popd
 echo export ROSMAV=`pwd` >> ~/.bashrc
 echo export ROS_PACKAGE_PATH=$ROSMAV:$ROSMAV/cmvision:$ROSMAV/brown-ros-pkg-read-only/experimental:$ROSMAV/stacks:$ROS_PACKAGE_PATH >> ~/.bashrc
-
+echo export PATH=$PATH:$ROSMAV/brown-ros-pkg-read-only/experimental/drone_teleop/bin >> ~/.bashrc
