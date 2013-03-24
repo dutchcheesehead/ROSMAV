@@ -13,7 +13,8 @@
 
 #include <VP_Os/vp_os_types.h>
 #ifdef USE_FFMPEG
-#include <libavutil/avutil.h>
+//#include <libavutil/avutil.h>
+#include <libavutil/pixfmt.h>
 #else
 /**
  * Pixel format. Notes:
