@@ -3,8 +3,9 @@ ROSMAV
 To install ROSMAV, first install ROS:
 http://www.ros.org/wiki/electric/Installation/Ubuntu
 
-Next do:
-
+Download our repository 
+	git clone https://github.com/dutchcheesehead/ROSMAV.git
+Navigate to the folder and install
 	./install.sh
 
 ARDrone Brown and cmvision are now installed.
