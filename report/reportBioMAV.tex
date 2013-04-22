@@ -58,20 +58,25 @@ camera.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Background}
 \label{sec:background}
+\subsection{IMAV}
 IMAV is a series of conferences and competitions with as main objective
 ``to provide an effective and established forum for dissemination and
 demonstration of original and recent advances in MAV technology.''\cite{imav}
 MAV stands for Micro Air Vehicles and IMAV stands for International
 Micro Air Vehicles.
 
-The previous and first BioMAV project started in 2010. It was a large
+\subsection{BioMAV}
+The previous and first BioMAV project started in 2010. It was the entry
+of Radboud University Artificial Intelligence department. BioMAV was a large
 success and obtained the third price in the IMAV 2011 pylon challenge.
 
+\subsection{Biological inspiration}
 This project's biological inspirations are mostly related to vision. The
 corridor-following task described in section \ref{sec:corridorfollowing} was inspired by how flying insects such as moths
 follow the light of the moon for navigation. The packet inspection task described in section \ref{sec:packageinspection}
 evolved from animals hunting their prey.
 
+\subsection{ROS}
 ROS (for Robot Operating System) is an open-source framework for robot
 controller software, especially intended for re-use of libraries
 (called ``nodes'') between different projects and for different types of
@@ -206,6 +211,7 @@ When there is no new target specified in our goals-array the drone will land.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Project history and division of labour}
 \label{sec:projecthistory}
+\subsection{Starting point}
 The first BioMAV project started in 2010 with an enthusiastic group of people (as described in section \ref{sec:background}). 
 After the initial project was a large success and obtained the third price in the IMAV 2011 pylon challenge, a sequel to this project was started.
 For this second project one had to write a solicitation letter and send this to the teachers. 
@@ -214,10 +220,11 @@ These people were divided into two teams, the "image processing" team and the "d
 The task of the "image processing" team, consisting of Rick, Jurriaan and Robin, was defined as getting useful features from the image data, which would be given to the "drone control" group.
 The "drone control" group, consisting of Roland and Youetta, was supposed to use these features to control the drone. 
 
-
+\subsection{Initial phase}
 Initially both groups were both trying to decode the largely undocumented code made by the previous team.
 One of the wishes of the group was a code implementation using ROS, this was another software part that both teams had to figure out how to use. 
 Around June the first implementation of a control program using ROS was finished by Roland. 
+
 This program consisted of a server extension of the original software written by the first BioMAV team.  
 The ROS component connected to a socket that listened to calls coming from the ROS component of the software. 
 Using a simple syntax to parse fly-commands it was possible to fly with the ARDrone using ROS.  
@@ -226,6 +233,7 @@ Unfortunately, other team members turned out to be not that enthusiastic about t
 Some stopped pretty early and told the whole group about it, others stopped very late without telling anybody.
 This all led to the fact that the project slowed down and was not really coordinated anymore. 
 
+\subsection{Restarting from scratch}
 During a meeting in July it was agreed that this setup was not useful enough and that another implementation had to be found that only used ROS. 
 Unfortunately this meant that Robin and Roland had to start over again, throwing away all old code (including all code produced by the first BioMAV project).  
 After we threw away all old code we started with searching this "easy usable" library that should have been available on the internet. 
@@ -238,6 +246,7 @@ We started with looking at the recognition of colours, which thanks to a remark 
 His idea was to recognize blobs using the cmvision library \cite{cmvision}. 
 Starting this library turned out to be pretty easy, tweaking it turned out to cost more time than expected. 
 
+\subsection{Tweaking and fine-tuning}
 Although recognizing blobs worked for recognizing objects it also yielded a lot of "false-positives", objects that did not have to be recognized.
 As an alternative we started to look at alternatives, including using AR markers and image-recognition. 
 Unfortunately it proved to be too much of a challenge to use the algorithms available on ROS with the image data that we acquired. 
