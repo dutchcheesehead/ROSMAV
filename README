@@ -13,7 +13,7 @@ ARDrone Brown and cmvision are now installed.
 ROSMAV itself needs no further installation, it can be run right from
 the repository.
 
-Possibly edit the location of the colors file (in CMVision). 
+Possibly edit the location of the colors file (in CMVisions blobs.launch). 
 
 To run ROSMAV, run the following commands, each in their own terminal
 window:
