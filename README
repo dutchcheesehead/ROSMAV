@@ -22,10 +22,14 @@ window:
 
 brown??	rosrun ardrone_brown ardrone_driver
 autonomy??	rosrun ardrone_autonomy ardrone_driver
-	brown-ros-pkg-read-only/experimental/drone_teleop/bin/drone_teleop.py
+
+put drone in the air:
+brown??	brown-ros-pkg-read-only/experimental/drone_teleop/bin/drone_teleop.py
+autonomy install??	rosrun ardrone_tutorials keyboard_controller.py
 
 	roslaunch cmvision blobs.launch
 
 	rosrun ROSMAV inspectPresents.py
 
 	rosrun image_view image_view image:=/heatmap_image
+
