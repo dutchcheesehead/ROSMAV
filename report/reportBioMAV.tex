@@ -152,17 +152,17 @@ In this section several of the implemented algorithms are discussed. Every subse
 targets = getAllBlobsThatMatchOurTarget
 coolDownHeatMap
 activateHeatMap(targets)
-if dot in heatmap is high enough
-    if sum of heatmap is high enough
+if dot in heat map is high enough
+    if sum of heat map is high enough
         inspect package
     else
         go toward average of activation
 \end{verbatim}
 Our program first determines that targets we have by acquiring all blobs that match our target.
-After this is done our heatmap is cooled down multiplying every activation value by $0.5$. 
-The heatmap then receives activation again by raising the value of all the locations of the detected blobs. 
-When a dot in our heatmap is activated enough it is assumed that this is because our target is at this position. 
-When the total sum of the heatmap is activated enough we "inspect" the package (see section \ref{sec:packageinspection}). 
+After this is done our heat map is cooled down multiplying every activation value by $0.5$. 
+The heat map then receives activation again by raising the value of all the locations of the detected blobs. 
+When a dot in our heat map is activated enough it is assumed that this is because our target is at this position. 
+When the total sum of the heat map is activated enough we "inspect" the package (see section \ref{sec:packageinspection}). 
 When there is not enough activation the drone flies towards the average of the activation (see section \ref{flytowards}).
 
 
@@ -215,14 +215,74 @@ if sum(activation) > threshold
 \end{verbatim}
 
 For the "inspection" of the packages there is not a really special behaviour. 
-As soon as the total activation in the heatmap for the packages exceeds the set threshold the next target is chosen. 
+As soon as the total activation in the heat map for the packages exceeds the set threshold the next target is chosen. 
 When there is no new target specified in our goals-array the drone will land. 
 
-\subsection{Heatmap}
+\subsection{Heat map}
 \subsubsection{Idea}
-(why we used a heatmap)
+At some point, it became clear that the blob detection was not consistent.
+Small blobs were often found where none should be, and the blob corresponding
+to the target fell away for a frame every so often. This confused the drone,
+making navigation less than optimal.
+
+We came with the idea of a heat map, which
+would only activate after blobs appeared consistently on a certain position.
+At the same time, a single missed frame wouldn't mean that the drone had lost
+its target.
 \subsubsection{How it works}
+The heat map is basically a matrix, each cell corresponding to a square of
+pixels from the drone camera. Every blob detected would then increase the
+values in the heat map inside that blob. Each time step, the matrix is
+multiplied by a constant $c_{{cooldown}}$, where
+$0 < c_{{cooldown}} < 1$, reducing the overall
+activation.
+
+Only if the maximal value in the matrix is more than a certain constant,
+the drone considers doing anything based on the heat map that time step.
+Otherwise, it will turn around slowly, looking for the target.
+
+If the sum of all values in the matrix is more than another constant,
+that means a large portion of the camera's field of vision is taken up
+by the target, which means we're close to it. That means the drone has
+found the target, and as such can continue to its next target.
+
+In any case, each column in the matrix is summed, such that we have an
+array of values. Each of these values is the total activation in a specific
+column of the heat map. A high activation at a certain position means it is
+likely that the target is in that position, and that means the drone should
+fly in that direction. To figure out the ``centre of gravity'' of the
+activation, we calculate the weighted average of the indexes of the columns,
+with the array of values as weights. The result can be normalised, giving us
+the direction the drone should fly.
 \subsubsection{Implementation}
+We used NumPy to deal with the matrix calculations.
+
+The implementation has several constants that were abstracted from in the
+previous section.
+
+The multiplication constant $c_{{cooldown}}$ was taken to be
+$0.5$. In our experience, larger values caused "after images" to persist
+longer than needed, and smaller values reduced the positive effects of
+the heat map too much, making jitters and missing blobs too strong.
+
+The "downsize factor" by which the matrix was scaled down from the
+drone camera was $4$, meaning that each cell in the heat map represented $16$
+pixels. This was chosen because a smaller downsize factor would make the
+algorithm that activated the heat map too slow, and with a downsize factor of
+$4$, the resolution preserved was still sufficient for subtle steering
+decisions.
+
+The activation added for each blob depends on the blob area $A$. This was
+another way to reduce the effect of jitters. The formula
+that worked best for us was $50 + \frac{\sqrt{A}}{10}$.
+
+The threshold that decided whether the drone has seen \emph{anything}
+interesting was set to $16$, fairly arbitrarily.
+
+The threshold for deciding the target has been found and the drone was
+finished or needed to find another target, is strongly dependent on the
+real life size of the target. Our targets were about $\frac{1}{4} m^2$
+and the constant that worked best was $30 000$.
 \subsection{Color detection}
 (why we have to use isRed, isGreen, isBlue... and how it works)
 
@@ -328,7 +388,7 @@ To start our software, run the following commands all in different terminal wind
 \item \textbf{roslaunch cmvision blobs.launch} \\ This starts the blob detection process.
 \item \textbf{drone\_teleop.py} \\ This is needed to let the drone take off and land.
 \item \textbf{rosrun image\_view image\_view image:=/heatmap\_image} \\ This
-      allows you to see the heatmap activation for the ``inspect presents''
+      allows you to see the heat map activation for the ``inspect presents''
       task, and thus see through the eyes of the drone.
 \item \textbf{rosrun ROSMAV inspectPresents.py} \textit{or} \\
       \textbf{rosrun ROSMAV followLights.py} \\
