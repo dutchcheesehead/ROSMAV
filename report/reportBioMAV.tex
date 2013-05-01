@@ -56,13 +56,11 @@ robots. This allowed us to make use of existing solutions for blob
 detection (used in section \ref{sec:corridorfollowing} and inter-node communication.
 
 \subsection{Vision}
-
+For vision the usage of CMVision turned out to be very handy for the detecting of blobs of colours. This was the reason that we used this for the detection of our goals. 
 \section{Task}
-
-\section{Goal}
-\label{sec:goal}
-\subsection{Initial goals}
-\label{sec:initialgoals}
+\label{sec:task}
+\subsection{Initial task}
+\label{sec:initialtask}
 The initial goals of this project were:
 \begin{enumerate}
 \item To establish a platform, based on the old BioMAV project, on which
@@ -75,14 +73,23 @@ The initial goals of this project were:
 \label{sec:finalgoal}
 Our final goal was to have the drone perform the packet-inspection task and
 light-following task.
+
+Initially we managed to create a fly-to-object behaviour. As this does not yet give way to a very advanced behaviour it was decided to add an implementation for a breadcrumbs finding navigation task. 
+
+In this breadcrumbs navigation task the drone is able to locate a goal object by following other objects. 
+Every time a temporary goal has been reached it will start searching for the next goal. 
 \section{Method}
 \subsection{Vision}
+\subsubsection{Blob detection}
+
+\subsubsection{HeatMap}
+
 \subsection{Control}
+Insert behaviours here (but short...)
 
 \section{Artificial intelligence}
-
+What kind of AI do we use??
 \section{Results}
-
 
 \subsection{Github}
 \subsection{Use case}
@@ -350,24 +357,6 @@ Suppose you want to add a different color to inspect.
 \item If it recognizes the object correctly, open ``cmvision/colors.txt''. Add both the color and the threshold. For the color, you can copy the last color and change the first bit into what the ColorGUI said, and change the name of the color. For the threshold, paste the threshold after the last threshold.
 \item Edit ``inspectPresents.py''. You might need to add a function like ``isRed'' if it's not already in there. Then modify the ``nextTarget'' dictionary to the sequence you want to inspect the presents.
 \end{enumerate}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% REFLECTION
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Reflection}
-\label{sec:reflection}
-
-Although the BioMAV project has been a rough project this year the final result is something that looks very cool. 
-To build a program that lets a small UAV autonomously follow bread-containers, corridors and inspect packages is something to be proud of. 
-
-Of course, one starts to think about how much more awesome the initial plans of the complete team were. 
-Unfortunately, since more than half of the team decided to stop early, these plans were never finished and kept for the next team. 
-
-Another thing that was very unfortunate was the fact that the whole old BioMAV project was thrown away in the end. 
-Although a lot of time was spend in learning how to interpret the old code and extending the project to work with ROS all these work was thrown away. 
-Additionally, it was unfortunate that a lot of time went into researching the AR markers for navigation, while in the end these proved to be impossible for us to implement. 
-
-Of course we are all very contend with the final result, and are very proud about what we eventually reached in such a short time. 
 
 \begin{figure}[h!]
 	\caption{A picture of a drone.}
