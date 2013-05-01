@@ -292,65 +292,6 @@ real life size of the target. Our targets were about $\frac{1}{4} m^2$
 and the constant that worked best was $30 000$.
 \subsection{Color detection}
 (why we have to use isRed, isGreen, isBlue... and how it works)
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% DIVISION OF LABOUR
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Project history and division of labour}
-\label{sec:projecthistory}
-\subsection{Starting point}
-The first BioMAV project started in 2010 with an enthusiastic group of people (as described in section \ref{sec:background}). 
-After the initial project was a large success and obtained the third price in the IMAV 2011 pylon challenge, a sequel to this project was started.
-For this second project one had to write a solicitation letter and send this to the teachers. 
-Initially the group consisted of a group of 5 students (Youetta, Rick, Jurriaan, Roland and Robin).  
-These people were divided into two teams, the "image processing" team and the "drone control" group. 
-The task of the "image processing" team, consisting of Rick, Jurriaan and Robin, was defined as getting useful features from the image data, which would be given to the "drone control" group.
-The "drone control" group, consisting of Roland and Youetta, was supposed to use these features to control the drone. 
-
-\subsection{Initial phase}
-Initially both groups were both trying to decode the largely undocumented code made by the previous team.
-One of the wishes of the group was a code implementation using ROS, this was another software part that both teams had to figure out how to use. 
-Around June the first implementation of a control program using ROS was finished by Roland. 
-
-This program consisted of a server extension of the original software written by the first BioMAV team.  
-The ROS component connected to a socket that listened to calls coming from the ROS component of the software. 
-Using a simple syntax to parse fly-commands it was possible to fly with the ARDrone using ROS.  
-
-Unfortunately, other team members turned out to be not that enthusiastic about the project anymore. 
-Some stopped pretty early and told the whole group about it, others stopped very late without telling anybody.
-This all led to the fact that the project slowed down and was not really coordinated anymore. 
-
-\subsection{Restarting from scratch}
-During a meeting in July it was agreed that this setup was not useful enough and that another implementation had to be found that only used ROS. 
-Unfortunately this meant that Robin and Roland had to start over again, throwing away all old code (including all code produced by the first BioMAV project).  
-After we threw away all old code we started with searching this "easy usable" library that should have been available on the internet. 
-Unfortunately, this did cost us more time than we expected.
-Every library we found was either not usable, not downloadable (findable) anymore or not uploaded yet (but sounded very promising). 
-It was only after a lot of hours searching that one of the libraries suddenly was pullable again. 
-
-After we were able to control the drone using this library we started looking at how we would be able to recognise objects. 
-We started with looking at the recognition of colours, which thanks to a remark by Bas Bootsma turned out to be relatively simple. 
-His idea was to recognize blobs using the cmvision library \cite{cmvision}. 
-Starting this library turned out to be pretty easy, tweaking it turned out to cost more time than expected. 
-
-\subsection{Tweaking and fine-tuning}
-Although recognizing blobs worked for recognizing objects it also yielded a lot of "false-positives", objects that did not have to be recognized.
-As an alternative we started to look at alternatives, including using AR markers and image-recognition. 
-Unfortunately it proved to be too much of a challenge to use the algorithms available on ROS with the image data that we acquired. 
-
-Unfortunately this did not solve our problem about recognizing objects that were not our target as target objects.
-The first solution we came up with was searching for the most dull location, this turned out to be the corridor under the Spinoza building. 
-Although this hallway did not contain a lot of colours and distractions from our real target there were still a lot of small blobs recognised by our blob-detector. 
-
-Our first solution was to simply ignore small blobs and try to use colours that were more different than those colours found in the hallway. 
-This did lead to a more stable blob recognition, but still was not perfect. 
-
-The small blobs scattered a lot while the blob of our real object was pretty stable. 
-Eventually we came up with the idea to use a "heat-map", where all detected blobs would yield an activation. 
-Over the course of several frames this activation would decay leading to the fact that only locations where for longer times blobs were detected would be activated. 
-
-This led to a very smooth detection of the target object, as is visible in figure \ref{fig:robinPresentActivation}. 
-
 \begin{figure}[h!]
 	\caption{Robin with a target in the left image, on the right is the activation}
 	\centering
