@@ -37,24 +37,62 @@
 
 \maketitle
 
-%%% Robin's part
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% INTRODUCTION
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
 BioMAV is a recurring project of the department of Artificial
-Intelligence at the Radboud University in Nijmegen. It stands for
-``Biologically inspired Micro Air Vehicles''. 
+Intelligence at the Radboud University in Nijmegen which stands for ``Biologically inspired Micro Air Vehicles''. In this report an overview will be given about what the project goals were this year. 
 
+\subsection{Drone}
 The robot used in the BioMAV is the Parrot AR.Drone 1.0. It is able to
 communicate via USB and Wi-Fi. The drone has two cameras, one
 ground-facing and one forward-facing. However, the driver software we
 used was only able to access the image data from the forward-facing
 camera.
 
+\subsection{ROS}
+ROS (for Robot Operating System) is an open-source framework for robot
+controller software, especially intended for re-use of libraries
+(called ``nodes'') between different projects and for different types of
+robots. This allowed us to make use of existing solutions for blob
+detection (used in section \ref{sec:corridorfollowing} and inter-node communication.
+
+\subsection{Vision}
+
+\section{Task}
+
+\section{Goal}
+\label{sec:goal}
+\subsection{Initial goals}
+\label{sec:initialgoals}
+The initial goals of this project were:
+\begin{enumerate}
+\item To establish a platform, based on the old BioMAV project, on which
+      future BioMAV projects can build.
+\item To let the drone perform a task autonomously. Which task that would be
+      was to be determined.
+\item To demonstrate the drone performing that task.
+\end{enumerate}
+\subsection{Final goal}
+\label{sec:finalgoal}
+Our final goal was to have the drone perform the packet-inspection task and
+light-following task.
+\section{Method}
+\subsection{Vision}
+\subsection{Control}
+
+\section{Artificial intelligence}
+
+\section{Results}
+
+
+\subsection{Github}
+\subsection{Use case}
+
+\section{Appendix}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% BACKGROUND
+% INTRODUCTION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Background}
 \label{sec:background}
@@ -76,13 +114,6 @@ corridor-following task described in section \ref{sec:corridorfollowing} was ins
 follow the light of the moon for navigation. The packet inspection task described in section \ref{sec:packageinspection}
 evolved from animals hunting their prey.
 
-\subsection{ROS}
-ROS (for Robot Operating System) is an open-source framework for robot
-controller software, especially intended for re-use of libraries
-(called ``nodes'') between different projects and for different types of
-robots. This allowed us to make use of existing solutions for blob
-detection (used in section \ref{sec:corridorfollowing} and inter-node communication.
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % MOTIVATION
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -100,25 +131,6 @@ blob-detection, and a ``driver'' ROS node that turned information from
 the camera, processed with blob-detection, into actions, to perform a
 task.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% GOAL
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Goal}
-\label{sec:goal}
-\subsection{Initial goals}
-\label{sec:initialgoals}
-The initial goals of this project were:
-\begin{enumerate}
-\item To establish a platform, based on the old BioMAV project, on which
-      future BioMAV projects can build.
-\item To let the drone perform a task autonomously. Which task that would be
-      was to be determined.
-\item To demonstrate the drone performing that task.
-\end{enumerate}
-\subsection{Final goal}
-\label{sec:finalgoal}
-Our final goal was to have the drone perform the packet-inspection task and
-light-following task.
 
 %%% Roland's part
 
