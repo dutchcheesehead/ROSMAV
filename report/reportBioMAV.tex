@@ -80,6 +80,25 @@ In this breadcrumbs navigation task the drone is able to locate a goal object by
 Every time a temporary goal has been reached it will start searching for the next goal. 
 \section{Method}
 \subsection{Vision}
+
+
+\subsection{Blob detection}
+\subsubsection{Using cmvision}
+We found a ROS package called cmvision that could find rectangular blobs of
+roughly the same color in images, and could do that in real time. We used
+it for every task. It was used both to find targets and recognise
+corridors (see \ref{sec:pseudocode}).
+
+cmvision comes with a tool, called colorgui, which allows one to calibrate the
+range of values used to identify blobs. The dramatic influence of environment
+lights on the colors meant that each time the environment changed, we had to
+use the colorgui tool again to recalibrate the colors.
+
+In our initial setup (with ROS Electric), cmvision did not specify correctly
+which color each blob was. That meant we had to implement a few functions that
+manually checked the colors of the camera pixel values. (See xxxx).
+
+
 \subsection{Heat map}
 \subsubsection{Idea}
 At some point, it became clear that the blob detection was not consistent.
@@ -150,22 +169,6 @@ finished or needed to find another target, is strongly dependent on the
 real life size of the target. Our targets were about $\frac{1}{4} m^2$
 and the constant that worked best was $30 000$.
 
-
-\subsection{Blob detection}
-\subsubsection{Using cmvision}
-We found a ROS package called cmvision that could find rectangular blobs of
-roughly the same color in images, and could do that in real time. We used
-it for every task. It was used both to find targets and recognise
-corridors (see \ref{sec:pseudocode}).
-
-cmvision comes with a tool, called colorgui, which allows one to calibrate the
-range of values used to identify blobs. The dramatic influence of environment
-lights on the colors meant that each time the environment changed, we had to
-use the colorgui tool again to recalibrate the colors.
-
-In our initial setup (with ROS Electric), cmvision did not specify correctly
-which color each blob was. That meant we had to implement a few functions that
-manually checked the colors of the camera pixel values. (See xxxx).
 \subsubsection{...}
 
 \subsection{Control}
@@ -198,7 +201,6 @@ The sum of activation if determined by using this formula: (as explained in \ref
 \subsection{Github}
 \subsection{Use case}
 
-\section{Appendix}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % INTRODUCTION
@@ -224,33 +226,6 @@ This project's biological inspirations are mostly related to vision. The
 corridor-following task described in section \ref{sec:corridorfollowing} was inspired by how flying insects such as moths
 follow the light of the moon for navigation. The packet inspection task described in section \ref{sec:packageinspection}
 evolved from animals hunting their prey.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% MOTIVATION
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Motivation}
-\label{sec:motivation}
-One of the wishes of the group was a code implementation using ROS, this was another software part that both teams had to figure out how to use. 
-Around June the first implementation of a control program using ROS was finished by Roland. 
-This program consisted of a server extension of the original software written by the first BioMAV team.  
-The ROS component connected to a socket that listened to calls coming from the ROS component of the software. 
-Using a simple syntax to parse fly-commands it was possible to fly with the ARDrone using ROS.  
-
-After that, we started to look on how to perform tasks, and we decided
-to use a library for computer vision, which eventually became
-blob-detection, and a ``driver'' ROS node that turned information from
-the camera, processed with blob-detection, into actions, to perform a
-task.
-
-
-%%% Roland's part
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% PSEUDOCODE
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Pseudocode}
-\label{sec:pseudocode}
 \begin{figure}[h!]
 	\caption{A picture of a drone.}
 	\centering
@@ -258,27 +233,7 @@ task.
 \end{figure}
 
 In this section several of the implemented algorithms are discussed. Every subsection starts with the code in pseudocode and ends with an explanation of the algorithm. 
-\subsection{Detection of objects}
-\begin{verbatim}
-targets = getAllBlobsThatMatchOurTarget
-coolDownHeatMap
-activateHeatMap(targets)
-if dot in heat map is high enough
-    if sum of heat map is high enough
-        inspect package
-    else
-        go toward average of activation
-\end{verbatim}
-Our program first determines that targets we have by acquiring all blobs that match our target.
-After this is done our heat map is cooled down multiplying every activation value by $0.5$. 
-The heat map then receives activation again by raising the value of all the locations of the detected blobs. 
-When a dot in our heat map is activated enough it is assumed that this is because our target is at this position. 
-When the total sum of the heat map is activated enough we "inspect" the package (see section \ref{sec:packageinspection}). 
-When there is not enough activation the drone flies towards the average of the activation (see section \ref{flytowards}).
 
-
-\subsection{Color detection}
-(why we have to use isRed, isGreen, isBlue... and how it works)
 \begin{figure}[h!]
 	\caption{Robin with a target in the left image, on the right is the activation}
 	\centering
