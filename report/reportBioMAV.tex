@@ -147,9 +147,22 @@ real life size of the target. Our targets were about $\frac{1}{4} m^2$
 and the constant that worked best was $30 000$.
 
 
-\subsubsection{Blob detection}
+\subsection{Blob detection}
+\subsubsection{Using cmvision}
+We found a ROS package called cmvision that could find rectangular blobs of
+roughly the same color in images, and could do that in real time. We used
+it for every task. It was used both to find targets and recognise
+corridors (see \ref{sec:pseudocode}).
 
-\subsubsection{HeatMap}
+cmvision comes with a tool, called colorgui, which allows one to calibrate the
+range of values used to identify blobs. The dramatic influence of environment
+lights on the colors meant that each time the environment changed, we had to
+use the colorgui tool again to recalibrate the colors.
+
+In our initial setup (with ROS Electric), cmvision did not specify correctly
+which color each blob was. That meant we had to implement a few functions that
+manually checked the colors of the camera pixel values. (See xxxx).
+\subsubsection{...}
 
 \subsection{Control}
 
