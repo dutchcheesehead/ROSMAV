@@ -91,7 +91,7 @@ We came with the idea of a heat map, which
 would only activate after blobs appeared consistently on a certain position.
 At the same time, a single missed frame wouldn't mean that the drone had lost
 its target.
-\subsubsection{How it works}
+\subsubsection{How it works}\label{subsec:howheatmapworks}
 The heat map is basically a matrix, each cell corresponding to a square of
 pixels from the drone camera. Every blob detected would then increase the
 values in the heat map inside that blob. Each time step, the matrix is
@@ -172,19 +172,22 @@ direction = XvalueOfAverageOfActivation
 turnTowards(direction)
 flyForward
 \end{verbatim}
-XvalueOfAverageOfActivation is determined by using this formula:
-%%TODO: fill in this formula
+XvalueOfAverageOfActivation is determined by using this formula: (as explained in \ref{subsec:howheatmapworks})
+\[\texttt{XvalueOfAverageOfActivation} = 0.5 - \frac{Avg}{i_{max}}\]
+\[Avg = weighted-average([0, ..., i_{max} - 1], weights=weights)\]
+\[weights_i = \sum_{j=0}^{j_{max}-1} H_{ij} \]
+\[H = \textrm{(heat map matrix, $i_{max}$ columns, $j_{max}$ rows)}\]
 
 \subsection{Package inspection\label{sec:packageinspection}}
 \begin{verbatim}
-if sum(activation) > threshold
+if SumActivation > threshold
         currentTarget = getNewTarget(currentTarget)
     else
         startLanding
 \end{verbatim}
-The sum of activation if determined by using this formula:
-%%TODO: fill in this formula
-
+The sum of activation if determined by using this formula: (as explained in \ref{subsec:howheatmapworks})
+\[\texttt{SumActivation} = \sum_{i=0}^{i_{max}-1} \sum_{j=0}^{j_{max}-1} H_{ij}\]
+\[H = \textrm{(heat map matrix, $i_{max}$ columns, $j_{max}$ rows)}\]
 
 \section{Results}
 
