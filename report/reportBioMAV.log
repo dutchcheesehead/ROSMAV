@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  1 MAY 2013 14:50
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  1 MAY 2013 15:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -133,8 +133,66 @@ Package: subfigure 2002/03/15 v2.1.5 subfigure package
 \subfig@top=\skip50
 \subfig@bottom=\skip51
 )
+(/usr/local/texlive/2011/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2000/07/18 v2.13 AMS math features
+\@mathmargin=\skip52
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2011/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks16
+\ex@=\dimen116
+))
+(/usr/local/texlive/2011/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen117
+)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count96
+LaTeX Info: Redefining \frac on input line 211.
+\uproot@=\count97
+\leftroot@=\count98
+LaTeX Info: Redefining \overline on input line 307.
+\classnum@=\count99
+\DOTSCASE@=\count100
+LaTeX Info: Redefining \ldots on input line 379.
+LaTeX Info: Redefining \dots on input line 382.
+LaTeX Info: Redefining \cdots on input line 467.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen118
+LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+\macc@depth=\count101
+\c@MaxMatrixCols=\count102
+\dotsspace@=\muskip10
+\c@parentequation=\count103
+\dspbrk@lvl=\count104
+\tag@help=\toks17
+\row@=\count105
+\column@=\count106
+\maxfields@=\count107
+\andhelp@=\toks18
+\eqnshift@=\dimen119
+\alignsep@=\dimen120
+\tagshift@=\dimen121
+\tagwidth@=\dimen122
+\totwidth@=\dimen123
+\lineht@=\dimen124
+\@envbody=\toks19
+\multlinegap=\skip53
+\multlinetaggap=\skip54
+\mathdisplay@stack=\toks20
+LaTeX Info: Redefining \[ on input line 2666.
+LaTeX Info: Redefining \] on input line 2667.
+)
 (/usr/local/texlive/2011/texmf-dist/tex/latex/url/url.sty
-\Urlmuskip=\muskip10
+\Urlmuskip=\muskip11
 Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
 )
 (/usr/local/texlive/2011/texmf-dist/tex/latex/parskip/parskip.sty
@@ -192,17 +250,17 @@ LaTeX Font Info:    ... okay on input line 27.
 
 (/usr/local/texlive/2011/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count96
-\scratchdimen=\dimen116
-\scratchbox=\box26
-\nofMPsegments=\count97
-\nofMParguments=\count98
-\everyMPshowfont=\toks16
-\MPscratchCnt=\count99
-\MPscratchDim=\dimen117
-\MPnumerator=\count100
-\makeMPintoPDFobject=\count101
-\everyMPtoPDFconversion=\toks17
+\scratchcounter=\count108
+\scratchdimen=\dimen125
+\scratchbox=\box28
+\nofMPsegments=\count109
+\nofMParguments=\count110
+\everyMPshowfont=\toks21
+\MPscratchCnt=\count111
+\MPscratchDim=\dimen126
+\MPnumerator=\count112
+\makeMPintoPDFobject=\count113
+\everyMPtoPDFconversion=\toks22
 ) (/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/04/22 v0.16 Utilities of pdfTeX for LuaTeX (HO)
 
@@ -246,58 +304,56 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 38.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 38.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 38.
+
+LaTeX Warning: Reference `sec:corridorfollowing' on page 1 undefined on input l
+ine 56.
 
 [1
 
 {/usr/local/texlive/2011/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-[2] [3] <images/boringHallway.jpg, id=17, 1734.48pt x 2601.72pt>
-File: images/boringHallway.jpg Graphic file (type jpg)
-
-<use images/boringHallway.jpg>
-Package pdftex.def Info: images/boringHallway.jpg used on input line 153.
-(pdftex.def)             Requested size: 209.12683pt x 313.66179pt.
- [4 <./images/boringHallway.jpg>]
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 169.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 169.
- [5]
-Overfull \hbox (4.21918pt too wide) in paragraph at lines 267--269
+[2]
+Overfull \hbox (4.21918pt too wide) in paragraph at lines 122--124
 []\OT1/cmr/m/n/10 The im-ple-men-ta-tion has sev-eral con-stants that were ab-s
 tracted from in the pre-vi-ous sec-tion. 
  []
 
-[6] <images/robinPresentActivation.png, id=30, 620.3175pt x 311.1625pt>
+[3]
+
+LaTeX Warning: Reference `sec:corridorfollowing' on page 4 undefined on input l
+ine 208.
+
+[4] <images/boringHallway.jpg, id=26, 1734.48pt x 2601.72pt>
+File: images/boringHallway.jpg Graphic file (type jpg)
+
+<use images/boringHallway.jpg>
+Package pdftex.def Info: images/boringHallway.jpg used on input line 241.
+(pdftex.def)             Requested size: 209.12683pt x 313.66179pt.
+ [5 <./images/boringHallway.jpg>]
+<images/robinPresentActivation.png, id=30, 620.3175pt x 311.1625pt>
 File: images/robinPresentActivation.png Graphic file (type png)
 
 <use images/robinPresentActivation.png>
 Package pdftex.def Info: images/robinPresentActivation.png used on input line 2
-98.
+69.
 (pdftex.def)             Requested size: 209.12683pt x 104.90123pt.
 
 <images/droneAttack.jpg, id=32, 2601.72pt x 1734.48pt>
 File: images/droneAttack.jpg Graphic file (type jpg)
 
 <use images/droneAttack.jpg>
-Package pdftex.def Info: images/droneAttack.jpg used on input line 305.
+Package pdftex.def Info: images/droneAttack.jpg used on input line 276.
 (pdftex.def)             Requested size: 209.12683pt x 139.39641pt.
- [7 <./images/robinPresentActivation.png> <./images/droneAttack.jpg>]
-Overfull \hbox (34.11055pt too wide) in paragraph at lines 349--350
+ [6 <./images/robinPresentActivation.png> <./images/droneAttack.jpg>]
+Overfull \hbox (34.11055pt too wide) in paragraph at lines 320--321
 []\OT1/cmr/m/n/10 In an-other ter-mi-nal win-dow, start the AR-Drone driver: \O
 T1/cmr/bx/n/10 ros-run ardrone[]brown ardrone[]driver 
  []
 
-[8] <images/presentsAndDrone.jpg, id=44, 2601.72pt x 1734.48pt>
+[7] <images/presentsAndDrone.jpg, id=41, 2601.72pt x 1734.48pt>
 File: images/presentsAndDrone.jpg Graphic file (type jpg)
 
 <use images/presentsAndDrone.jpg>
-Package pdftex.def Info: images/presentsAndDrone.jpg used on input line 365.
+Package pdftex.def Info: images/presentsAndDrone.jpg used on input line 336.
 (pdftex.def)             Requested size: 209.12683pt x 139.39641pt.
  (./reportBioMAV.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 4--6
@@ -305,32 +361,35 @@ Underfull \hbox (badness 10000) in paragraph at lines 4--6
 m-pe-ti-tion \OT1/cmr/m/sc/10 url\OT1/cmr/m/n/10 :
  []
 
-) [9 <./images/presentsAndDrone.jpg>] (./reportBioMAV.aux) ) 
+) [8 <./images/presentsAndDrone.jpg>] (./reportBioMAV.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
 Here is how much of TeX's memory you used:
- 2585 strings out of 493633
- 36838 string characters out of 3143378
- 99928 words of memory out of 3000000
- 5846 multiletter control sequences out of 15000+200000
- 8710 words of font info for 31 fonts, out of 3000000 for 9000
+ 3182 strings out of 493633
+ 43601 string characters out of 3143378
+ 111277 words of memory out of 3000000
+ 6425 multiletter control sequences out of 15000+200000
+ 9838 words of font info for 36 fonts, out of 3000000 for 9000
  831 hyphenation exceptions out of 8191
- 38i,6n,24p,332b,239s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/local/texlive
-/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/
-2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2
-011/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2
-011/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/20
-11/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2011
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2011/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2011/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2011/texmf
--dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2011/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2011/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2011/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on reportBioMAV.pdf (9 pages, 2901972 bytes).
+ 38i,9n,24p,332b,243s stack positions out of 5000i,500n,10000p,200000b,50000s
+</usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+></usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+</usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb>
+</usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
+/usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></u
+sr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
+/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/l
+ocal/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/loc
+al/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/
+texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/t
+exlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/te
+xlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on reportBioMAV.pdf (8 pages, 2900296 bytes).
 PDF statistics:
- 88 PDF objects out of 1000 (max. 8388607)
- 59 compressed objects within 1 object stream
+ 85 PDF objects out of 1000 (max. 8388607)
+ 57 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

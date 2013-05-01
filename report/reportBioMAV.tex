@@ -17,7 +17,7 @@
 
 % Allows the use of \includegraphics{...}.
 \usepackage{graphicx,subfigure}
-
+\usepackage{amsmath}
 % Allows the use of \url{...}.
 \usepackage{url}
 
@@ -136,7 +136,11 @@ decisions.
 
 The activation added for each blob depends on the blob area $A$. This was
 another way to reduce the effect of jitters. The formula
-that worked best for us was $50 + \frac{\sqrt{A}}{10}$.
+that worked best for us was
+\begin{align*}
+ activation &=50 + \frac{\sqrt{A}}{10}
+\end{align*}
+
 
 The threshold that decided whether the drone has seen \emph{anything}
 interesting was set to $16$, fairly arbitrarily.
@@ -257,31 +261,6 @@ When the total sum of the heat map is activated enough we "inspect" the package 
 When there is not enough activation the drone flies towards the average of the activation (see section \ref{flytowards}).
 
 
-
-\subsection{Corridor following} 
-\label{sec:corridorfollowing}
-\begin{verbatim}
-targets = getAllBlobsThatMatchOurTarget
-myTarget = getTargetLowestOnCamera
-if isVeryMuchToTheLeft(myTarget)
-    flyVeryHardToTheleft
-else if isVeryMuchToTheRight(myTarget)
-    flyVeryHardToTheRight
-else if isSlightlyToTheLeft(myTarget)
-    flySlowlyToTheLeft
-else if isSlightlyToTheRight(myTarget)
-    flySlowlyToTheRight
-else
-    flyForward
-\end{verbatim}
-
-We found out that by always flying towards the target that was the "lowest" on the camera (in the y-space) our drone could smoothly follow the lights in the hallway. 
-By implementing this function we were able to get a corridor-following behaviour. 
-Our program first gets all blobs that are matching our target colour (the color of the lights). 
-The blob with the lowest y value is chosen as our primary target. 
-When this blob is very much to the left or right the drone will turn with a great speed in this direction. 
-When this blob is only slightly to the left or right the drone will turn slowly in this direction. 
-Otherwise the drone will fly forwards this blob. 
 \subsection{Color detection}
 (why we have to use isRed, isGreen, isBlue... and how it works)
 \begin{figure}[h!]
