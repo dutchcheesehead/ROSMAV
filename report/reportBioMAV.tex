@@ -38,64 +38,57 @@
 \maketitle
 
 \section{Introduction}
-BioMAV is a recurring project of the department of Artificial
-Intelligence at the Radboud University in Nijmegen which stands for ``Biologically inspired Micro Air Vehicles''. In this report an overview will be given about what the project goals were this year. 
+BioMAV (which stands for ''Biologically inspired Micro Air Vehicles'' is a recurring project of the department of Artificial
+Intelligence at the Radboud University in Nijmegen.
+This report contains an overview of this years project, the approaches taken, materials used and the result. 
+
 
 \subsection{Drone}
-The robot used in the BioMAV is the Parrot AR.Drone 1.0. It is able to
-communicate via USB and Wi-Fi. The drone has two cameras, one
-ground-facing and one forward-facing. However, the driver software we
-used was only able to access the image data from the forward-facing
-camera.
+The robot of this project is the Parrot AR.Drone 1.0. It is able to
+communicate with a laptop using USB or Wi-Fi. The drone has two cameras, one
+ground-facing and one forward-facing. However, the driver software used was only able to access the image data from the forward-facing camera.
 
 \subsection{ROS}
 ROS (for Robot Operating System) is an open-source framework for robot
-controller software, especially intended for re-use of libraries
+controller software and is especially intended for the re-use of libraries
 (called ``nodes'') between different projects and for different types of
-robots. This allowed us to make use of existing solutions for blob
-detection (used in section \ref{sec:corridorfollowing} and inter-node communication.
+robots. This allowed us to make use of existing solutions for computer vision, drone control and inter-node communication.
 
 \subsection{Vision}
-For vision the usage of CMVision turned out to be very handy for the detecting of blobs of colours. This was the reason that we used this for the detection of our goals. 
+For the processing of camera images the CMVision library was used. 
+This library contains several computer vision techniques which apply low level image processing techniques to segregate blobs from images. 
+More about the vision component can be found in section \ref{sec:blobdetection}
+
 \section{Task}
-\label{sec:task}
-\subsection{Initial task}
-\label{sec:initialtask}
-The initial goals of this project were:
+The goals of this project were:
 \begin{enumerate}
 \item To establish a platform, based on the old BioMAV project, on which
       future BioMAV projects can build.
-\item To let the drone perform a task autonomously. Which task that would be
-      was to be determined.
+\item To let the drone perform a task autonomously. 
 \item To demonstrate the drone performing that task.
 \end{enumerate}
-\subsection{Final goal}
-\label{sec:finalgoal}
-Our final goal was to have the drone perform the packet-inspection task and
-light-following task.
 
-Initially we managed to create a fly-to-object behaviour. As this does not yet give way to a very advanced behaviour it was decided to add an implementation for a breadcrumbs finding navigation task. 
+The task that the drone had to perform was a search and deploy task. In this task the robot searches for a goal where it has to perform a simple task. This led to task where the drone inspects a package by flying towards this package.
+
+Initially a fly-to-object behaviour was created. As this does not yet give way to very advanced behaviour an implementation for a breadcrumbs finding navigation task was chosen as task. 
 
 In this breadcrumbs navigation task the drone is able to locate a goal object by following other objects. 
 Every time a temporary goal has been reached it will start searching for the next goal. 
 \section{Method}
-\subsection{Vision}
-
-
 \subsection{Blob detection}
-\subsubsection{Using cmvision}
-We found a ROS package called cmvision that could find rectangular blobs of
+\label{sec:blobdetection}
+\subsubsection{Using CMVision}
+We found a ROS package called CMVision that could find rectangular blobs of
 roughly the same color in images, and could do that in real time. We used
-it for every task. It was used both to find targets and recognise
+it for every task to both find targets and recognise
 corridors (see \ref{sec:pseudocode}).
 
-cmvision comes with a tool, called colorgui, which allows one to calibrate the
+CMVision comes with a tool, called colorgui, which allows one to calibrate the
 range of values used to identify blobs. The dramatic influence of environment
-lights on the colors meant that each time the environment changed, we had to
-use the colorgui tool again to recalibrate the colors.
+lights on the colors meant that each time the environment changed the colorgui tool had to be used again to recalibrate the colors.
 
-In our initial setup (with ROS Electric), cmvision did not specify correctly
-which color each blob was. That meant we had to implement a few functions that
+In our initial setup (with ROS Electric), CMVision did not specify correctly
+which color each blob was. That meant a few functions had to be implemented that
 manually checked the colors of the camera pixel values. (See xxxx).
 
 
@@ -106,7 +99,7 @@ Small blobs were often found where none should be, and the blob corresponding
 to the target fell away for a frame every so often. This confused the drone,
 making navigation less than optimal.
 
-We came with the idea of a heat map, which
+As a solution a heat map was implemented which
 would only activate after blobs appeared consistently on a certain position.
 At the same time, a single missed frame wouldn't mean that the drone had lost
 its target.
@@ -135,6 +128,7 @@ fly in that direction. To figure out the ``centre of gravity'' of the
 activation, we calculate the weighted average of the indexes of the columns,
 with the array of values as weights. The result can be normalised, giving us
 the direction the drone should fly.
+
 \subsubsection{Implementation}
 We used NumPy to deal with the matrix calculations.
 
@@ -202,14 +196,14 @@ The source code to the ROSMAV project (as well as this report) are accessible
 on Github. This is because it made working with multiple team members
 reasonably convenient. Additionally, it makes ROSMAV easily accessible to
 others, as they can simply clone or fork the repository from Github.
-\subsection{Use case}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% INTRODUCTION
+% BIBLIOGRAPHY
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Introduction}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibliographystyle{plain}
+\bibliography{bibliography}
+\section*{Appendix}
 \section{Background}
 \label{sec:background}
 \subsection{IMAV}
@@ -309,10 +303,6 @@ Suppose you want to add a different color to inspect.
 	\centering
 	\includegraphics[width=0.5\textwidth]{images/presentsAndDrone}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% BIBLIOGRAPHY
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\bibliographystyle{plain}
-\bibliography{bibliography}
+
 
 \end{document}
