@@ -103,7 +103,9 @@ At the same time, a single missed frame wouldn't mean that the drone had lost
 its target.
 \subsubsection{How it works}\label{subsec:howheatmapworks}
 The heat map is a matrix, each cell corresponding to a square of
-pixels from the drone camera. Every blob detected increases the
+pixels from the drone camera. How many pixels depends on the ``downsize factor'',
+which reduces the size of the matrix to deal with CPU-heavy calculations.
+Every blob detected increases the
 values in the heat map inside that blob. Each time step, the matrix is
 multiplied by a constant $c_{{cooldown}}$, where
 $0 < c_{{cooldown}} < 1$, reducing the overall
@@ -138,7 +140,7 @@ $0.5$. In our experience, larger values caused "after images" to persist
 longer than needed, and smaller values reduced the positive effects of
 the heat map too much, making jitters and missing blobs too strong.
 
-The "downsize factor" by which the matrix was scaled down from the
+The downsize factor by which the matrix was scaled down from the
 drone camera was set to $4$, meaning that each cell in the heat map represented $16$
 pixels. This was chosen because a smaller downsize factor would make the
 algorithm that activated the heat map too slow, and with a downsize factor of
