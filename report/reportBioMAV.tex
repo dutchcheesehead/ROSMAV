@@ -38,9 +38,9 @@
 \maketitle
 
 \section{Introduction}
-BioMAV (which stands for ''Biologically inspired Micro Air Vehicles'' is a recurring project of the department of Artificial
+BioMAV (which stands for ''Biologically inspired Micro Air Vehicles'') is a recurring project of the department of Artificial
 Intelligence at the Radboud University in Nijmegen.
-This report contains an overview of this years project, the approaches taken, materials used and the result. 
+This report contains an overview of this years project, the approaches taken, materials used and the resulting program. 
 
 
 \subsection{Drone}
@@ -80,23 +80,21 @@ Every time a temporary goal has been reached it will start searching for the nex
 \subsubsection{Using CMVision}
 We found a ROS package called CMVision that could find rectangular blobs of
 roughly the same color in images, and could do that in real time. We used
-it for every task to both find targets and recognise
-corridors (see \ref{sec:pseudocode}).
+it for every task to both find targets and were even able to recognise corridors by looking at the fluorescent lamps. 
 
 CMVision comes with a tool, called colorgui, which allows one to calibrate the
 range of values used to identify blobs. The dramatic influence of environment
 lights on the colors meant that each time the environment changed the colorgui tool had to be used again to recalibrate the colors.
 
 In our initial setup (with ROS Electric), CMVision did not specify correctly
-which color each blob was. That meant a few functions had to be implemented that
-manually checked the colors of the camera pixel values. (See xxxx).
+which color each blob was. That meant a few functions had to be implemented that manually checked the colors of the camera pixel values.
 
 
 \subsection{Heat map}
 \subsubsection{Idea}
 At some point, it became clear that the blob detection was not consistent.
 Small blobs were often found where none should be, and the blob corresponding
-to the target fell away for a frame every so often. This confused the drone,
+to the target fell away for a frame every so often. This confused our software,
 making navigation less than optimal.
 
 As a solution a heat map was implemented which
@@ -104,18 +102,18 @@ would only activate after blobs appeared consistently on a certain position.
 At the same time, a single missed frame wouldn't mean that the drone had lost
 its target.
 \subsubsection{How it works}\label{subsec:howheatmapworks}
-The heat map is basically a matrix, each cell corresponding to a square of
-pixels from the drone camera. Every blob detected would then increase the
+The heat map is a matrix, each cell corresponding to a square of
+pixels from the drone camera. Every blob detected increases the
 values in the heat map inside that blob. Each time step, the matrix is
 multiplied by a constant $c_{{cooldown}}$, where
 $0 < c_{{cooldown}} < 1$, reducing the overall
 activation.
 
-Only if the maximal value in the matrix is more than a certain constant,
+Only if the maximal value in the matrix is more than a specified constant,
 the drone considers doing anything based on the heat map that time step.
-Otherwise, it will turn around slowly, looking for the target.
+During control, when there is no activation it will turn around slowly, looking for the target.
 
-If the sum of all values in the matrix is more than another constant,
+If the sum of all values in the matrix is more than another specified constant,
 that means a large portion of the camera's field of vision is taken up
 by the target, which means we're close to it. That means the drone has
 found the target, and as such can continue to its next target.
@@ -135,13 +133,13 @@ We used NumPy to deal with the matrix calculations.
 The implementation has several constants that were abstracted from in the
 previous section.
 
-The multiplication constant $c_{{cooldown}}$ was taken to be
+The multiplication constant $c_{{cooldown}}$ was set to
 $0.5$. In our experience, larger values caused "after images" to persist
 longer than needed, and smaller values reduced the positive effects of
 the heat map too much, making jitters and missing blobs too strong.
 
 The "downsize factor" by which the matrix was scaled down from the
-drone camera was $4$, meaning that each cell in the heat map represented $16$
+drone camera was set to $4$, meaning that each cell in the heat map represented $16$
 pixels. This was chosen because a smaller downsize factor would make the
 algorithm that activated the heat map too slow, and with a downsize factor of
 $4$, the resolution preserved was still sufficient for subtle steering
@@ -156,7 +154,7 @@ that worked best for us was
 
 
 The threshold that decided whether the drone has seen \emph{anything}
-interesting was set to $16$, fairly arbitrarily.
+interesting was set to $16$, which is chosen fairly arbitrarily.
 
 The threshold for deciding the target has been found and the drone was
 finished or needed to find another target, is strongly dependent on the
@@ -166,7 +164,7 @@ and the constant that worked best was $30 000$.
 
 \subsection{Control}
 
-\subsection{Flying towards objects\label{flytowards}}
+\subsubsection{Flying towards objects\label{flytowards}}
 \begin{verbatim}
 direction = XvalueOfAverageOfActivation
 turnTowards(direction)
@@ -178,7 +176,7 @@ XvalueOfAverageOfActivation is determined by using this formula: (as explained i
 \[weights_i = \sum_{j=0}^{j_{max}-1} H_{ij} \]
 \[H = \textrm{(heat map matrix, $i_{max}$ columns, $j_{max}$ rows)}\]
 
-\subsection{Package inspection\label{sec:packageinspection}}
+\subsubsection{Package inspection\label{sec:packageinspection}}
 \begin{verbatim}
 if SumActivation > threshold
         currentTarget = getNewTarget(currentTarget)
