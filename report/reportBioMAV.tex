@@ -91,6 +91,15 @@ which color each blob was. That meant a few functions had to be implemented that
 
 
 \subsection{Heat map}
+
+\begin{figure}[h!]
+	\caption{Robin with a target in the left image, on the right is the activation}
+	\centering
+	\includegraphics[width=0.5\textwidth]{images/robinPresentActivation}
+	\label{fig:robinPresentActivation}
+\end{figure}
+
+
 \subsubsection{Idea}
 At some point, it became clear that the blob detection was not consistent.
 Small blobs were often found where none should be, and the blob corresponding
@@ -204,6 +213,7 @@ in the same situation before). The drone has to be made to take off manually.
 \subsection{Setup}
 Setting this project up has proved to be difficult to streamline. We provide
 a virtual machine image that has already been set up to make it easier to use.
+In the appendix of this report a description has been included about how to set up your own workspace. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % BIBLIOGRAPHY
@@ -227,8 +237,8 @@ success and obtained the third price in the IMAV 2011 pylon challenge.
 
 \subsection{Biological inspiration}
 This project's biological inspirations are mostly related to vision. The
-corridor-following task described in section \ref{sec:corridorfollowing} was inspired by how flying insects such as moths
-follow the light of the moon for navigation. The packet inspection task described in section \ref{sec:packageinspection}
+corridor-following task that we first made was inspired by how flying insects such as moths
+follow the light of the moon for navigation. The final packet inspection task described in section 
 evolved from animals hunting their prey.
 \begin{figure}[h!]
 	\caption{A picture of a drone.}
@@ -237,13 +247,6 @@ evolved from animals hunting their prey.
 \end{figure}
 
 In this section several of the implemented algorithms are discussed. Every subsection starts with the code in pseudo code and ends with an explanation of the algorithm. 
-
-\begin{figure}[h!]
-	\caption{Robin with a target in the left image, on the right is the activation}
-	\centering
-	\includegraphics[width=0.5\textwidth]{images/robinPresentActivation}
-	\label{fig:robinPresentActivation}
-\end{figure}
 
 \begin{figure}[h!]
 	\caption{A picture of a drone.}
@@ -256,7 +259,10 @@ In this section several of the implemented algorithms are discussed. Every subse
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Tutorial}
 \subsection{Virtual machine}
-(virtual box etc.)
+Download virtual box at https://www.virtualbox.org/ and install this software. 
+Download our virtual box image and add it to your virtual boxes. 
+Possibly adjust your settings, it is known that not all settings work (especially the network settings seem to be specific to your hardware). 
+
 \subsection{Installation}
 To install ROSMAV manually, follow the following steps:
 \begin{enumerate}
