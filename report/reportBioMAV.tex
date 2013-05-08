@@ -48,6 +48,11 @@ The robot of this project is the Parrot AR.Drone 1.0. It is able to
 communicate with a laptop using USB or Wi-Fi. The drone has two cameras, one
 ground-facing and one forward-facing. However, the driver software used was only able to access the image data from the forward-facing camera.
 
+\begin{figure}[h!]
+	\caption{A picture of a drone.}
+	\centering
+	\includegraphics[width=0.5\textwidth]{images/boringHallway}
+\end{figure}
 \subsection{ROS}
 ROS (for Robot Operating System) is an open-source framework for robot
 controller software and is especially intended for the re-use of libraries
@@ -58,6 +63,12 @@ robots. This allowed us to make use of existing solutions for computer vision, d
 For the processing of camera images the CMVision library was used. 
 This library contains several computer vision techniques which apply low level image processing techniques to segregate blobs from images. 
 More about the vision component can be found in section \ref{sec:blobdetection}
+
+\begin{figure}[h!]
+	\caption{A picture of a drone.}
+	\centering
+	\includegraphics[width=0.5\textwidth]{images/droneAttack}
+\end{figure}
 
 \section{Task}
 The goals of this project were:
@@ -221,7 +232,7 @@ In the appendix of this report a description has been included about how to set 
 \bibliographystyle{plain}
 \bibliography{bibliography}
 \newpage
-\section*{Appendix}
+\section*{Appendix A}
 \section{Background}
 \label{sec:background}
 \subsection{IMAV}
@@ -241,30 +252,26 @@ This project's biological inspirations are mostly related to vision. The
 corridor-following task that we first made was inspired by how flying insects such as moths
 follow the light of the moon for navigation. The final packet inspection task described in section 
 evolved from animals hunting their prey.
-\begin{figure}[h!]
-	\caption{A picture of a drone.}
-	\centering
-	\includegraphics[width=0.5\textwidth]{images/boringHallway}
-\end{figure}
 
 In this section several of the implemented algorithms are discussed. Every subsection starts with the code in pseudo code and ends with an explanation of the algorithm. 
-
-\begin{figure}[h!]
-	\caption{A picture of a drone.}
-	\centering
-	\includegraphics[width=0.5\textwidth]{images/droneAttack}
-\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % TUTORIAL
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Tutorial}
-\subsection{Virtual machine}
+During this project a lot of our dependencies have changed. This includes a new Ubuntu version, a new ROS version and our library for controlling the drone is deprecated. This makes it technically very difficult to reproduce our software in the original setting. 
+
+With some adjustments our software now works on newer versions of Ubuntu and ROS. It also uses a new library for the controlling of the drone. The complete project can be downloaded as an .ova file and can be imported into a virtual machine. 
+\subsection{Option a: Virtual machine (recommended)}
 Download virtual box at https://www.virtualbox.org/ and install this software. 
 Download our virtual box image and add it to your virtual boxes. 
 Possibly adjust your settings, it is known that not all settings work (especially the network settings seem to be specific to your hardware). 
 
-\subsection{Installation}
+Working setting are: \\
+Network: enable network adapter\\
+Network: attached to: bridged adapter
+
+\subsection{Option b: Installation}
 To install ROSMAV manually, follow the following steps:
 \begin{enumerate}
 \item Install Ubuntu (we used Ubuntu 10.10 and later 12.04).
@@ -285,6 +292,21 @@ To install ROSMAV manually, follow the following steps:
 \end{enumerate}
 
 \subsection{Starting ROSMAV}
+\subsubsection{Option a: using the new software (virtual box)}
+To start our software, run the following commands all in different terminal windows:
+\begin{enumerate}
+\item \textbf{roscore} \\ This starts roscore.
+\item \textbf{rosrun ardrone\_autonomy ardrone\_driver} \\ This starts the driver for the AR-Drone.
+\item \textbf{roslaunch cmvision blobs.launch} \\ This starts the blob detection process.
+\item \textbf{rosrun ardrone\_tutorials keyboard\_controller.py} \\ This is needed to let the drone take off and land.
+\item \textbf{rosrun image\_view image\_view image:=/heatmap\_image} \\ This
+      allows you to see the heat map activation for the ``inspect presents''
+      task, and thus see through the eyes of the drone.
+\item \textbf{rosrun ROSMAV inspectPresents.py} \textit{or} \\
+      \textbf{rosrun ROSMAV followLights.py} \\
+      This actually starts the task. 
+\end{enumerate}
+\subsubsection{Option b: using the old software}
 To start our software, run the following commands all in different terminal windows:
 \begin{enumerate}
 \item \textbf{roscore} \\ This starts roscore.
@@ -298,6 +320,7 @@ To start our software, run the following commands all in different terminal wind
       \textbf{rosrun ROSMAV followLights.py} \\
       This actually starts the task. 
 \end{enumerate}
+\
 \subsection{Adding different colors to inspect}
 Suppose you want to add a different color to inspect.
 \begin{enumerate}
