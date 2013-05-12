@@ -195,6 +195,67 @@ finished or needed to find another target, is strongly dependent on the
 real life size of the target. Our targets were about $\frac{1}{4} m^2$
 and the constant that worked best was $30 000$.
 
+\subsubsection{Example}\label{sec:heatmapexample}
+This is an example of how the activation is updated on the heat map.
+For this example, we use a much larger downsize factor for clarity,
+namely $80$.
+
+The heat map matrix looks like this before cooldown and before 
+the new activation is added:
+
+\[\left(\begin{array}{cccc}
+0 & 0 & 0 & 0 \\
+0 & 20 & 20 & 20 \\
+0 & 20 & 20 & 20 \end{array}\right)\]
+
+First, cooldown is applied:
+
+\[\left(\begin{array}{cccc}
+0 & 0 & 0 & 0 \\
+0 & 10 & 10 & 10 \\
+0 & 10 & 10 & 10 \end{array}\right)\]
+
+A large blob is then found in the upper-left corner, and a small jitter
+found in the upper-right corner. The values that have to be updated are
+underscored below:
+
+\[\left(\begin{array}{cccc}
+\underline{0} & \underline{0} & 0 & \underline{0} \\
+\underline{0} & \underline{10} & 10 & 10 \\
+0 & 10 & 10 & 10 \end{array}\right)\]
+
+For each of the blobs, the activation value has to be calculated.
+We assume for this example that the actual dimensions of the blobs are
+multiples of the downsize factor (which in actuality is not often the
+case, but it simplifies the calculations in this example).
+
+For the large blob:
+\[
+	A=160\times160
+\]
+\begin{align*}
+ activation &=50 + \frac{\sqrt{160\times160}}{10} \\
+  &=50 + \frac{160}{10} \\
+	 &= 50 + 16 = 66
+\end{align*}
+
+For the small blob:
+
+\[
+	A=80\times80
+\]
+\begin{align*}
+ activation &=50 + \frac{\sqrt{80\times80}}{10} \\
+  &=50 + \frac{80}{10} \\
+	 &= 50 + 8 = 58
+\end{align*}
+
+These values are added to the heat map:
+
+\[\left(\begin{array}{cccc}
+66 & 66 & 0 & 58 \\
+66 & 76 & 10 & 10 \\
+0 & 10 & 10 & 10 \end{array}\right)\]
 
 \subsection{Control}
 
@@ -204,12 +265,28 @@ direction = XvalueOfAverageOfActivation
 turnTowards(direction)
 flyForward
 \end{verbatim}
-XvalueOfAverageOfActivation is determined by using this formula: (as explained in \ref{subsec:howheatmapworks})
+\texttt{XvalueOfAverageOfActivation} is determined by using this formula: (as explained in \ref{subsec:howheatmapworks})
 \[\texttt{XvalueOfAverageOfActivation} = 0.5 - \frac{Avg}{i_{max}}\]
 \[Avg = weightedaverage([0, ..., i_{max} - 1], weights=weights)\]
 \[weights_i = \sum_{j=0}^{j_{max}-1} H_{ij} \]
 \[H = \textrm{(heat map matrix, $i_{max}$ columns, $j_{max}$ rows)}\]
-
+\paragraph{Example}
+With the heat map from \ref{sec:heatmapexample}, here is how to calculate
+\texttt{XvalueOfAverageOfActivation}:
+\[H = \left(\begin{array}{cccc}
+66 & 66 & 0 & 58 \\
+66 & 76 & 10 & 10 \\
+0 & 10 & 10 & 10 \end{array}\right)\]
+\[weights = \left(\begin{array}{cccc}
+132 & 152 & 20 & 78\end{array}\right)\]
+\begin{align*}
+Avg &= weightedaverage([0, 1, 2, 3], weights=[132, 152, 20, 78])\\
+	&= \frac{0\times 132 + 1\times 152 + 2\times 20 + 3\times 78}
+	   {132 + 152 + 20 + 78}\\
+	   &= \frac{426}{382} \approx 1.12
+\end{align*}
+\[\texttt{XvalueOfAverageOfActivation} = 0.5 - \frac{1.12}{4} \approx 0.22 \]
+A direction of 0.22 means steering moderately to the left.
 \subsubsection{Package inspection\label{sec:packageinspection}}
 \begin{verbatim}
 if SumActivation > threshold
@@ -221,6 +298,16 @@ The sum of activation if determined by using this formula: (as explained in \ref
 \[\texttt{SumActivation} = \sum_{i=0}^{i_{max}-1} \sum_{j=0}^{j_{max}-1} H_{ij}\]
 \[H = \textrm{(heat map matrix, $i_{max}$ columns, $j_{max}$ rows)}\]
 
+\paragraph{Example}
+With the heat map from \ref{sec:heatmapexample}, here is how to calculate
+\texttt{SumActivation}:
+\[H = \left(\begin{array}{cccc}
+66 & 66 & 0 & 58 \\
+66 & 76 & 10 & 10 \\
+0 & 10 & 10 & 10 \end{array}\right)\]
+\begin{align*}\texttt{SumActivation} &= 66 + 66 + 0 + 66 + 78 + 10 + 0 + 10 + 10
++ 58 + 10 + 10
+\\ &= 384 \end{align*}
 \section{Results}
 
 \subsection{Github}
