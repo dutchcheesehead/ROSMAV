@@ -169,11 +169,23 @@ decisions.
 
 The activation added for each blob depends on the blob area $A$. This was
 another way to reduce the effect of jitters. The formula
-that worked best for us was
+that worked best for us was:
 \begin{align*}
  activation &=50 + \frac{\sqrt{A}}{10}
 \end{align*}
 
+Here, $activation$ is the value that is added to each element in the
+heat map matrix that fits inside the current blob. That operation is
+repeated for each blob the blob detection has found in the current frame.
+
+Above formula was chosen because the size of the blob has an influence on the
+activation. Smaller blobs tend to be false positives, while larger
+blobs are more likely to be true positives. Because this property has
+more to do with the width and height of the blob than with the area
+of the blob, the square root of the area was taken (which is the
+geometric mean of the width and the height). A relatively large
+constant of $50$ is added for each activation. We have no explanation for
+that, it simply worked better.
 
 The threshold that decided whether the drone has seen \emph{anything}
 interesting was set to $16$, which is chosen fairly arbitrarily.
@@ -194,7 +206,7 @@ flyForward
 \end{verbatim}
 XvalueOfAverageOfActivation is determined by using this formula: (as explained in \ref{subsec:howheatmapworks})
 \[\texttt{XvalueOfAverageOfActivation} = 0.5 - \frac{Avg}{i_{max}}\]
-\[Avg = weighted-average([0, ..., i_{max} - 1], weights=weights)\]
+\[Avg = weightedaverage([0, ..., i_{max} - 1], weights=weights)\]
 \[weights_i = \sum_{j=0}^{j_{max}-1} H_{ij} \]
 \[H = \textrm{(heat map matrix, $i_{max}$ columns, $j_{max}$ rows)}\]
 
