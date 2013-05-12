@@ -38,7 +38,7 @@
 \maketitle
 
 \section{Introduction}
-BioMAV (which stands for ''Biologically inspired Micro Air Vehicles'') is a recurring project of the department of Artificial
+BioMAV (which stands for ``Biologically inspired Micro Air Vehicles'') is a recurring project of the department of Artificial
 Intelligence at the Radboud University in Nijmegen.
 This report contains an overview of this years project, the approaches taken, materials used and the resulting program. 
 
@@ -156,7 +156,7 @@ The implementation has several constants that were abstracted from in the
 previous section.
 
 The multiplication constant $c_{{cooldown}}$ was set to
-$0.5$. In our experience, larger values caused "after images" to persist
+$0.5$. In our experience, larger values caused ``after images'' to persist
 longer than needed, and smaller values reduced the positive effects of
 the heat map too much, making jitters and missing blobs too strong.
 
@@ -198,7 +198,8 @@ and the constant that worked best was $30 000$.
 \subsubsection{Example}\label{sec:heatmapexample}
 This is an example of how the activation is updated on the heat map.
 For this example, we use a much larger downsize factor for clarity,
-namely $80$.
+namely $80$. We will pretend a large blob was seen some number of frames
+before, so not all values in the heat map are initially zero.
 
 The heat map matrix looks like this before cooldown and before 
 the new activation is added:
@@ -226,7 +227,7 @@ underscored below:
 
 For each of the blobs, the activation value has to be calculated.
 We assume for this example that the actual dimensions of the blobs are
-multiples of the downsize factor (which in actuality is not often the
+multiples of the downsize factor (which in actuality is often not the
 case, but it simplifies the calculations in this example).
 
 For the large blob:
