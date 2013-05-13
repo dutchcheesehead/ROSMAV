@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  13 MAY 2013 15:01
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  13 MAY 2013 15:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -436,17 +436,14 @@ Overfull \hbox (34.11055pt too wide) in paragraph at lines 509--510
 T1/cmr/bx/n/10 ros-run ardrone[]brown ardrone[]driver 
  []
 
-<images/presentsAndDrone.jpg, id=70, 2601.72pt x 1734.48pt>
+[14 <./images/totalpicture.png>]
+<images/presentsAndDrone.jpg, id=73, 2601.72pt x 1734.48pt>
 File: images/presentsAndDrone.jpg Graphic file (type jpg)
 
 <use images/presentsAndDrone.jpg>
 Package pdftex.def Info: images/presentsAndDrone.jpg used on input line 525.
 (pdftex.def)             Requested size: 209.12683pt x 139.39641pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[14 <./images/totalpicture.png>] [15 <./images/presentsAndDrone.jpg>]
+ [15 <./images/presentsAndDrone.jpg>]
 (./reportBioMAV.aux) ) 
 Here is how much of TeX's memory you used:
  3221 strings out of 493633
@@ -455,7 +452,7 @@ Here is how much of TeX's memory you used:
  6457 multiletter control sequences out of 15000+200000
  10174 words of font info for 38 fonts, out of 3000000 for 9000
  831 hyphenation exceptions out of 8191
- 38i,10n,24p,341b,236s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 38i,10n,24p,407b,236s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/local/texlive/2011/texmf-dist/fonts/type1/public/am
 sfonts/cm/cmbx10.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/public/ams
 fonts/cm/cmbx12.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsf
@@ -472,7 +469,7 @@ pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pf
 b></usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
 ></usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
 
-Output written on reportBioMAV.pdf (15 pages, 4511432 bytes).
+Output written on reportBioMAV.pdf (15 pages, 4511684 bytes).
 PDF statistics:
  125 PDF objects out of 1000 (max. 8388607)
  81 compressed objects within 1 object stream
