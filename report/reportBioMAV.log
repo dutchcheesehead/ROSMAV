@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  13 MAY 2013 14:20
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  13 MAY 2013 14:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -377,21 +377,24 @@ File: images/roscore.png Graphic file (type png)
 
 <use images/roscore.png>
 Package pdftex.def Info: images/roscore.png used on input line 435.
-(pdftex.def)             Requested size: 209.12683pt x 104.4027pt.
+(pdftex.def)             Requested size: 334.60422pt x 167.05476pt.
 
 <images/ardrone_autonomy.png, id=55, 1371.1225pt x 684.5575pt>
 File: images/ardrone_autonomy.png Graphic file (type png)
 
 <use images/ardrone_autonomy.png>
 Package pdftex.def Info: images/ardrone_autonomy.png used on input line 443.
-(pdftex.def)             Requested size: 209.12683pt x 104.4027pt.
+(pdftex.def)             Requested size: 334.60422pt x 167.05476pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 <images/blobslaunch.png, id=56, 1371.1225pt x 684.5575pt>
 File: images/blobslaunch.png Graphic file (type png)
 
 <use images/blobslaunch.png>
 Package pdftex.def Info: images/blobslaunch.png used on input line 451.
-(pdftex.def)             Requested size: 209.12683pt x 104.4027pt.
+(pdftex.def)             Requested size: 334.60422pt x 167.05476pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -401,7 +404,7 @@ File: images/keysforcontrol.png Graphic file (type png)
 
 <use images/keysforcontrol.png>
 Package pdftex.def Info: images/keysforcontrol.png used on input line 458.
-(pdftex.def)             Requested size: 209.12683pt x 113.24887pt.
+(pdftex.def)             Requested size: 334.60422pt x 181.1987pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -410,8 +413,8 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 File: images/heatmapterminal.png Graphic file (type png)
 
 <use images/heatmapterminal.png>
-Package pdftex.def Info: images/heatmapterminal.png used on input line 468.
-(pdftex.def)             Requested size: 209.12683pt x 104.4027pt.
+Package pdftex.def Info: images/heatmapterminal.png used on input line 465.
+(pdftex.def)             Requested size: 334.60422pt x 167.05476pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -420,30 +423,30 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 File: images/totalpicture.png Graphic file (type png)
 
 <use images/totalpicture.png>
-Package pdftex.def Info: images/totalpicture.png used on input line 475.
-(pdftex.def)             Requested size: 209.12683pt x 104.4027pt.
+Package pdftex.def Info: images/totalpicture.png used on input line 472.
+(pdftex.def)             Requested size: 334.60422pt x 167.05476pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[11 <./images/roscore.png> <./images/ardrone_autonomy.png>]
-Overfull \vbox (4.99617pt too high) has occurred while \output is active []
-
-
-[12 <./images/blobslaunch.png> <./images/keysforcontrol.png> <./images/heatmapt
-erminal.png> <./images/totalpicture.png>]
-Overfull \hbox (34.11055pt too wide) in paragraph at lines 512--513
+[11 <./images/roscore.png>] [12 <./images/ardrone_autonomy.png> <./images/blobs
+launch.png>] [13 <./images/keysforcontrol.png> <./images/heatmapterminal.png>]
+Overfull \hbox (34.11055pt too wide) in paragraph at lines 509--510
 []\OT1/cmr/m/n/10 In an-other ter-mi-nal win-dow, start the AR-Drone driver: \O
 T1/cmr/bx/n/10 ros-run ardrone[]brown ardrone[]driver 
  []
 
-[13] <images/presentsAndDrone.jpg, id=70, 2601.72pt x 1734.48pt>
+<images/presentsAndDrone.jpg, id=70, 2601.72pt x 1734.48pt>
 File: images/presentsAndDrone.jpg Graphic file (type jpg)
 
 <use images/presentsAndDrone.jpg>
-Package pdftex.def Info: images/presentsAndDrone.jpg used on input line 528.
+Package pdftex.def Info: images/presentsAndDrone.jpg used on input line 525.
 (pdftex.def)             Requested size: 209.12683pt x 139.39641pt.
- [14 <./images/presentsAndDrone.jpg>]
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[14 <./images/totalpicture.png>] [15 <./images/presentsAndDrone.jpg>]
 (./reportBioMAV.aux) ) 
 Here is how much of TeX's memory you used:
  3221 strings out of 493633
@@ -452,7 +455,7 @@ Here is how much of TeX's memory you used:
  6457 multiletter control sequences out of 15000+200000
  10174 words of font info for 38 fonts, out of 3000000 for 9000
  831 hyphenation exceptions out of 8191
- 38i,10n,24p,336b,236s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 38i,10n,24p,341b,236s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/local/texlive/2011/texmf-dist/fonts/type1/public/am
 sfonts/cm/cmbx10.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/public/ams
 fonts/cm/cmbx12.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsf
@@ -469,10 +472,10 @@ pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pf
 b></usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
 ></usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
 
-Output written on reportBioMAV.pdf (14 pages, 4510774 bytes).
+Output written on reportBioMAV.pdf (15 pages, 4511432 bytes).
 PDF statistics:
- 122 PDF objects out of 1000 (max. 8388607)
- 79 compressed objects within 1 object stream
+ 125 PDF objects out of 1000 (max. 8388607)
+ 81 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  51 words of extra memory for PDF output out of 10000 (max. 10000000)
 

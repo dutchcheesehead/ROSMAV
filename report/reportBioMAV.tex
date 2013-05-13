@@ -378,7 +378,7 @@ When controlling the drone, working settings for your virtual box are:\\
 In network: enable the network adapter by checking the checkbox\\
 In network: set attached to: bridged adapter
 
-Note that the set attached to setting has to be changed to NAT when using "normal" internet again and that the bridged adapater is needed when controlling the drone. 
+Note that the set attached to setting has to be changed to NAT when using "normal" internet again and that the bridged adapter is needed when controlling the drone. 
 
 Also note that the drone must be connected to wifi before launching your virtual box. 
 
@@ -416,7 +416,7 @@ To start our software, run the following commands all in different terminal wind
 \item \textbf{roscore} \\ This starts roscore, a possible result is visible in figure \ref{fig:roscore}.
 \item \textbf{rosrun ardrone\_autonomy ardrone\_driver} \\ This starts the driver for the AR-Drone, a possible result is visible in figure \ref{fig:ardrone_autonomy}.
 \item \textbf{roslaunch cmvision blobs.launch} \\ This starts the blob detection process, a possible result is visible in figure \ref{fig:blobslaunch}. The blue and red rectangles appear where the drone sees red and blue blobs. 
-\item \textbf{rosrun ardrone\_tutorials keyboard\_controller.py} \\ This is needed to let the drone take off and land, the keys that are used for controlling the drone are shown in figure \ref{fig:keysforcontrol}.
+\item \textbf{rosrun ardrone\_tutorials keyboard\_controller.py} \\ This is needed to let the drone take off and land, the keys that are used for controlling the drone are shown in figure \ref{fig:keysforcontrol} (note that the spacebar can be used for an emergency landing).
 \item \textbf{rosrun image\_view image\_view image:=/heatmap\_image} \\ This
       allows you to see the heat map activation for the ``inspect presents''
       task, and thus see through the eyes of the drone. A possible result of this is shown in figure \ref{fig:heatmapterminal}. While our software is not running this window will be gray. 
@@ -425,14 +425,14 @@ To start our software, run the following commands all in different terminal wind
       A result of this is visible in figure \ref{fig:totalpicture}.
 \end{enumerate}
 
-After all software is running click the image that is responsible for controlling the drone (the keyboard controller), go to the location where you want to fly (preferably with a lot of open space) and let the drone hover in the air (Please not that the spacebar can be used for an emergency landing).
+After all software is running click the image that is responsible for controlling the drone (the keyboard controller), go to the location where you want to fly (preferably with a lot of open space) and let the drone hover in the air by pressing the Y button (Please not that the spacebar can be used for an emergency landing).
 Our software will now take control of the drone. 
 
 Note that colours will appear different at different locations, see section \ref{sec:changecolour} on how to change this. 
 \begin{figure}[h!]
 	\caption{Image of a terminal running roscore}
 	\centering
-	\includegraphics[width=0.5\textwidth]{images/roscore}
+	\includegraphics[width=0.8\textwidth]{images/roscore}
 	\label{fig:roscore}
 \end{figure}
 
@@ -440,7 +440,7 @@ Note that colours will appear different at different locations, see section \ref
 \begin{figure}[h!]
 	\caption{Image of a terminal running ardrone\_autonomy}
 	\centering
-	\includegraphics[width=0.5\textwidth]{images/ardrone_autonomy}
+	\includegraphics[width=0.8\textwidth]{images/ardrone_autonomy}
 	\label{fig:ardrone_autonomy}
 \end{figure}
 
@@ -448,31 +448,28 @@ Note that colours will appear different at different locations, see section \ref
 \begin{figure}[h!]
 	\caption{Image of a terminal running the blobslaunch script, note that an image will be displayed of what the drone sees with its camera}
 	\centering
-	\includegraphics[width=0.5\textwidth]{images/blobslaunch}
+	\includegraphics[width=0.8\textwidth]{images/blobslaunch}
 	\label{fig:blobslaunch}
 \end{figure}
 
 \begin{figure}[h!]
 	\caption{The keys needed for controlling the drone}
 	\centering
-	\includegraphics[width=0.5\textwidth]{images/keysforcontrol}
+	\includegraphics[width=0.8\textwidth]{images/keysforcontrol}
 	\label{fig:keysforcontrol}
 \end{figure}
-
-
-
 
 \begin{figure}[h!]
 	\caption{Initial heatmap image}
 	\centering
-	\includegraphics[width=0.5\textwidth]{images/heatmapterminal}
+	\includegraphics[width=0.8\textwidth]{images/heatmapterminal}
 	\label{fig:heatmapterminal}
 \end{figure}
 
 \begin{figure}[h!]
 	\caption{Your screen when running all software}
 	\centering
-	\includegraphics[width=0.5\textwidth]{images/totalpicture}
+	\includegraphics[width=0.8\textwidth]{images/totalpicture}
 	\label{fig:totalpicture}
 \end{figure}
 
@@ -490,7 +487,7 @@ To start our software, run the following commands all in different terminal wind
 \item \textbf{roscore} \\ This starts roscore, a possible result is visible in figure \ref{fig:roscore}.
 \item \textbf{rosrun ardrone\_brown ardrone\_driver} \\ This starts the driver for the AR-Drone, a possible result is visible in figure \ref{fig:ardrone_autonomy}.
 \item \textbf{roslaunch cmvision blobs.launch} \\ This starts the blob detection process, a possible result is visible in figure \ref{fig:blobslaunch}. The blue and red rectangles appear where the drone sees red and blue blobs. 
-\item \textbf{drone\_teleop.py}  \\ This is needed to let the drone take off and land, the keys that are used for controlling the drone are shown in figure \ref{fig:keysforcontrol}.
+\item \textbf{drone\_teleop.py}  \\ This is needed to let the drone take off and land, the keys that are used for controlling the drone are shown in figure \ref{fig:keysforcontrol} (note that the spacebar can be used for an emergency landing).
 \item \textbf{rosrun image\_view image\_view image:=/heatmap\_image} \\ This
       allows you to see the heat map activation for the ``inspect presents''
       task, and thus see through the eyes of the drone. A possible result of this is shown in figure \ref{fig:heatmapterminal}. While our software is not running this window will be gray. 
@@ -499,7 +496,7 @@ To start our software, run the following commands all in different terminal wind
       A result of this is visible in figure \ref{fig:totalpicture}.
 \end{enumerate}
 
-After all software is running click the image that is responsible for controlling the drone (the keyboard controller), go to the location where you want to fly (preferably with a lot of open space) and let the drone hover in the air (Please not that the spacebar can be used for an emergency landing).
+After all software is running click the image that is responsible for controlling the drone (the keyboard controller), go to the location where you want to fly (preferably with a lot of open space) and let the drone hover in the air by pressing the Y button (Please not that the spacebar can be used for an emergency landing).
 Our software will now take control of the drone. 
 
 Note that colours will appear different at different locations, see section \ref{sec:changecolour} on how to change this. 
