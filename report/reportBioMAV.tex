@@ -361,17 +361,29 @@ In this section several of the implemented algorithms are discussed. Every subse
 \section{Tutorial}
 During this project a lot of our dependencies have changed. This includes a new Ubuntu version, a new ROS version and our library for controlling the drone is deprecated. This makes it technically very difficult to reproduce our software in the original setting. 
 
-With some adjustments our software now works on newer versions of Ubuntu and ROS. It also uses a new library for the controlling of the drone. The complete project can be downloaded as an .ova file and can be imported into a virtual machine. 
+With some adjustments our software now works on newer versions of Ubuntu and ROS. 
+It also uses a new library for the controlling of the drone. 
+The complete project can be downloaded as an .ova file and can be imported into a virtual machine. 
+
+To use our software you can either use our virtual machine (which is recommended) or install it as a new Linux distribution. The instructions for installing our virtual machine can be found in section \ref{sec:tuta} and the instructions for installing a new distribution can be found in section \ref{sec:tutb}. 
+
 \subsection{Option a: Virtual machine (recommended)}
+\label{sec:tuta}
 Download virtual box at https://www.virtualbox.org/ and install this software. 
-Download our virtual box image and add it to your virtual boxes. 
+Download our virtual box image (currently available on:\\
+ \url{https://mega.co.nz/#!ONZR2DrY!fpG2KGBSurOtpoTNI323EhcyZscosjcvwL1S2Q55ZLw}) and add it to your virtual boxes. 
 Possibly adjust your settings, it is known that not all settings work (especially the network settings seem to be specific to your hardware). 
 
-Working setting are: \\
-Network: enable network adapter\\
-Network: attached to: bridged adapter
+When controlling the drone, working settings for your virtual box are:\\
+In network: enable the network adapter by checking the checkbox\\
+In network: set attached to: bridged adapter
+
+Note that the set attached to setting has to be changed to NAT when using "normal" internet again and that the bridged adapater is needed when controlling the drone. 
+
+Also note that the drone must be connected to wifi before launching your virtual box. 
 
 \subsection{Option b: Installation}
+\label{sec:tutb}
 To install ROSMAV manually, follow the following steps:
 \begin{enumerate}
 \item Install Ubuntu (we used Ubuntu 10.10 and later 12.04).
@@ -393,35 +405,107 @@ To install ROSMAV manually, follow the following steps:
 
 \subsection{Starting ROSMAV}
 \subsubsection{Option a: using the new software (virtual box)}
+Before starting our software make the following preparations: 
+\begin{enumerate}
+	\item Prepare the drone by putting a charged battery into the drone, after this its lights will become red.
+	\item Connect to the drone by using wifi. 
+	\item Start the ARDrone virtual box.  
+\end{enumerate}
 To start our software, run the following commands all in different terminal windows:
 \begin{enumerate}
-\item \textbf{roscore} \\ This starts roscore.
-\item \textbf{rosrun ardrone\_autonomy ardrone\_driver} \\ This starts the driver for the AR-Drone.
-\item \textbf{roslaunch cmvision blobs.launch} \\ This starts the blob detection process.
-\item \textbf{rosrun ardrone\_tutorials keyboard\_controller.py} \\ This is needed to let the drone take off and land.
+\item \textbf{roscore} \\ This starts roscore, a possible result is visible in figure \ref{fig:roscore}.
+\item \textbf{rosrun ardrone\_autonomy ardrone\_driver} \\ This starts the driver for the AR-Drone, a possible result is visible in figure \ref{fig:ardrone_autonomy}.
+\item \textbf{roslaunch cmvision blobs.launch} \\ This starts the blob detection process, a possible result is visible in figure \ref{fig:blobslaunch}. The blue and red rectangles appear where the drone sees red and blue blobs. 
+\item \textbf{rosrun ardrone\_tutorials keyboard\_controller.py} \\ This is needed to let the drone take off and land, the keys that are used for controlling the drone are shown in figure \ref{fig:keysforcontrol}.
 \item \textbf{rosrun image\_view image\_view image:=/heatmap\_image} \\ This
       allows you to see the heat map activation for the ``inspect presents''
-      task, and thus see through the eyes of the drone.
-\item \textbf{rosrun ROSMAV inspectPresents.py} \textit{or} \\
-      \textbf{rosrun ROSMAV followLights.py} \\
-      This actually starts the task. 
+      task, and thus see through the eyes of the drone. A possible result of this is shown in figure \ref{fig:heatmapterminal}. While our software is not running this window will be gray. 
+\item \textbf{rosrun ROSMAV inspectPresents.py} for the present inspection task \textit{or} \\
+      \textbf{rosrun ROSMAV followLights.py} for the task where the drone follows lights\\
+      A result of this is visible in figure \ref{fig:totalpicture}.
 \end{enumerate}
+
+After all software is running click the image that is responsible for controlling the drone (the keyboard controller), go to the location where you want to fly (preferably with a lot of open space) and let the drone hover in the air (Please not that the spacebar can be used for an emergency landing).
+Our software will now take control of the drone. 
+
+Note that colours will appear different at different locations, see section \ref{sec:changecolour} on how to change this. 
+\begin{figure}[h!]
+	\caption{Image of a terminal running roscore}
+	\centering
+	\includegraphics[width=0.5\textwidth]{images/roscore}
+	\label{fig:roscore}
+\end{figure}
+
+
+\begin{figure}[h!]
+	\caption{Image of a terminal running ardrone\_autonomy}
+	\centering
+	\includegraphics[width=0.5\textwidth]{images/ardrone_autonomy}
+	\label{fig:ardrone_autonomy}
+\end{figure}
+
+
+\begin{figure}[h!]
+	\caption{Image of a terminal running the blobslaunch script, note that an image will be displayed of what the drone sees with its camera}
+	\centering
+	\includegraphics[width=0.5\textwidth]{images/blobslaunch}
+	\label{fig:blobslaunch}
+\end{figure}
+
+\begin{figure}[h!]
+	\caption{The keys needed for controlling the drone}
+	\centering
+	\includegraphics[width=0.5\textwidth]{images/keysforcontrol}
+	\label{fig:keysforcontrol}
+\end{figure}
+
+
+
+
+\begin{figure}[h!]
+	\caption{Initial heatmap image}
+	\centering
+	\includegraphics[width=0.5\textwidth]{images/heatmapterminal}
+	\label{fig:heatmapterminal}
+\end{figure}
+
+\begin{figure}[h!]
+	\caption{Your screen when running all software}
+	\centering
+	\includegraphics[width=0.5\textwidth]{images/totalpicture}
+	\label{fig:totalpicture}
+\end{figure}
+
+
+
 \subsubsection{Option b: using the old software}
+Before starting our software make the following preparations: 
+\begin{enumerate}
+	\item Prepare the drone by putting a charged battery into the drone, after this its lights will become red.
+	\item Connect to the drone by using wifi. 
+	\item Start the ARDrone virtual box.  
+\end{enumerate}
 To start our software, run the following commands all in different terminal windows:
 \begin{enumerate}
-\item \textbf{roscore} \\ This starts roscore.
-\item \textbf{rosrun ardrone\_brown ardrone\_driver} \\ This starts the driver for the AR-Drone.
-\item \textbf{roslaunch cmvision blobs.launch} \\ This starts the blob detection process.
-\item \textbf{drone\_teleop.py} \\ This is needed to let the drone take off and land.
+\item \textbf{roscore} \\ This starts roscore, a possible result is visible in figure \ref{fig:roscore}.
+\item \textbf{rosrun ardrone\_brown ardrone\_driver} \\ This starts the driver for the AR-Drone, a possible result is visible in figure \ref{fig:ardrone_autonomy}.
+\item \textbf{roslaunch cmvision blobs.launch} \\ This starts the blob detection process, a possible result is visible in figure \ref{fig:blobslaunch}. The blue and red rectangles appear where the drone sees red and blue blobs. 
+\item \textbf{drone\_teleop.py}  \\ This is needed to let the drone take off and land, the keys that are used for controlling the drone are shown in figure \ref{fig:keysforcontrol}.
 \item \textbf{rosrun image\_view image\_view image:=/heatmap\_image} \\ This
       allows you to see the heat map activation for the ``inspect presents''
-      task, and thus see through the eyes of the drone.
-\item \textbf{rosrun ROSMAV inspectPresents.py} \textit{or} \\
-      \textbf{rosrun ROSMAV followLights.py} \\
-      This actually starts the task. 
+      task, and thus see through the eyes of the drone. A possible result of this is shown in figure \ref{fig:heatmapterminal}. While our software is not running this window will be gray. 
+\item \textbf{rosrun ROSMAV inspectPresents.py} for the present inspection task \textit{or} \\
+      \textbf{rosrun ROSMAV followLights.py} for the task where the drone follows lights\\
+      A result of this is visible in figure \ref{fig:totalpicture}.
 \end{enumerate}
-\
+
+After all software is running click the image that is responsible for controlling the drone (the keyboard controller), go to the location where you want to fly (preferably with a lot of open space) and let the drone hover in the air (Please not that the spacebar can be used for an emergency landing).
+Our software will now take control of the drone. 
+
+Note that colours will appear different at different locations, see section \ref{sec:changecolour} on how to change this. 
+
 \subsection{Adding different colors to inspect}
+\label{sec:changecolour}
 Suppose you want to add a different color to inspect.
 \begin{enumerate}
 \item Run \textbf{roscore}
